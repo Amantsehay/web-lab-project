@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/font-awesome/fontawesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="./style/index.css">
+    <link href="../dist/output.css" rel="stylesheet"> -->
+    <title>Registration Page</title>
+    <style>
+        .error {
+          color: red;
+        }
+        body {
+          margin: 0;
+          padding: 0;
+          background-image: url('../src/images/background.webp');
+          background-size: cover;
+          background-position: center;
+          background-repeat:no-repeat;
+        }
+        .registration-main {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          height: 100vh;
+        }
+        .registration-card {
+          display: flex;
+          flex-direction: column;
+          color: white;
+          align-items: center;
+          padding: 20px;
+          width: 400px;
+          margin-left: 300px;
+          margin-top: 100px;
+          background-color: rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 8px black;
+          
+        }
+        .registration-logo {
+          display: flex;
+          gap: 4px;
+        }
+        .registration-logo img{
+            width:80px;
+            height: 80px;
+        }
+        .registration-form {
+          display: flex;
+          flex-direction: column;
+        }
+        .registration-form-emails {
+          display: flex;
+          flex-direction: column;
+          gap:6px;    
+        }
+        .registration-button {
+          margin-top: 20px;
+        }
+        .firstName {
+          display: flex;
+          flex-direction: column;
+        }
+        .names {
+          display: flex;
+          gap:10px;
+          margin-bottom: 10px;
+        }
+        .lastName {
+          display: flex;
+          flex-direction: column;
+        }
+        .welcome-section {
+          margin-left: 20px;
+          margin-top: 300px;
+          color:white;
+          
+        }
+        .regstration-form input{
+            background-color: black;
+            border:1px solid rgba(255, 255, 255, 0.432);
+            height:30px;
+            color:white;
+            box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.683);
+        }
+        .regstration-form input:active{
+            box-shadow: none;
+        }
+        .names input{
+            margin-top: 3px;
+        }
+        .registration-button{
+            text-align: center;
+            background-color:gold;
+            padding:8px;
+            border-radius: 20px;
+        }
+        .registration-button button:hover{
+            font-size: larger;
+        }
+        .registration-button button{
+            background-color:gold;
+            border: none;
+            font-size: medium;
+        }
+        .registration-logo p{
+            font-size:30px;
+        }
+        .registration-logo a{
+            color:rgba(255, 217, 0, 0.701);
+        }
+        .welcome-section h2{
+            color:rgba(255, 217, 0, 0.701);
+        }
+        .welcome-section a{
+            color:gold;
+        }
+        .regstration-form label{
+            font-size: larger;
+        }
+        .header-container{
+            display: flex;
+            justify-content: space-between;
+            color:white;
+            align-items: center;
+            /* background-color: rgba(0, 0, 0, 0.3); */
+            height:70px;
+            position:sticky;
+        }
+        #main-logo{
+            width:60px;
+            height:70px
+            
+        }
+        #logo-container{
+            display: flex;
+        
+        }
+        .nav-bar{
+            display: flex;
+            gap:20px;
+            font-size: 20px;
+            text-decoration: none;
+
+        }
+      </style>
+</head>
+<body>
+    <header class="header-container">
+        <div id="logo-container">
+            <img id="main-logo" src="../src/images/logo.jpg">
+            <h1 class="logo">BetEbet</h1>
+        </div>
+        <div class="nav-bar">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Games</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="sign-in-up-container">
+            <button class="btn btn-primary">Login</button>
+            <button class="btn btn-primary">Register</button>
+        </div>
+    </header>
+    <main class="registration-main">
+        <section class="registration-card">
+            <div class="registration-logo">
+                <img src="../src/images/logo.jpg" alt="logo">
+                <p>Bet<a href="#">Ebet</a></p>
+            </div>
+            <div>
+                <form class="regstration-form">
+                    <div class="names">
+                        <div class="firstName">
+                            <label for="firstName"><i class="fa fa-user"></i>First Name:</label>
+                            <input type="text" name="firstName" required>
+                        </div>
+                    
+                        <div class="lastName">
+                            <label for="lastName"><i class="fa fa-user"></i>Last Name:</label>
+                            <input type="text" name="lastName" required>
+                        </div>
+                    </div>
+                
+                    <div class="registration-form-emails">
+                        <label for="email"><i class="fa fa-envelope-o"></i>Email:</label>
+                        <input type="email" name="email" required>
+                    
+                        <label for="password"><i class="fa fa-key"></i>Password:</label>
+                        <input type="password" name="password" id="password" required>
+                    
+                        <label for="confirmPassword"><i class="fa fa-lock"></i>Confirm Password:</label>
+                        <input type="password" name="confirmPassword" id="confirmPassword" required>
+                        <p id="passwordError" class="error" style="display: none;">Passwords do not match. Please try again.</p>
+                    </div>
+                
+                    <div class="registration-button">
+                        <button type="Register" onclick="validateForm(event)">Register</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="welcome-section">
+            <h2>Welcome to BetEbet</h2>
+            <h5>Sign in to your account. Capture the excitement and allure of Winning</h5>
+            <p>Already have an account? <a href="#">Sign in</a></p>
+        </section>
+    </main>
+    <script>
+        function validateForm(event) {
+          event.preventDefault();
+    
+          const password = document.getElementById('password').value;
+          const confirmPassword = document.getElementById('confirmPassword').value;
+          const passwordError = document.getElementById('passwordError');
+    
+          if (password !== confirmPassword) {
+            passwordError.style.display = 'block';
+            document.getElementById('confirmPassword').classList.add('error');
+            return;
+          }
+    
+          passwordError.style.display = 'none';
+          document.getElementById('confirmPassword').classList.remove('error');
+    
+          alert("Registration successful!");
+          document.querySelector("form").reset();
+        }
+      </script>
+</body>
+</html>
