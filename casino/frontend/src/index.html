@@ -15,7 +15,7 @@
     <header class="header-container">
         <div id="logo-container">
             <img id="main-logo" src="../src/images/logo.jpg">
-            <h1><a  href="#" class="Bet">Bet</a><a class="Ebet"href="#">Ebet</a></h1>
+            <h1><a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a></h1>
         </div>
         <div class="nav-bar">
             <a href="./index.html">Home</a>
@@ -27,31 +27,104 @@
             <a href="#">Contact</a>
         </div>
         <div class="sign-in-up-container">
-            <a href="./login.html"><button>Login</button></a>
-            <a href="./register.html"><button><i class="fa fa-user-plus"></i>Register</button></a>
+            <a href="#" onclick="displayLoginForm()"><i class="fa fa-sign-in" ></i><button>Login</button></a>
+            <a href="#" onclick="displayRegistrationForm()"><i class="fa fa-user-plus" ></i><button>Register</button></a>
         </div>
+        <i class="fa fa-bars menu-icon"></i>
     </header>
-
-<main class="index-main">
-    <div class="landing-page">
-        <div class="welcome-container">
-            <h1 class="welcome-title">
-                Welcome to BetEbet, 
-            </h1>
-            <h2 class="welcome-title2">It's not gambling if you always win!</h2>
-            <p class="welcome-text ">
-                Explore an exhilarating world of online gambling where luck and skill intertwine, offering endless opportunities to win big.
-            </p>
-
-        </div>
-
-        <div class="landing-page-btn">
-            <a href="./register.html"><button id="landing-page-btn1" >sign up</button></a>
-            <a href="./login.html"><button id="landing-page-btn2">Sign in</button></a>
-        </div>
-
-
+    <div>
+        <div id="registrationForm">
+            <div class="close-button" onclick="closeRegistrationForm()">&times;</div>
+            <main class="registration-main">
+                <section class="registration-card">
+                    <div class="registration-logo">
+                        <img src="../src/images/logo.jpg" alt="logo">
+                        <p>Bet<a href="#">Ebet</a></p>
+                    </div>
+                <div>
+                    <form class="regstration-form">
+                        <div class="names">
+                            <div class="firstName">
+                                <label for="firstName"><i class="fa fa-user"></i>First Name:</label>
+                                <input type="text" name="firstName" required>
+                            </div>
+                        
+                            <div class="lastName">
+                                <label for="lastName"><i class="fa fa-user"></i>Last Name:</label>
+                                <input type="text" name="lastName" required>
+                            </div>
+                        </div>
+                    
+                        <div class="registration-form-emails">
+                            <label for="email"><i class="fa fa-envelope-o"></i>Email:</label>
+                            <input type="email" name="email" required>
+                        
+                            <label for="password"><i class="fa fa-key"></i>Password:</label>
+                            <input type="password" name="password" id="password" required>
+                        
+                            <label for="confirmPassword"><i class="fa fa-lock"></i>Confirm Password:</label>
+                            <input type="password" name="confirmPassword" id="confirmPassword" required>
+                            <p id="passwordError" class="error" style="display: none;">Passwords do not match. Please try again.</p>
+                        </div>
+                    
+                        <div class="registration-button">
+                            <button type="Register" onclick="validateForm(event)">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
     </div>
+    </div>
+    <div>
+        <div id="loginForm">
+            <div class="close-button" onclick="closeLoginForm()">&times;</div>
+            <main class="login-main">
+                <section class="login-card">
+                    <div class="login-logo">
+                        <img src="../src/images/logo.jpg" alt="logo">
+                        <p>Bet<a href="#">Ebet</a></p>
+                    </div>
+                    <div>
+                        <form class="regstration-form">
+                          <div class="login-form-emails">
+                                <label for="email"><i class="fa fa-envelope-o"></i>Email:</label>
+                                <input type="email" name="email" required>
+                            
+                                <label for="password"><i class="fa fa-key"></i>Password:</label>
+                                <input type="password" name="password" id="password" required>
+                            
+                            </div>
+                        
+                            <div class="login-button">
+                                <button type="Login">Sign in</button>
+                            </div>
+                            <div id="changeToRegister">
+                                <p>Don't have an account? <a href="./register.html">Register</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <main class="index-main">
+        <div class="landing-page">
+            <div class="welcome-container">
+                <h1 class="welcome-title">
+                    Welcome to BetEbet, 
+                </h1>
+                <h2 class="welcome-title2">It's not gambling if you always win!</h2>
+                <p class="welcome-text ">
+                    Explore an exhilarating world of online gambling where luck and skill intertwine, offering endless opportunities to win big.
+                </p>
+            </div>
+
+            <div class="landing-page-btn">
+                <a href="./register.html"><button id="landing-page-btn1">sign up</button></a>
+                <a href="./login.html"><button id="landing-page-btn2">Sign in</button></a>
+            </div>
+        </div>
 
         <div class="random-facts">
 
@@ -170,19 +243,16 @@
                 <div>
                     <i class="fa fa-rocket"></i>
                     <h3> Fast To Play</h3>
-                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequatur corporis delectus similique, sint temporibus tenetur! Atque autem doloribus ducimus eaque est excepturi nemo nulla quibusdam soluta? Asperiores, numquam totam?</p> -->
                 </div>
     
                 <div>
                     <i class="fa fa-folder"></i>
                     <h3> Easy To Use</h3>
-                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa facere impedit nisi! Aperiam aut cum in ipsa iusto magni nihil officiis optio perspiciatis voluptas. Facere illum nemo quae unde.</p> -->
                 </div>
     
                 <div>
                     <i class="fa fa-shield"></i>
                     <h3> Secure</h3>
-                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque consequatur corporis ea, eaque eius, excepturi fugit illo ipsam iusto minima nobis placeat qui quod ratione temporibus tenetur vel, vero.</p> -->
                 </div>
     
                 <div>
@@ -193,13 +263,11 @@
                 <div>
                     <i class="fa fa-download"></i>
                     <h3> Fast Withdraw</h3>
-                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolore doloremque earum et ex libero quas quis voluptatem? Aut beatae corporis eligendi eos exercitationem facere fuga, harum inventore iusto totam!</p> -->
                 </div>
     
                 <div>
                     <i class="fa fa-handshake-o"></i>
                     <h3>24/7 support</h3>
-                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet consequatur corporis culpa et fugiat incidunt ipsa ipsum, maxime mollitia natus nemo nulla omnis quod reiciendis repellat sed sequi voluptates.</p> -->
                 </div>
                 <section>
                     <a href="#">Click here >> to learn more</a>
@@ -395,7 +463,9 @@
 
 
 </footer>
-
+<!-- <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script> -->
+<script src="./java/script.js"></script>
 
 </body>
 </html>
