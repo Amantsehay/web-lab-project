@@ -22,9 +22,9 @@
             return await this.userModel.findOne({email: email});
         }
     
-        async createUser (createUserDto: AuthDto) : Promise<void>{
+        async createUser (createUserDto: AuthDto) : Promise<User>{
             const  newUser =  new this.userModel(createUserDto);
-            newUser.save();
+            return newUser.save();
             
         }
 
