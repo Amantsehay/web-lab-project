@@ -17,7 +17,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="./style/index.css" />
-    <title>Casino Game</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <title>Contact</title>
   </head>
   <body class="about-body">
     <header class="header-container">
@@ -44,32 +50,59 @@
       </div>
     </header>
 
-    <main>
-      <form
-        action="https://formsubmit.co/birrukmaru12@gmail.com"
-        method="post"
-        class="contact"
-        id="commentForm"
-      >
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+    <main class="container mt-5">
+      <div class="row">
+        <div class="col-md-5">
+          <h2>Contact Us</h2>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+          <div class="column mt-4">
+            <div class="col-md-4 my-5">
+              <h5>Email</h5>
+              <a href="mailto:your.email@example.com">
+                <i class="fas fa-envelope"></i> betebet2023@gmail.com
+              </a>
+            </div>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+            <div class="col-md-4 my-5">
+              <h5>Phone</h5>
+              <a href="tel:+251989122801">
+                <i class="fas fa-phone"></i> +251989122801
+              </a>
+            </div>
 
-        <button onclick="sendMail()" type="submit">Submit</button>
-      </form>
+            <div class="col-md-4">
+              <h5>Location</h5>
+              <a
+                href="https://www.google.com/maps?q=your+company+location"
+                target="_blank"
+              >
+                <i class="fas fa-map-marker"></i> Our Company Location
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <form
+            action="https://formsubmit.co/birukmaru12@gmail.com"
+            method="post"
+            class="contact"
+            id="commentForm"
+          >
+            <label for="name">Name:</label>
+            <input class="my-3" type="text" id="name" name="name" required />
+
+            <label for="email">Email:</label>
+            <input class="my-3" type="email" id="email" name="email" required />
+
+            <label class="mb-3" for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button onclick="sendMail()" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
     </main>
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
 
     <footer>
       <div class="footer-container">
@@ -111,7 +144,7 @@
         </div>
       </div>
     </footer>
-      <script
+    <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
     ></script>
