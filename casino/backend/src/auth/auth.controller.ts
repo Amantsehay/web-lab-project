@@ -1,35 +1,57 @@
-import { Controller, Post, Body, Req, ParseIntPipe } from "@nestjs/common";
-import  authService from "./auth.services";
-import { AuthDto } from "./dto/auth.dto";
-import { UserService } from "src/models/user-folder/user.service";
+import {
+  Controller,
+  Post,
+  Get,
+  Req,
+  Body,
+  HttpCode,
+  HttpStatus,
+  ValidationPipe,
+  UseGuards,
+} from "@nestjs/common";
+import { AuthService } from "./auth.services";
+import { LoginDto } from "./dto/login.dto";
 
+import { Public } from "./decorators/public.decorator";
+import { SignUpDto } from "./dto/signUp.dto";
+import { User } from "./schemas/user.schema";
+import { Request } from "express";
 
-@Controller('auth')
-class AuthController{
-    constructor(private authService: authService, private userService: UserService){  
+@Controller("auth")
+export class AuthController {
+  constructor(private authService: AuthService) {}
 
-    }
-    @Post('register')
-  async register( @Body() body: AuthDto): Promise<any> {
+  // login endpoint
 
-  
-    const oldUser = await this.authService.findOne(body.email);
-    console.log(oldUser);
-    if(oldUser){
-        return "the user already exists  " + oldUser;
-
-    }
-    return await this.authService.register(body);
-
+  @Public()
+  @HttpCode(HttpStatus.OK)
+  @Post("/login")
+  logIn(@Body() loginDto: LoginDto) {
+    return this.authService.logIn(
+      loginDto.username,
+      loginDto.password,
+    );
   }
 
-    @Post('login')
-    public login(@Body() body: any):string{
+  //   signup endpoint
 
-        this.authService.login();
-        return "the app is logged in"
-    }
+  @Public()
+  @HttpCode(HttpStatus.OK)
+  @Post("/signup")
+  async signup(
+    @Body(ValidationPipe) signupDto: SignUpDto,
+  ): Promise<User> {
+    console.log(process.env.JWT_EXPIRES);
+    return await this.authService.singUP(
+      signupDto,
+    );
+  }
+
+  //   get user endpoint
+
+  @Get("profile")
+  getProfile(@Req() req: Request) {
+    console.log(req.cookies);
+    return req["user"];
+  }
 }
-
-
-export default AuthController;
