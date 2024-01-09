@@ -14,9 +14,18 @@ async function bootstrap() {
       transform: true,
     }
   ));
+<<<<<<< HEAD
   await app.listen(env.PORT_NUMBER).catch((error)=>{
     console.log(error, "connection failed");
   });
+=======
+  app.enableCors();
+  await app.listen(env.PORT_NUMBER).catch((error)=>{
+    console.log(error, "connection failed");
+  });
+
+ 
+>>>>>>> second-setup
   console.log("connection to port successful ")
 }
 bootstrap();
