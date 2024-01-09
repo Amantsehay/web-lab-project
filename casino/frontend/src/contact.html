@@ -28,7 +28,7 @@
   <body class="about-body">
     <header class="header-container">
       <div id="logo-container">
-        <img id="main-logo" src="images/logo.jpg" />
+        <img id="main-logo" src="../src/images/logo.jpg" />
         <h1>
           <a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a>
         </h1>
@@ -38,16 +38,19 @@
         <hr />
         <a href="./about.html">About Us</a>
         <hr />
-        <a href="#">Games</a>
+        <a href="games.html">Games</a>
         <hr />
         <a href="contact.html">Contact</a>
       </div>
       <div class="sign-in-up-container">
-        <a href="./login.html"><button>Login</button></a>
-        <a href="./register.html"
-          ><button><i class="fa fa-user-plus"></i>Register</button></a
+        <a href="#" onclick="displayLoginForm()"
+          ><i class="fa fa-sign-in"></i><button>Login</button></a
+        >
+        <a href="#" onclick="displayRegistrationForm()"
+          ><i class="fa fa-user-plus"></i><button>Register</button></a
         >
       </div>
+      <i class="fa fa-bars menu-icon"></i>
     </header>
 
     <main class="container mt-5">
@@ -170,19 +173,6 @@
         </div>
       </div>
     </footer>
-    <script src="script.js"></script>
-
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("VbEhGK32tRH1Las4B");
-      })();
-    </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="java/script.js"></script>
   </body>
 </html>
