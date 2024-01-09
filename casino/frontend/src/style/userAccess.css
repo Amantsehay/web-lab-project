@@ -94,6 +94,27 @@ a:hover {
   color: var(--color-yellow);
 }
 
+.blur {
+  animation: blur 10s;
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(0.9px);
+  }
+  30% {
+    filter: blur(1px);
+  }
+  50% {
+    filter: blur(2px);
+  }
+  80% {
+    filter: blur(1.5px);
+  }
+  95% {
+    filter: blur(0px);
+  }
+}
 #main-logo {
   width: 3.5rem;
   height: 4rem;
@@ -117,14 +138,29 @@ a:hover {
   background: var(--color-black);
   height: 100vh;
   opacity: 0.95;
+  background-image: url("https://casino5.netlify.app/background.jpg");
 }
 .main-user-access .main-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-items: center;
 }
 .main-user-access .main-container .game-board {
-  background-color: var(--color-black);
+  margin-top: 5rem;
+  position: relative;
+}
+.main-user-access .main-container .game-board .marker {
+  color: red;
+  position: absolute;
+  left: 45%;
+  top: -1rem;
+  width: 60px;
+  height: 100px;
+  z-index: 100;
+}
+.main-user-access .main-container .game-board .wheel {
+  background: none;
 }
 .main-user-access .main-container .score-keeping .current-amount {
   font-size: 1.5rem;
