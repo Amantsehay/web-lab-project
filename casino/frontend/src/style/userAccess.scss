@@ -212,10 +212,8 @@
     .game-board{
       margin-top: 5rem;
       position: relative;
-  
 
       .marker{
-        color: red;
         position: absolute;
         left: 45%;
         top: -1rem;
@@ -224,9 +222,7 @@
         z-index: 100;
        
       }
-      .wheel{
-        background: none;
-      }
+     
     }
 
     .score-keeping{
