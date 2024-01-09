@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    
   
 }
 
@@ -39,7 +40,7 @@
     font-family: monospace;
     text-decoration: none;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease-in-out;
     font-size:1.26rem
   }
   
@@ -53,7 +54,7 @@
     background-color: #333;
     transform: scaleX(0);
     transform-origin: left center;
-    transition: transform 0.3s ease;
+    transition: 0.3s ease-in-out;
   }
   
   .nav-bar a:hover {
@@ -225,7 +226,7 @@
   height: 100%;
   background-color: transparent;
   z-index: -1;
-  transition: background-color 0.3s;
+  transition:  0.3s  ease-in-out;
 }
 
 .game:hover::before {
@@ -263,7 +264,7 @@
   visibility: hidden;
   color: white;
   padding: 10px;
-  transition: visibility 0.3s, background-color 0.3s;
+  transition: visibility 0.3s, background-color 0.3s ease-in-out;
 }
 
 .game:hover .game-description {

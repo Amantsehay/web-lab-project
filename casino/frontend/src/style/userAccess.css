@@ -151,16 +151,12 @@ a:hover {
   position: relative;
 }
 .main-user-access .main-container .game-board .marker {
-  color: red;
   position: absolute;
   left: 45%;
   top: -1rem;
   width: 60px;
   height: 100px;
   z-index: 100;
-}
-.main-user-access .main-container .game-board .wheel {
-  background: none;
 }
 .main-user-access .main-container .score-keeping .current-amount {
   font-size: 1.5rem;
