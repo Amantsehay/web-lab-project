@@ -7,11 +7,7 @@ import { DatabaseModule } from "src/db/database.module";
 
 
 @Module({
-<<<<<<< HEAD
     imports: [DatabaseModule],
-=======
-    imports: [],
->>>>>>> second-setup
     providers: [UserService],
     controllers: [UserController],
     exports: [UserService]

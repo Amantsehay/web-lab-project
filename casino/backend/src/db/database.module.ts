@@ -47,11 +47,7 @@ export class DatabaseModule implements OnModuleInit {
         console.log("Already connected to MongoDB");
       } else {
         // If not connected, establish the connection
-<<<<<<< HEAD
         await mongoose.connect(env.MONGODB_URL, {});
-=======
-        await mongoose.connect(process.env.MONGODB_URL_LOCAL, {});
->>>>>>> second-setup
       }
     } catch (error) {
       console.error("Error connecting to MongoDB:", error);
