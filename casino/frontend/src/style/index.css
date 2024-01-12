@@ -230,9 +230,6 @@
   border-radius: 10px;
 }
 
-.game-button:hover {
-  font-size: large;
-}
 .games-intro-title {
   text-align: center;
   color: rgba(255, 255, 255, 0.824);
@@ -286,7 +283,7 @@
 }
 .description-home h1 {
   color: rgba(255, 217, 0, 0.808);
-  /* margin-left: 1rem; */
+
 }
 .description-home p {
   color: rgb(177, 196, 215);
@@ -327,7 +324,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* flex-wrap: wrap; */
   gap: 1rem;
   /* border:2px solid white;
   border:0px 0px 2px rgba(255, 255, 255, 0.824); */
