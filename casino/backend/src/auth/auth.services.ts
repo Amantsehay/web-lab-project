@@ -1,15 +1,11 @@
-import {
-  HttpException,
-  HttpStatus,
-  Injectable,
-  UnauthorizedException,
-} from "@nestjs/common";
-import { InjectModel } from "@nestjs/mongoose";
-import { Model } from "mongoose";
-import { User } from "./schemas/user.schema";
+import {HttpException, HttpStatus, Injectable,} from "@nestjs/common";
+import {InjectModel} from "@nestjs/mongoose";
+import {Model} from "mongoose";
+import {User} from "./schemas/user.schema";
 import * as bcrypt from "bcryptjs";
-import { JwtService } from "@nestjs/jwt";
-import { SignUpDto } from "./dto/signUp.dto";
+import {JwtService} from "@nestjs/jwt";
+import {SignUpDto} from "./dto/signup.dto";
+import { Response } from "express";
 
 @Injectable()
 export class AuthService {
@@ -21,26 +17,26 @@ export class AuthService {
 
   // login service
 
-  async logIn(
-    username: string,
-    pass: string,
-  ): Promise<any> {
+  async logIn( username: string, pass: string): Promise<any> {
     const user = await this.userModel
       .findOne({ username: username })
       .lean()
       .exec();
 
-    const isPasswordValid = await bcrypt.compare(
-      pass,
-      user.password,
-    );
-
-    if (!user) {
-      throw new HttpException(
-        "User not found",
-        HttpStatus.NOT_FOUND,
-      );
-    } else if (!isPasswordValid) {
+      
+      if (!user) {
+        throw new HttpException(
+          "User not found",
+          HttpStatus.NOT_FOUND,
+          );
+          
+          
+        } 
+        const isPasswordValid = await bcrypt.compare(
+          pass,
+          user.password,
+        );
+    if (!isPasswordValid) {
       throw new HttpException(
         "Invalid password",
         HttpStatus.UNAUTHORIZED,
@@ -48,16 +44,19 @@ export class AuthService {
     }
 
     const payload = {
-      sub: user["_id"],
+      sub: user.email,
       username: user.username,
+
     };
 
+    const access_token: string = await this.jwtService.signAsync(payload, {
+      secret: process.env.JWT_SECRET,
+      expiresIn: process.env.JWT_EXPIRES,
+    })
+   
+    
     return {
-      access_token:
-        await this.jwtService.signAsync(payload, {
-          secret: process.env.JWT_SECRET,
-          expiresIn: process.env.JWT_EXPIRES,
-        }),
+      access_token
     };
   }
 
@@ -82,12 +81,28 @@ export class AuthService {
     }
 
     const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(
-      signupDto.password,
-      salt,
+    signupDto.password = await bcrypt.hash(
+        signupDto.password,
+        salt,
     );
-    signupDto.password = hashedPassword;
     const user = new this.userModel(signupDto);
     return await user.save();
+  }
+  
+
+  async blockUserByEmail(email: string): Promise<void> {
+    await this.userModel.findOneAndUpdate({ email }, { isBlocked: true });
+  }
+
+  async unblockUserByEmail(email: string): Promise<void> {
+    await this.userModel.findOneAndUpdate({ email }, { isBlocked: false });
+  }
+
+  async getUserByEmail(email: string): Promise<User | null> {
+    return this.userModel.findOne({ email }).exec();
+  }
+
+  deleteUser(userId: any) {
+    
   }
 }

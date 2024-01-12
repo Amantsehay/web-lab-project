@@ -6,6 +6,9 @@ import { JwtModule } from "@nestjs/jwt";
 import { UserSchema } from "./schemas/user.schema";
 import { APP_GUARD } from "@nestjs/core";
 import { AuthGuard } from "./guards/auth.guard";
+import { GameSchema } from "./schemas/game.schema";
+import { GameController } from "./game.controller";
+import {GameService} from "./game.service";
 
 @Module({
   imports: [
@@ -23,10 +26,13 @@ import { AuthGuard } from "./guards/auth.guard";
         schema: UserSchema,
       },
     ]),
+    MongooseModule.forFeature([
+      {name: "Game", schema: GameSchema}
+    ])
   ],
-  controllers: [AuthController],
+  controllers: [AuthController, GameController],
   providers: [
-    AuthService,
+    AuthService, GameService,
     { provide: APP_GUARD, useClass: AuthGuard },
   ],
 })
