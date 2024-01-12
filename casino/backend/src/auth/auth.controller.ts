@@ -1,33 +1,35 @@
 import { Controller, Post, Body, Req, ParseIntPipe } from "@nestjs/common";
-import  authService from "./auth.services";
+import  AuthService from "./auth.service";
 import { AuthDto } from "./dto/auth.dto";
 import { UserService } from "src/models/user-folder/user.service";
+import { Response } from "express";
+import { Res } from "@nestjs/common";
+import { Error, MongooseError } from "mongoose";
 
 
 @Controller('auth')
 class AuthController{
-    constructor(private authService: authService, private userService: UserService){  
+    constructor(private authService: AuthService){  
 
     }
     @Post('register')
   async register( @Body() body: AuthDto): Promise<any> {
-
-  
     const oldUser = await this.authService.findOne(body.email);
-    console.log(oldUser);
-    if(oldUser){
-        return "the user already exists  " + oldUser;
 
+    if(oldUser){
+        return {message: "User already exists"}
     }
-    return await this.authService.register(body);
+    
+    const user =  await this.authService.createUser(body);
+    return user;
 
   }
 
     @Post('login')
-    public login(@Body() body: any):string{
+    async login(@Body() body: any,@Res({passthrough:true}) response: Response ){
 
-        this.authService.login();
-        return "the app is logged in"
+        return this.authService.login(body.email, body.password, response);
+        
     }
 }
 
