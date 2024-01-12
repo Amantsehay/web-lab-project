@@ -6,6 +6,9 @@ A small gambling website to play some legal games online and win prizes. It basi
 
 Group Members:
 1 Amanuel Tsehay Wondim       UGR/6705/14
+
 2 Biruk Maru Asnakew          UGR/4775/13
-3 Nardos Amakele Demissie     UGR/6957/14      
+
+3 Nardos Amakele Demissie     UGR/6957/14  
+
 4 Zemenu Mekuria Embiale      UGR/5017/14    
