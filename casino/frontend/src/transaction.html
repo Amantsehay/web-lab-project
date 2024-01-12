@@ -1,110 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Account Transaction</title>
+    <link rel="stylesheet" href="./style/userAccess.css" />
+    <link rel="stylesheet" href="./style/index.css" />
 
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0sys;
-            background-image: url('./images/7360222.jpg');
-            
-        }
-        .transaction-container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color:rgb(224, 216, 216)   ;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0sys;
+        background-image: url("./images/7360222.jpg");
+      }
+      .transaction-container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: rgb(224, 216, 216);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
 
-        .transaction-form {
-            display: flex;
-            flex-direction: column;
-        }
+      .transaction-form {
+        display: flex;
+        flex-direction: column;
+      }
 
-        .form-label {
-            margin-bottom: 8px;
-        }
+      .form-label {
+        margin-bottom: 8px;
+      }
 
-        .form-input {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            background-color: gray;
-        }
+      .form-input {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background-color: gray;
+      }
 
-        .form-button {
-            padding: 10px;
-            background-color: #4caf50;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
+      .form-button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
 
-        .form-button:hover {
-            background-color: #45a049;
-        }
+      .form-button:hover {
+        background-color: #45a049;
+      }
 
-        .form-button.withdraw {
-            background-color: #f44336;
-        }
+      .form-button.withdraw {
+        background-color: #f44336;
+      }
 
-        .form-button.withdraw:hover {
-            background-color: #d32f2f;
-        }
+      .form-button.withdraw:hover {
+        background-color: #d32f2f;
+      }
 
-        .error-message {
-            color: #f44336;
-            margin-top: 5px;
-        }
+      .error-message {
+        color: #f44336;
+        margin-top: 5px;
+      }
 
-        .with-dep-div{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-
-        }
+      .with-dep-div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <header class="header-container">
+      <div id="logo-container">
+        <img id="main-logo" src="../src/images/logo.jpg" />
+        <h1>
+          <a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a>
+        </h1>
+      </div>
+      <div class="nav-bar">
+        <a href="./dashboard.html">DashBoard</a>
+        <hr />
+        <a href="./transaction.html">Transaction</a>
+        <hr />
+        <a href="./login_games.html">Games</a>
+        <hr />
+        <a href="./account.html">Account</a>
+        <hr />
+      </div>
+      <div class="sign-in-up-container">
+        <a href="./logout.html"><button>Logout</button></a>
+      </div>
+    </header>
     <div class="transaction-container">
-        <h2>Account Transaction</h2>
-        <form class="transaction-form" onsubmit="return validateForm()">
-            <label for="accountNumber" class="form-label">Account Number:</label>
-            <input type="text" id="accountNumber" name="accountNumber" class="form-input" required >
+      <h2>Account Transaction</h2>
+      <form class="transaction-form" onsubmit="return validateForm()">
+        <label for="accountNumber" class="form-label">Account Number:</label>
+        <input
+          type="text"
+          id="accountNumber"
+          name="accountNumber"
+          class="form-input"
+          required
+        />
 
-            <label for="amount" class="form-label">Amount:</label>
-            <input type="text" id="amount" name="amount" class="form-input" required>
-            <div class="with-dep-div">
-                <button type="submit" class="form-button">Deposit</button>
-                <button type="submit" class="form-button withdraw">Withdraw</button>
-            </div>
+        <label for="amount" class="form-label">Amount:</label>
+        <input
+          type="text"
+          id="amount"
+          name="amount"
+          class="form-input"
+          required
+        />
+        <div class="with-dep-div">
+          <button type="submit" class="form-button">Deposit</button>
+          <button type="submit" class="form-button withdraw">Withdraw</button>
+        </div>
 
-            <div id="error-message" class="error-message"></div>
-        </form>
+        <div id="error-message" class="error-message"></div>
+      </form>
     </div>
 
     <script>
-        function validateForm() {
-            var accountNumber = document.getElementById('accountNumber').value;
-            var amount = document.getElementById('amount').value;
-            var errorMessage = document.getElementById('error-message');
+      function validateForm() {
+        var accountNumber = document.getElementById("accountNumber").value;
+        var amount = document.getElementById("amount").value;
+        var errorMessage = document.getElementById("error-message");
 
-            if (isNaN(accountNumber) || isNaN(amount)) {
-                errorMessage.textContent = 'Both account number and amount should be valid numbers.';
-                return false;
-            } else {
-                errorMessage.textContent = '';
-                return true;
-            }
+        if (isNaN(accountNumber) || isNaN(amount)) {
+          errorMessage.textContent =
+            "Both account number and amount should be valid numbers.";
+          return false;
+        } else {
+          errorMessage.textContent = "";
+          return true;
         }
+      }
     </script>
-</body>
+  </body>
 </html>
