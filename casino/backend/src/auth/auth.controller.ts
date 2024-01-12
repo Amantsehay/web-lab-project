@@ -20,7 +20,6 @@ export class AuthController {
   @Public()
   @HttpCode(HttpStatus.OK)
   @Post("/login")
-
   logIn(@Body() loginDto: LoginDto) {
     return this.authService.logIn(
       loginDto.username,
@@ -52,19 +51,18 @@ export class AuthController {
   }
 
 
- @Post('block-user')
- @UseGuards(ACGuard)
- @UseRoles({
+  @Post('block')
+  @UseGuards(ACGuard)
+  @UseRoles({
   possession: 'any',
   action: 'create',
-  resource: 'block'
+  resource: 'profile'
 })
-@Post('block/:email')
-async blockUser(@Param('email') email: string) {
-  const user = await this.authService.getUserByEmail(email);
+async blockUser(@Param('username') username: string) {
+  const user = await this.authService.getUserByUsername(username);
 
   if (user) {
-    await this.authService.blockUserByEmail(email);
+    await this.authService.blockUserByUsername(username);
     return { message: 'User blocked successfully' };
   } else {
     return { message: 'User not found' };

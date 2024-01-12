@@ -1,138 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/font-awesome/fontawesome.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style/css.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="./style/index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <title>Contact</title>
-  </head>
-  <body class="about-body">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/font-awesome/fontawesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <title>Casino Game</title>
+</head>
+<body class="contactBody">
     <header class="header-container">
-      <div id="logo-container">
-        <img id="main-logo" src="../src/images/logo.jpg" />
-        <h1>
-          <a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a>
-        </h1>
-      </div>
-      <div class="nav-bar">
-        <a href="./index.html">Home</a>
-        <hr />
-        <a href="./about.html">About Us</a>
-        <hr />
-        <a href="games.html">Games</a>
-        <hr />
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="sign-in-up-container">
-        <a href="#" onclick="displayLoginForm()"
-          ><i class="fa fa-sign-in"></i><button>Login</button></a
-        >
-        <a href="#" onclick="displayRegistrationForm()"
-          ><i class="fa fa-user-plus"></i><button>Register</button></a
-        >
-      </div>
-      <i class="fa fa-bars menu-icon"></i>
+        <div id="logo-container">
+            <img id="main-logo" src="../src/images/logo.jpg">
+            <h1><a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a></h1>
+        </div>
+        <div class="nav-bar">
+            <a href="./index.html">Home</a>
+            <hr>
+            <a href="./about.html">About Us</a>
+            <hr>
+            <a href="games.html">Games</a>
+            <hr>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="sign-in-up-container">
+            <a href="#" onclick="displayLoginForm()"><i class="fa fa-sign-in" ></i><button>Login</button></a>
+            <a href="#" onclick="displayRegistrationForm()"><i class="fa fa-user-plus" ></i><button>Register</button></a>
+        </div>
+        <i class="fa fa-bars menu-icon"></i>
     </header>
-
-    <main class="container mt-5">
-      <div class="row">
-        <div class="col-md-5">
-          <h2>Contact Us</h2>
-
-          <div class="column mt-4">
-            <div class="col-md-4 my-5">
-              <h5>Email</h5>
-              <a href="mailto:betebet2023@gmail.com">
-                <i class="fas fa-envelope"></i> betebet2023@gmail.com
-              </a>
+    <div>
+        <div id="registrationForm">
+            <div class="close-button" onclick="closeRegistrationForm()">&times;</div>
+            <div class="registration-main">
+                <section class="registration-card">
+                    <div class="registration-logo">
+                        <img src="../src/images/logo.jpg" alt="logo">
+                        <p>Bet<a href="#">Ebet</a></p>
+                    </div>
+                  <div>
+                    <form class="regstration-form">
+                        <div class="registration-form-emails">
+                          <div class="registration-input">
+                            <div><label for="userName"><i class="fa fa-user"></i> Username:</label></div>
+                            <div><input id="userName" type="text" required></div>
+                            <div class="error"></div>
+                          </div>
+                          <div class="registration-form-emails"> 
+                            <div><label for="email"><i class="fa fa-envelope-o"></i> Email:</label></div>
+                            <div><input id="email" type="email" name="email" required></div>
+                            <div class="error"></div>
+                          </div>
+                          <div class="registration-form-emails">
+                                                    
+                            <div><label for="password"><i class="fa fa-key"></i> Password:</label></div>
+                            <div><input id="password" type="password" name="password" id="password" required></div>
+                            <div class="error"></div>
+                        
+                          </div>
+                          <div class="registration-form-emails">
+                            <div><label for="confirmPassword"><i class="fa fa-lock"></i> Confirm Password:</label></div>
+                            <div><input id="confirmPassword" type="password" name="confirmPassword" id="confirmPassword" required></div>
+                            <div class="error"></div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="registration-options">
+                            <label><input type="radio" name="registrationType" value="user" checked> User</label>
+                            <label><input type="radio" name="registrationType" value="admin"> Admin</label>
+                        </div>
+                        </div>
+                    
+                        <div class="registration-button">
+                            <button type="submit" onclick="validateForm(event)">Register</button>
+                        </div>
+                    </form>
+                  </div>
+            </section>
+          </div>
+    </div>
+    </div>
+    <div>
+        <div id="loginForm">
+            <div class="close-button" onclick="closeLoginForm()">&times;</div>
+            <div class="login-main">
+                <section class="login-card">
+                    <div class="login-logo">
+                        <img src="../src/images/logo.jpg" alt="logo">
+                        <p>Bet<a href="#">Ebet</a></p>
+                    </div>
+                    <div>
+                        <form class="regstration-form">
+                          <div class="login-form-emails">
+                            <div>
+                              <label for="userName"><i class="fa fa-user"></i> Username:</label>
+                              <input id="userName" type="text" required>
+                              <div class="error"></div>
+                            </div>
+                            <div>
+                              <label for="password"><i class="fa fa-key"></i>Password:</label>
+                              <input id ="password" type="password" name="password" id="password" required>
+                              <div class="error"></div>
+                            </div>
+                            
+                            </div>
+                        
+                            <div class="login-button">
+                                <button type="submit">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+              </div>
+        </div>
+    </div>
+    <section class="contactSection">
+      <div class="content">
+        <h2>Contact Us</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam et, culpa distinctio excepturi explicabo earum ut obcaecati. Recusandae, qui! Laudantium magnam amet tenetur nam facilis eveniet enim architecto exercitationem incidunt?</p>
+        <div class="contactContainer">
+          <div class="contactInfo">
+            <div class="box">
+              <div class="contactIcon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                <div class="contactText">
+                  <h3>Location</h3>
+                  <a
+                    href="https://maps.app.goo.gl/sRLnUokVCYN19ion8"
+                    target="_blank">
+                     Our Company Location
+                  </a>
+                </div>
             </div>
-
-            <div class="col-md-4 my-5">
-              <h5>Phone</h5>
-              <a href="tel:+251989122801">
-                <i class="fas fa-phone"></i> +251989122801
-              </a>
+            <div class="box">
+              <div class="contactIcon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                <div class="contactText">
+                  <h3>Email</h3>
+                  <a href="mailto:betebet2023@gmail.com">
+                    betebet2023@gmail.com
+                  </a>
+                </div>
             </div>
-
-            <div class="col-md-4">
-              <h5>Location</h5>
-              <a
-                href="https://maps.app.goo.gl/sRLnUokVCYN19ion8"
-                target="_blank"
-              >
-                <i class="fas fa-map-marker"></i> Our Company Location
-              </a>
+            <div class="box">
+              <div class="contactIcon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                <div class="contactText">
+                  <h3>Phone</h3>
+                  <a href="tel:+251989122801">
+                     +251989122801
+                  </a>
+                </div>
             </div>
           </div>
-        </div>
-
-        <div class="col-md-7">
-          <div class="container">
-            <form
-              action="https://formsubmit.co/birukmaru12@gmail.com"
-              method="post"
-              class="contact"
-              id="commentForm"
-            >
-              <div class="form-group">
-                <label for="name"><h5>Name:</h5></label>
-                <input
-                  class="form-control my-3"
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                />
+          <div class="contactForm">
+            <form>
+              <h2 id="sendMessage">Send Message</h2>
+              <div class="inputBox">
+                <input type="text" name="" required="required">
+                <span>Full Name</span>
               </div>
-
-              <div class="form-group">
-                <label for="email"><h5>Email:</h5></label>
-                <input
-                  class="form-control my-3"
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                />
+              <div class="inputBox">
+                <input type="text" name="" required="required">
+                <span>Email</span>
               </div>
-
-              <div class="form-group">
-                <label class="mb-3" for="message"><h5>Message:</h5></label>
-                <textarea
-                  class="form-control"
-                  id="message"
-                  name="message"
-                  rows="4"
-                  required
-                ></textarea>
+              <div class="inputBox">
+                <textarea required="required"></textarea>
+                <span>Type your messege...</span>
               </div>
-
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <div class="inputBox">
+                <input type="submit" name="" value="send">
             </form>
           </div>
-        </div>
       </div>
-    </main>
-
+    </section>
     <footer>
       <div class="footer-container">
         <div class="payment-option-info">

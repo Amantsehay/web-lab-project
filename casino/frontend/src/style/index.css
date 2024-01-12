@@ -230,9 +230,6 @@
   border-radius: 10px;
 }
 
-.game-button:hover {
-  font-size: large;
-}
 .games-intro-title {
   text-align: center;
   color: rgba(255, 255, 255, 0.824);
@@ -286,7 +283,7 @@
 }
 .description-home h1 {
   color: rgba(255, 217, 0, 0.808);
-  /* margin-left: 1rem; */
+
 }
 .description-home p {
   color: rgb(177, 196, 215);
@@ -327,7 +324,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* flex-wrap: wrap; */
   gap: 1rem;
   /* border:2px solid white;
   border:0px 0px 2px rgba(255, 255, 255, 0.824); */
@@ -676,6 +672,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+
   }
   .payment-option-info h4 {
     font-size: 2rem;
@@ -684,10 +681,12 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 0.3rem;
+  
   }
   .sign-in-up-container a {
     text-decoration: none;
   }
+ 
 }
 @media (min-width: 650px) {
   .footer-container {
@@ -700,6 +699,7 @@ footer {
   }
   .payment-icons {
     gap: 1rem;
+    
   }
 }
 @media (min-width: 500px) {
@@ -712,12 +712,12 @@ footer {
   .sign-in-up-container a {
     text-decoration: none;
   }
+
 }
 /* ************************************************************************Registration***************************************************************************************** */
 
 .registration-main {
   display: flex;
-  /* flex-direction:center; */
   justify-content: center;
   align-items: flex-start;
   height: 100vh;
@@ -741,49 +741,58 @@ footer {
   width: 80px;
   height: 80px;
 }
-.registration-form {
+.registration-form-emails{
   display: flex;
   flex-direction: column;
+  gap:4px;
 }
-.registration-form-emails {
+/* .registration-form-emails {
   display: flex;
   flex-direction: column;
   gap: 3px;
   padding: 10px;
   padding-left: 20px;
-}
+} */
 .registration-button {
   margin-top: 20px;
 }
-.firstName {
+/* .firstName {
   display: flex;
   flex-direction: column;
-}
-.names {
+} */
+/* .names {
   display: flex;
   gap: 0.1%;
   margin-bottom: 10px;
-  /* padding: 10px; */
+
   padding-left: 20px;
 }
 .lastName {
   display: flex;
   flex-direction: column;
-}
+} */
 .regstration-form input {
   background-color: black;
   border: 1px solid rgba(255, 255, 255, 0.432);
   height: 3%;
   color: white;
-  box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.683);
+  box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.683);
   padding: 7px;
+  margin-top: 2px;
+  padding-left: 150px;
+
 }
 .regstration-form input:active {
   box-shadow: none;
 }
-.names input {
+/* .names input {
   margin-top: 3px;
   height: 16px;
+} */
+.registration-input{
+  display: flex;
+  flex-direction: column;
+
 }
 .registration-button {
   text-align: center;
@@ -799,24 +808,30 @@ footer {
   border: none;
   font-size: medium;
 }
-.registration-logo p {
+.registration-logo p 
+{
   font-size: 30px;
   margin-top: 20px;
 }
-.registration-logo a {
+.registration-logo a 
+{
   color: rgba(255, 217, 0, 0.701);
 }
-.welcome-section h2 {
+.welcome-section h2 
+{
   color: rgba(255, 217, 0, 0.701);
 }
-.welcome-section a {
+.welcome-section a 
+{
   color: gold;
 }
-.regstration-form label {
+.regstration-form label 
+{
   font-size: larger;
 }
 
-#registrationForm {
+#registrationForm
+{
   display: none;
   position: fixed;
   top: 5px;
@@ -826,8 +841,8 @@ footer {
   background-color: #0f0e0e81;
   z-index: 1;
 }
-
-.close-button {
+.close-button 
+{
   position: absolute;
   top: 10px;
   right: 10px;
@@ -836,6 +851,7 @@ footer {
   cursor: pointer;
   font-size: 50px;
 }
+
 /* ***************************************************************************Login page *******************************************************************8 */
 .login-main {
   display: flex;
@@ -925,17 +941,24 @@ footer {
 /* ***************************************************************************Games page *******************************************************************8 */
 
 .game-body {
-  background-image: url("../images/casino.jpg");
+  /* background-image: url("../images/game3.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  font-family:'poppins', sans-serif;
 }
 
-.main-container {
-  margin-top: 7rem;
+.game-main-container {
+  margin: 0.6rem;
+  padding:30px
 }
-
+.game-main-container  h1{
+  text-align: center;
+  color:orange;
+  font-size: 80px;
+  font-weight: 600;
+}
 .games-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -982,4 +1005,167 @@ footer {
   background-color: rgb(242, 206, 5);
   color: black;
   border: none;
-} /*# sourceMappingURL=games.css.map */
+  text-decoration: none;
+  font-size: 25px;
+  padding:5px;
+
+} 
+.game-layer a:hover{
+  background-color: red;
+}
+
+  /*# sourceMappingURL=games.css.map */
+/* ***************************************************************************Contact page******************************************************************* */
+.contactBody{
+  font-family: 'poppins', sans-serif;
+}
+.contactSection{
+  position: relative;
+  min-height: 100vh;
+  padding:50px 100px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url('../images/oncontact\ \(1\).jpg');
+  /* background-color:black; */
+  background-size: cover;
+
+}
+.contactSection .content{
+  max-width:800px;
+  text-align: center;
+
+}
+.contactSection .content h2{
+  font-size: 36px;
+  font-weight: 500;
+  color:rgba(255, 166, 0, 0.824);
+  margin-bottom: 10px;
+
+}
+.contactSection .content p{
+  font-weight: 300;
+  color:white;
+
+}
+.contactContainer{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:30px ;
+}
+.contactContainer .contactInfo{
+  width:50%;
+  display: flex;
+  flex-direction: column;
+
+}
+.contactContainer .contactInfo .box{
+  position:relative;
+  padding:20p 0;
+  display:flex;
+  margin-bottom: 30px;
+}
+.contactContainer .contactInfo .box .contactIcon{
+  min-width: 60px;
+  height:60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+
+}
+.contactContainer .contactInfo .box .contactText
+{
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  flex-direction: column;
+  font-weight: 300;
+  
+}
+.contactContainer .contactInfo .box .contactText a{
+  color:white;
+  text-decoration: none;
+
+}
+.contactContainer .contactInfo .box .contactText h3{
+  font-weight: 800;
+  color:rgba(255, 166, 0, 0.824);
+
+}
+.contactForm{
+  width:40%;
+  padding:40px;
+  background: #fff;
+}
+#sendMessage{
+  font-size: 30px;
+  color:#333;
+  font-weight: 500px;
+}
+.contactForm .inputBox{
+  position: relative;
+  width:100%;
+  margin-top: 10px;
+
+}
+.contactForm .inputBox input,
+.contactForm .inputBox textarea
+{
+  width:100%;
+  padding:5px 0;
+  font-size: 16px;
+  margin:10px 0;
+  border:none;
+  border-bottom: 2px solid #333;
+  outline:none;
+}
+.contactForm .inputBox span{
+  position: absolute;
+  left:0;
+  padding:5px 0;
+  font-size: 16px;
+  margin:10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color:#666;
+}
+.contactForm .inputBox  input:focus ~ span,
+.contactForm .inputBox  input:valid ~ span,
+.contactForm .inputBox  textarea:focus ~ span,
+.contactForm .inputBox  textarea:valid ~ span{
+  font-size: 12px;
+  transform: translateY(-20px);
+  color:red;
+}
+.contactForm .inputBox input[type="submit"]{
+  width:100px;
+  cursor:pointer;
+  padding:10px;
+  font-size: 18px;
+  background-color: #ff9900;
+  border:none;
+}
+
+@media (max-width: 991px)
+{
+  .contactSection{
+    padding:50px;
+  }
+  .contactContainer{
+    flex-direction: column;
+  }
+  .contactContainer .contactInfo{
+    margin-bottom: 40px;
+  }
+  .contactContainer .contactInfo,
+  .contactForm 
+  {
+    width:80%;
+  }
+}
