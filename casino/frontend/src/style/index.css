@@ -1290,7 +1290,74 @@ footer {
 #update-newUser{
   background-color: rgba(44, 44, 44, 0.2);
 }
+/* *****************************************************************************transaction******************************************************************************8 */
+.transaction-body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0sys;
+  background-image: url("../images/bg-contact.jpg");
+  background-size: 50% 80%;
+ 
+}
+.transaction-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgb(224, 216, 216);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  
+}
 
+
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-form-label {
+  margin-bottom: 8px;
+}
+
+.transaction-form-input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: gray;
+}
+
+.transaction-form-button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.transaction-form-button:hover {
+  background-color: #45a049;
+}
+
+.transaction-form-button.withdraw {
+  background-color: #f44336;
+}
+
+.transaction-form-button.withdraw:hover {
+  background-color: #d32f2f;
+}
+
+.error-message {
+  color: #f44336;
+  margin-top: 5px;
+}
+
+.with-dep-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
 
 
