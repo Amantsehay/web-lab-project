@@ -18,36 +18,27 @@
     <link rel="stylesheet" href="./style/index.css" />
     <title>Casino Game</title>
   </head>
-  <body class="contactBody">
+  <body class="game-body">
     <header class="header-container">
-      <div id="logo-container">
-        <img id="main-logo" src="../src/images/logo.jpg" />
-        <h1>
-          <a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a>
-        </h1>
-      </div>
-      <div class="nav-bar">
-        <a href="./dashboard.html">DashBoard</a>
-        <hr />
-        <a href="./transaction.html">Transaction</a>
-        <hr />
-        <a href="./login_games.html">Games</a>
-        <hr />
-        <a href="./account.html">Account</a>
-        <hr />
-      </div>
-
-      <div class="sign-in-up-container">
-        <a href="./logout.html"><button>Logout</button></a>
-      </div>
-
-      <div class="sign-in-up-container">
-        <a href="" onclick="displayLoginForm()"
-          ><i class="fa fa-sign-in"></i><button></button
-        ></a>
-      </div>
-      <i class="fa fa-bars menu-icon"></i>
-    </header>
+        <div id="logo-container">
+          <img id="main-logo" src="../src/images/logo.jpg" />
+          <h1>
+            <a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a>
+          </h1>
+        </div>
+        <div class="nav-bar">
+          <a href="./usergames.html">Games</a>
+          <hr />
+          <a href="./usertransaction.html">Transaction</a>
+          <hr />
+          <a href="./useraccount.html">Account</a>
+          <hr />
+        </div>
+        <div class="sign-in-up-container">
+          <a href="./index.html"><button>Logout</button></a>
+        </div>
+        <i class="fa fa-bars menu-icon"></i>
+      </header>
     <div>
       <div id="registrationForm">
         <div class="close-button" onclick="closeRegistrationForm()">
@@ -194,107 +185,107 @@
       </div>
     </div>
     <main class="container-fluid game-main-container">
-      <div>
-        <h1 class="text-center">Games</h1>
-      </div>
-      <div class="games-container">
-        <div class="games-content 
-        ">
-          <img
-            src="./images/poker.jpg"
-            alt="Game Image"
-          />
-          <div class="game-layer">
-            <h5 class="card-title">Wheel</h5>
-            <a href="#" class="available-game-button">Play Now</a>
+        <div>
+          <h1 class="text-center">Games</h1>
+        </div>
+        <div class="games-container">
+          <div class="games-content 
+          ">
+            <img
+              src="./images/poker.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Wheel</h5>
+              <a href="./userAcces.html" class="available-game-button">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/roll.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Blackjack</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/roll.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Pocker</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/game2.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Dice</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/poker.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Craps</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/roll.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Slots</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/game3.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Craps</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/poker.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Fun Bobby</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
           </div>
         </div>
-
-        <div class="games-content unavailable-games
-        ">
-          <img
-            src="./images/roll.jpg"
-            alt="Game Image"
-          />
-          <div class="game-layer">
-            <h5 class="card-title">Blackjack</h5>
-            <a href="#" class="btn btn-primary">Play Now</a>
-          </div>
-        </div>
-
-        <div class="games-content unavailable-games
-        ">
-          <img
-            src="./images/roll.jpg"
-            alt="Game Image"
-          />
-          <div class="game-layer">
-            <h5 class="card-title">Pocker</h5>
-            <a href="#" class="btn btn-primary">Play Now</a>
-          </div>
-        </div>
-
-        <div class="games-content unavailable-games
-        ">
-          <img
-            src="./images/game2.jpg"
-            alt="Game Image"
-          />
-          <div class="game-layer">
-            <h5 class="card-title">Dice</h5>
-            <a href="#" class="btn btn-primary">Play Now</a>
-          </div>
-        </div>
-
-        <div class="games-content unavailable-games
-        ">
-          <img
-            src="./images/poker.jpg"
-            alt="Game Image"
-          />
-          <div class="game-layer">
-            <h5 class="card-title">Craps</h5>
-            <a href="#" class="btn btn-primary">Play Now</a>
-          </div>
-        </div>
-
-        <div class="games-content unavailable-games
-        ">
-          <img
-            src="./images/roll.jpg"
-            alt="Game Image"
-          />
-          <div class="game-layer">
-            <h5 class="card-title">Slots</h5>
-            <a href="#" class="btn btn-primary">Play Now</a>
-          </div>
-        </div>
-
-        <div class="games-content unavailable-games
-        ">
-          <img
-            src="./images/game3.jpg"
-            alt="Game Image"
-          />
-          <div class="game-layer">
-            <h5 class="card-title">Craps</h5>
-            <a href="#" class="btn btn-primary">Play Now</a>
-          </div>
-        </div>
-
-        <div class="games-content unavailable-games
-        ">
-          <img
-            src="./images/poker.jpg"
-            alt="Game Image"
-          />
-          <div class="game-layer">
-            <h5 class="card-title">Fun Bobby</h5>
-            <a href="#" class="btn btn-primary">Play Now</a>
-          </div>
-        </div>
-      </div>
-    </main>
+      </main>
 
     <footer>
       <div class="footer-container">
@@ -336,6 +327,6 @@
         </div>
       </div>
     </footer>
-    <script src="./java/script.js"></script>
+    <script src="../build/scripts/index.js"></script>
   </body>
 </html>

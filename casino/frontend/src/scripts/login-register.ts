@@ -49,11 +49,15 @@ async function loginUser(username: string, password: string): Promise<any> {
 
     if (response.ok) {
       const data = await response.json();
-      const accessToken = data.accessToken;
+      const accessToken = await data.accessToken;
+      console.log("The access token for this user is:", accessToken);
       setCookie(username, accessToken, 3);
+      console.log("Cookie set");
+      console.log("and the access token from the  cookie is :");
+      console.log(getCookie(username));
       console.log("Login successful:", data);
     } else {
-      console.log("Login failed:", response);
+      console.log("Login failed:", response.json());
     }
   } catch (error) {
     console.log("Login failed:", error);
