@@ -979,3 +979,157 @@ footer {
   color: black;
   border: none;
 } /*# sourceMappingURL=games.css.map */
+/* ***************************************************************************Contact page******************************************************************* */
+.contactBody{
+  font-family: 'poppins', sans-serif;
+}
+.contactSection{
+  position: relative;
+  min-height: 100vh;
+  padding:50px 100px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background: url('../images/pexels-raka-miftah-4253690back.jpg'); */
+  background-color:black;
+  background-size: 100% 100%;
+
+}
+.contactSection .content{
+  max-width:800px;
+  text-align: center;
+
+}
+.contactSection .content h2{
+  font-size: 36px;
+  font-weight: 500;
+  color:rgba(255, 166, 0, 0.824);
+  margin-bottom: 10px;
+
+}
+.contactSection .content p{
+  font-weight: 300;
+  color:white;
+
+}
+.contactContainer{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:30px ;
+}
+.contactContainer .contactInfo{
+  width:50%;
+  display: flex;
+  flex-direction: column;
+
+}
+.contactContainer .contactInfo .box{
+  position:relative;
+  padding:20p 0;
+  display:flex;
+  margin-bottom: 30px;
+}
+.contactContainer .contactInfo .box .contactIcon{
+  min-width: 60px;
+  height:60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+
+}
+.contactContainer .contactInfo .box .contactText
+{
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  flex-direction: column;
+  font-weight: 300;
+  
+}
+.contactContainer .contactInfo .box .contactText a{
+  color:white;
+  text-decoration: none;
+
+}
+.contactContainer .contactInfo .box .contactText h3{
+  font-weight: 800;
+  color:rgba(255, 166, 0, 0.824);
+
+}
+.contactForm{
+  width:40%;
+  padding:40px;
+  background: #fff;
+}
+#sendMessage{
+  font-size: 30px;
+  color:#333;
+  font-weight: 500px;
+}
+.contactForm .inputBox{
+  position: relative;
+  width:100%;
+  margin-top: 10px;
+
+}
+.contactForm .inputBox input,
+.contactForm .inputBox textarea
+{
+  width:100%;
+  padding:5px 0;
+  font-size: 16px;
+  margin:10px 0;
+  border:none;
+  border-bottom: 2px solid #333;
+  outline:none;
+}
+.contactForm .inputBox span{
+  position: absolute;
+  left:0;
+  padding:5px 0;
+  font-size: 16px;
+  margin:10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color:#666;
+}
+.contactForm .inputBox  input:focus ~ span,
+.contactForm .inputBox  input:valid ~ span,
+.contactForm .inputBox  textarea:focus ~ span,
+.contactForm .inputBox  textarea:valid ~ span{
+  font-size: 12px;
+  transform: translateY(-20px);
+  color:red;
+}
+.contactForm .inputBox input[type="submit"]{
+  width:100px;
+  cursor:pointer;
+  padding:10px;
+  font-size: 18px;
+  background-color: #ff9900;
+  border:none;
+}
+
+@media (max-width: 991px)
+{
+  .contactSection{
+    padding:50px;
+  }
+  .contactContainer{
+    flex-direction: column;
+  }
+  .contactContainer .contactInfo{
+    margin-bottom: 40px;
+  }
+  .contactContainer .contactInfo,
+  .contactForm 
+  {
+    width:80%;
+  }
+}
