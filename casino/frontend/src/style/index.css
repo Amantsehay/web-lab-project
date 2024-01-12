@@ -18,9 +18,7 @@
   width: 3.75rem; /* Converted from 60px */
   height: 4.375rem; /* Converted from 70px */
 }
-/* .logo{
-    color:;
-  } */
+
 #logo-container {
   display: flex;
   align-items: center;
@@ -746,31 +744,14 @@ footer {
   flex-direction: column;
   gap:4px;
 }
-/* .registration-form-emails {
+.registration-form-emails div{
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  padding: 10px;
-  padding-left: 20px;
-} */
+}
 .registration-button {
   margin-top: 20px;
 }
-/* .firstName {
-  display: flex;
-  flex-direction: column;
-} */
-/* .names {
-  display: flex;
-  gap: 0.1%;
-  margin-bottom: 10px;
 
-  padding-left: 20px;
-}
-.lastName {
-  display: flex;
-  flex-direction: column;
-} */
 .regstration-form input {
   background-color: black;
   border: 1px solid rgba(255, 255, 255, 0.432);
@@ -785,29 +766,27 @@ footer {
 .regstration-form input:active {
   box-shadow: none;
 }
-/* .names input {
-  margin-top: 3px;
-  height: 16px;
-} */
+
 .registration-input{
   display: flex;
   flex-direction: column;
 
 }
 .registration-button {
-  text-align: center;
+
   background-color: gold;
   padding: 8px;
   border-radius: 20px;
 }
-.registration-button button:hover {
-  font-size: larger;
-}
-.registration-button button {
+.registration-button input {
   background-color: gold;
-  border: none;
+  border:none;
+  box-shadow: none;
+  color: black;
   font-size: medium;
+
 }
+
 .registration-logo p 
 {
   font-size: 30px;
@@ -904,7 +883,6 @@ footer {
   box-shadow: none;
 }
 .login-button {
-  text-align: center;
   background-color: gold;
   padding: 8px;
   border-radius: 20px;
@@ -912,10 +890,13 @@ footer {
 .login-button button:hover {
   font-size: larger;
 }
-.login-button button {
+.login-button input {
   background-color: gold;
-  border: none;
+  border:none;
+  box-shadow: none;
+  color: black;
   font-size: medium;
+
 }
 .login-logo p {
   font-size: 30px;
@@ -941,17 +922,18 @@ footer {
 /* ***************************************************************************Games page *******************************************************************8 */
 
 .game-body {
-  /* background-image: url("../images/game3.jpg"); */
+  /* background-image: url("../images/a"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   font-family:'poppins', sans-serif;
+  background-color: aliceblue;
 }
 
 .game-main-container {
   margin: 0.6rem;
-  padding:30px
+  padding:30px;
 }
 .game-main-container  h1{
   text-align: center;
@@ -980,7 +962,9 @@ footer {
   object-fit: cover;
   border-radius: 1rem;
 }
-
+.unavailable-games img{
+  opacity:0.8;
+}
 .game-layer {
   width: 100%;
   height: 100%;
@@ -1001,20 +985,21 @@ footer {
   line-height: 1.8;
 }
 .game-layer a {
-  width: 100%;
+  width: 80%;
   background-color: rgb(242, 206, 5);
   color: black;
   border: none;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   padding:5px;
 
 } 
-.game-layer a:hover{
+.nav-bar{
+  z-index: 999;
+}
+.available-game-button:hover{
   background-color: red;
 }
-
-  /*# sourceMappingURL=games.css.map */
 /* ***************************************************************************Contact page******************************************************************* */
 .contactBody{
   font-family: 'poppins', sans-serif;
