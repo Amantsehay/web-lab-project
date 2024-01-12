@@ -4,7 +4,7 @@ import {Role} from "../roles/user.roles";
 @Schema({
   timestamps: true,
 })
-export class User {
+export class Admin {
   @Prop({ required: true })
   username: string;
 
@@ -14,7 +14,7 @@ export class User {
   @Prop({ required: true })
   password: string;
 
-  @Prop({type:String, default: Role.User})
+  @Prop({type:String, default: Role.Admin})
   roles: string;
 
   @Prop({ default: false})
@@ -24,4 +24,4 @@ export class User {
   currentBalance: number;
 }
 
-export const UserSchema = SchemaFactory.createForClass(User);
+export const AdminSchema = SchemaFactory.createForClass(Admin);

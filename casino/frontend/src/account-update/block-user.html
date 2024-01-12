@@ -72,12 +72,15 @@
 <body>
     <div class="block-form">
         <h2>Block User</h2>
-        <form action="/block-user" method="post">
+        <form id="block-user-form">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username-to-block" name="username" required>
 
-            <button type="submit">Block User</button>
+            <button type="submit" id="block-user-btn" class="block-user-btn" onclick="blockUser(event)" >Block User</button>
         </form>
     </div>
+
+    <script src="../../build/scripts/login-register.js"></script>
+
 </body>
 </html>

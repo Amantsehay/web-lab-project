@@ -11,11 +11,13 @@ import {
   Param,
   Delete,
   UnauthorizedException,
+  Patch,
+  Query
 } from "@nestjs/common";
 import { AuthService } from "./auth.services";
 import { LoginDto } from "./dto/login.dto";
 import { Public } from "./decorators/public.decorator";
-import { SignUpDto } from "./dto/signUp.dto";
+import { SignUpDto } from "./dto/signup.dto";
 import { User } from "./schemas/user.schema";
 import { Request } from "express";
 import {
@@ -23,6 +25,8 @@ import {
   UseRoles,
 } from "nest-access-control";
 import { AuthGuard } from "./guards/auth.guard";
+import * as bcrypt from "bcryptjs";
+import { use } from "passport";
 
 @Controller("auth")
 export class AuthController {
@@ -65,7 +69,7 @@ export class AuthController {
   @UseGuards(ACGuard)
   @UseRoles({
     possession: "any",
-    action: "create",
+    action: "update",
     resource: "profile",
   })
   async blockUser(
@@ -76,9 +80,11 @@ export class AuthController {
         username,
       );
 
+      console.log(user, 'this is the user in block user');
+
     if (user) {
       await this.authService.blockUserByUsername(
-        username,
+        user
       );
       return {
         message: "User blocked successfully",
@@ -118,6 +124,10 @@ export class AuthController {
     @Req() req: Request,
   ): Promise<{ message: string }> {
     const user = req["user"];
+    console.log(user);
+    console.log(user, "this is the usr in delete")
+    if ('username' in user) 
+    console.log(user.username, "this is the user in delete")
     if (!user) {
       throw new UnauthorizedException();
     }
@@ -136,4 +146,108 @@ export class AuthController {
       message: "Account deleted successfully",
     };
   }
+
+
+  @Post("update-password")
+  @UseGuards(AuthGuard)
+  async updatePassword(
+    @Req() req: Request,
+  ): Promise<{ message: string }> {
+    const user = req["user"];
+
+    if (!user || !("username" in user)) {
+      throw new UnauthorizedException();
+    }
+
+    const newPassword = req.body.newPassword;
+    if ('username' in user){
+      const userName: string | unknown= user.username;
+
+       await this.authService.updatePassword(
+        user.username,
+        newPassword,
+      );
+    }
+
+
+    return {
+      message: "Password updated successfully",
+    };
+  }
+
+
+
+  @Patch("update-username")
+  @UseGuards(AuthGuard)
+  async updateUsername(
+    @Req() req: Request,
+  ): Promise<{ message: string }> {
+    const user = req["user"];
+
+    if (!user || !("username" in user)) {
+      throw new UnauthorizedException();
+    }
+    const newUsername = req.body.newUsername;
+    const confirmPassword = req.body.confirmPassword;
+
+    console.log(user, "this is the user in update username")
+    
+    
+    if ('username' in user){
+      const userName: string | unknown = user.username;
+      if (typeof userName === 'string'){
+        console.log(userName, "this is the username")
+
+        let hashedPassword = (await this.authService.getUserByUsername(userName)).password;
+        let unHasehdPassword = bcrypt.compare(confirmPassword, hashedPassword);
+        if (!unHasehdPassword){
+          throw new UnauthorizedException();
+        }
+      }
+      await this.authService.updateUsername(
+        userName,
+        newUsername,
+      );
+    }
+
+    return {
+      message: "Username updated successfully",
+    };
+  }
+
+
+  @Get('user-amount')
+  @UseGuards(AuthGuard)
+  async getUserAmount(@Query('username') username: string): Promise<{amount: number}>{
+    console.log(username, "this is the username")
+    
+    const curerntUsername = username
+    const userAmount = await this.authService.getUserAmount(curerntUsername);
+    return {
+      amount: userAmount
+    }
+   
+  }
+
+  @Get('user')
+  async getUser(@Query('username') username: string){
+
+    const user = await this.authService.getUserByUsername(username);
+
+    if (user)
+    return user;
+
+    else{
+      return {'message': 'user not found'}
+    }
+
+
+  }
 }
+
+
+
+
+
+
+

@@ -1,4 +1,9 @@
+// import {getCurentBalanec} from './login-register.ts'
 const rotateWheel = () => {
+    const currentBet = document.getElementById('bet-number').valueAsNumber;
+    console.log(currentBet, 'this is the current bet');
+    const currentBalance = Number(document.getElementById('current-amount').querySelector('span').innerText);
+    console.log(currentBalance, 'this is the current balance');
     const wheel = document.querySelector('.wheel');
     const startButton = document.querySelector('.play-button');
     let deg = 0;
@@ -30,15 +35,20 @@ const rotateWheel = () => {
             console.log(actualDeg, 'this is the actual');
         }
         let result = document.querySelector('.result');
-        if (result) {
-            result.innerHTML = '1';
-        }
-        wheel?.removeEventListener('transitionend', transitionEndHandler);
         startButton?.addEventListener('click', clickHandler);
     };
+    if (currentBet > currentBalance) {
+        alert('You do not have enough money to place this bet');
+        return;
+    }
+    wheel?.removeEventListener('transitionend', transitionEndHandler);
     startButton?.addEventListener('click', clickHandler);
 };
-rotateWheel();
+const startButton = document.querySelector('.play-button');
+startButton?.addEventListener('click', (e) => {
+    e.preventDefault();
+    rotateWheel();
+});
 const menuIcon = document.querySelector('.menu-icon');
 const navBar = document.querySelector('.nav-bar');
 if (menuIcon && navBar) {

@@ -17,4 +17,6 @@ export class AuthDto {
   @IsNotEmpty()
   @IsEmail()
   email: string;
+
+  
 }

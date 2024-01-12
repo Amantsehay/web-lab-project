@@ -10,6 +10,7 @@ import { GameSchema } from "./schemas/game.schema";
 import { GameController } from "./game.controller";
 import {GameService} from "./game.service";
 
+
 @Module({
   imports: [
     JwtModule.register({
@@ -28,7 +29,8 @@ import {GameService} from "./game.service";
     ]),
     MongooseModule.forFeature([
       {name: "Game", schema: GameSchema}
-    ])
+    ]),
+ 
   ],
   controllers: [AuthController, GameController],
   providers: [

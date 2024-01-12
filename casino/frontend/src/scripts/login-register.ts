@@ -1,11 +1,19 @@
 // Bckend API endpoints
 
-const API_URL = "http://localhost:5000/";
+const API_URL = "http://localhost:5000/auth/";
+
+const USER_API = 'http://localhost:5000/auth/user';
+// const sdfsdf= "http://localhost:5000/auth/index.html"
+
+const USER_API_URL_AMOUNT = 'http://localhost:5000/auth/user-amount';
 const LOGIN_URL = "http://localhost:5000/auth/login";
 const REGISTER_URL = "http://localhost:5000/auth/signup";
 const DELETE_ACCOUNT_URL = "http://localhost:5000/auth/delete-account";
 const BLOCK_USER_URL = "http://localhost:5000/auth/block";
 const UNBLOCK_USER_URL = "http://localhost:5000/auth/unblock";
+
+const UPDATE_PASSWORD_URL = "http://localhost:5000/auth/update-password";
+const UPDATE_USERNAME_URL = "http://localhost:5000/auth/update-username";
 // form validation validation for registration
 
 function validateRegisterForm() {
@@ -168,6 +176,7 @@ loginForm?.addEventListener("submit", (e) => {
   console.log("login form submitted");
 
   //call login function
+
   loginUser(username, password);
 });
 
@@ -186,26 +195,87 @@ async function loginUser(username: string, password: string): Promise<any> {
     if (response.ok) {
       const data = await response.json();
       const accessToken = await data.accessToken;
+
       console.log("The access token for this user is:", accessToken);
-      setCookie(username, accessToken, 3);
-      console.log("Cookie set");
-      console.log("and the access token from the  cookie is :");
-      console.log(getCookie(username));
-      console.log("Login successful:", data);
-      (<HTMLInputElement>document.getElementById("login-userName")).value = "";
-      (<HTMLInputElement>document.getElementById("login-password")).value = "";
+      // setCookie(username, accessToken, 3);
+      setCookie("access-token", accessToken, 3);
+
+      
+      // console.log("Cookie set");
+      // console.log("and the access token from the  cookie is :");
+      // console.log(getCookie(username));
+      // console.log("Login successful:", data);
+      // (<HTMLInputElement>document.getElementById("login-userName")).value = "";
+      // (<HTMLInputElement>document.getElementById("login-password")).value = "";
+
+
+      const currentBalanceDiv: HTMLElement = document.getElementById('current-bet-amount');
+
+
+      const currentUser = await fetch(`${USER_API}?username=${username}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        }
+      });
+
+      let currentAmount: number; 
+      let role: string;
+      if (currentUser.ok) {
+        const data = await currentUser.json();
+         currentAmount= data.currentBalance;
+         role = data.roles;
+         console.log(data.username)
+         console.log(data, 'this is the current user ')
+      }
+
+      console.log(role);
+      console.log("this is the redirect ")
+      if (role ==='admin'){
+        window.location.href = '../src/dashboard.html'
+      }
+      else
+
+        window.location.href = '../src/login_games.html'
+
+      
+
+      console.log(role, currentAmount)
+
+      
+        // const currentAmount = await fetch(`${USER_API_URL_AMOUNT}?username=${username}`, {
+        //   method: "GET",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //     Authorization: `Bearer ${accessToken}`,
+        //   }
+        // });
+
+      // if (currentUser.ok) {
+      //   const data = await currentUser.json();
+      //   console.log("The current amount is:", data);
+      //   currentBalanceDiv.innerText = data.amount;
+      // } else {
+      //   const error = await currentUser.json();
+      //   console.log("Get current amount failed", error);
+      // }
+      // console.log("the current amount is" + currentUser.json());
+
+      
+      // console.log("the current amount is" + currentAmount);
+     
     } else {
       console.log("Login failed:", response.json());
       alert("Username or password is incorrect");
-    }
+    } 
   } catch (error) {
     console.log("Login failed:", error);
   }
 }
 
-// Function to set cookie
 
-function setCookie(name: string, value: string, days: number) {
+const  setCookie = (name: string, value: string, days: number)=> {
   const expirationDate = new Date();
   expirationDate.setDate(expirationDate.getDate() + days);
 
@@ -214,10 +284,10 @@ function setCookie(name: string, value: string, days: number) {
   )}; expires=${expirationDate.toUTCString()}; path=/`;
 
   document.cookie = cookieString;
+  localStorage.setItem(name, value);
 }
 
-// Function to get cookie
-function getCookie(name: string): string | null {
+const  getCookie = (name: string): string | null => {
   const cookies = document.cookie.split(";");
 
   for (const cookie of cookies) {
@@ -226,8 +296,12 @@ function getCookie(name: string): string | null {
       return decodeURIComponent(cookieValue);
     }
   }
-  return null;
+
+  const localStorageValue = localStorage.getItem(name);
+  return localStorageValue !== null ? localStorageValue : null;
 }
+
+
 
 // calling register function
 
@@ -275,12 +349,16 @@ async function registerUser(
     if (response.ok) {
       const data = await response.json();
       console.log("Registeration successful:", data);
-      (<HTMLInputElement>document.getElementById("register-userName")).value =
-        "";
-      (<HTMLInputElement>document.getElementById("email")).value = "";
-      (<HTMLInputElement>document.getElementById("register-password")).value =
-        "";
-      (<HTMLInputElement>document.getElementById("confirmPassword")).value = "";
+      // (<HTMLInputElement>document.getElementById("register-userName")).value =
+      //   "";
+      // (<HTMLInputElement>document.getElementById("email")).value = "";
+      // (<HTMLInputElement>document.getElementById("register-password")).value =
+      //   "";
+      // (<HTMLInputElement>document.getElementById("confirmPassword")).value = "";
+
+      // window.location.href = '../src/login_games.html'
+
+      loginUser(username, password);
     } else {
       const error = await response.json();
       console.log("Registeration failed", error);
@@ -293,10 +371,10 @@ async function registerUser(
 function deleteCookie(name: string) {
   document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 }
-const deleteAccount = async () => {
-  // e.preventDefault();
+const deleteAccount = async (event: Event) => {
+  event.preventDefault();
   console.log(document.cookie);
-  const accessToken = getCookie("accessToken");
+  const accessToken = getCookie("access-token");
   console.log(accessToken);
   const confirmation = confirm("Are you sure you want to delete your account?");
   if (!confirmation) {
@@ -315,7 +393,7 @@ const deleteAccount = async () => {
       const result = await response.json();
       deleteCookie(accessToken);
       alert(result.message);
-      window.location.href = "../index.html";
+      window.location.href = './index.html'
     } else {
       const error = await response.json();
       alert(`Error: ${error.message}`);
@@ -324,13 +402,17 @@ const deleteAccount = async () => {
     console.log("Deletion Failed failed:", error);
   }
 };
-async function blockUser(e) {
-  console.log("this method is being called");
-  console.log(e);
-  e.preventDefault();
-  const usernameToBlock = <HTMLInputElement>document.getElementById("username");
+
+
+async function blockUser(event: Event) {
+  
+  event.preventDefault();
+  console.log("this method is being called")
+  const usernameToBlock = (<HTMLInputElement>document.getElementById("username-to-block")).value;
+
+  console.log(usernameToBlock, 'this is the username to be blocked')
   try {
-    const accessToken = localStorage.getItem("accessToken");
+    const accessToken = getCookie('access-token');
     if (!accessToken) {
       console.error("Access token not found. Please log in.");
       alert("Access token not found. Please log in.");
@@ -344,13 +426,182 @@ async function blockUser(e) {
       },
       body: JSON.stringify({ username: usernameToBlock }),
     });
+    
     if (response.ok) {
       const data = await response.json();
       console.log(data.message);
+      alert(data.message);
     } else {
       console.log("Block user failed:", response);
     }
   } catch (error) {
-    console.error("Block user failed:", error);
+    console.error("Block user failed: ", error);
+    alert('the user doesnt  exist')
   }
 }
+
+// const blockUserForm = document.getElementById("block-user-form");
+
+// blockUserForm?.addEventListener("submit", (e: Event)=>{
+//   e.preventDefault();
+//   blockUser();
+
+// });
+
+
+
+const updatePassword = async (event: Event) => {
+  event.preventDefault();
+  const accessToken = getCookie("access-token");
+  console.log(accessToken, "this is the access token")
+  const newPassword = (<HTMLInputElement>document.getElementById("new-password")).value;
+  const confirmPassword = (<HTMLInputElement>document.getElementById("old-password")).value;
+  const confirmation = confirm("Are you sure you want to update your password?");
+  if (!confirmation) {
+    return;
+  }
+
+  try {
+    const response = await fetch(UPDATE_PASSWORD_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify({ newPassword}),
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      alert(result.message);
+    } else {
+      const error = await response.json();
+      alert(`Error: ${error.message}`);
+    }
+  } catch (error) {
+    console.log("Update Password Failed:", error);
+  }
+};
+
+
+
+// const updatePasswordBtn = document.querySelector("#update-password-btn");
+// updatePasswordBtn?.addEventListener("click", (e:Event)=>{
+//   e.preventDefault();
+//   updatePassword();
+// });
+
+const updateUsername = async (e: Event) => {
+  e.preventDefault();
+  const accessToken = getCookie("access-token");
+  const newUsername = (<HTMLInputElement>document.getElementById("new-username")).value;
+  const confirmPassword = (<HTMLInputElement>document.getElementById("password-for-change-username")).value;
+  const confirmation = confirm("Are you sure you want to update your username?");
+  if (!confirmation) {
+    return;
+  }
+
+  try {
+    const response = await fetch(UPDATE_USERNAME_URL, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify({ newUsername, confirmPassword }),
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      alert(result.message);
+    } else {
+      const error = await response.json();
+      alert(`Error: ${error.message}`);
+    }
+  } catch (error) {
+    console.log("Update Username Failed:", error);
+  }
+};
+
+const deleteGame = async (gameUrl: string, accessToken: string) => {
+  try {
+    const response = await fetch('/game', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({gameUrl: gameUrl} ),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to delete game. Status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    console.log('Deleted game:', result);
+  } catch (error) {
+    console.error('Error deleting game:', error.message);
+  }
+};
+
+const deleteGames = async (event: Event) =>{
+  event.preventDefault();
+  const specificImageUrl = prompt("Enter the game url you want to delete ")
+
+  const gameCards = document.querySelectorAll('.games-content');
+  gameCards.forEach(card => {
+  const cardImage = card.querySelector('img');
+
+  if (cardImage.src === specificImageUrl) {
+    const accessToken: string = getCookie('access-token');
+    
+    deleteGame(specificImageUrl, accessToken);
+
+    card.remove();
+
+    
+    console.log('Removed game card:', card);
+  }
+
+
+});
+
+
+
+}
+
+
+const addGame = async (gameUrl: string) => {
+
+  const accessToken = getCookie('access-token')
+  try {
+    const accessToken = getCookie('access-token');
+
+    const response = await fetch('/game', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify({gameUrl: gameUrl}),
+    });   
+
+    if (!response.ok) {
+      throw new Error(`Failed to add game. Status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    console.log('Added game:', result);
+  } catch (error) {
+    console.error('Error adding game:', error.message);
+  }
+};
+
+
+
+
+
+
+
+
+
