@@ -1,37 +1,33 @@
-import { Module } from '@nestjs/common';
-<<<<<<< HEAD
-import { Auth } from 'mongodb';
-import AuthController from './auth.controller';
-import AuthService from './auth.services';
-import { UserModule } from 'src/models/user-folder/user.module';
-=======
-import AuthController from './auth.controller';
-import AuthService from './auth.service';
-import { MongooseModule } from '@nestjs/mongoose';
-import { User, UserSchema } from 'src/models/user-folder/user.schema';
-import { JwtModule } from '@nestjs/jwt';
-import { DatabaseModule } from 'src/db/database.module';
->>>>>>> second-setup
+import { Module, Session } from "@nestjs/common";
+import { AuthController } from "./auth.controller";
+import { AuthService } from "./auth.services";
+import { MongooseModule } from "@nestjs/mongoose";
+import { JwtModule } from "@nestjs/jwt";
+import { UserSchema } from "./schemas/user.schema";
+import { APP_GUARD } from "@nestjs/core";
+import { AuthGuard } from "./guards/auth.guard";
 
-
-
-@Module({ 
-    controllers: [AuthController],
-    providers: [AuthService],
-<<<<<<< HEAD
-    imports: [UserModule]
-=======
-    imports: [MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]), 
+@Module({
+  imports: [
     JwtModule.register({
-        secret: process.env.JWT_SECRET,
-        signOptions: { expiresIn: '1d' },
-      })
-      , DatabaseModule
-    ]
->>>>>>> second-setup
+      global: true,
+      secret: process.env.JWT_SECRET,
+      signOptions: {
+        expiresIn: process.env.JWT_EXPIRES,
+      },
+    }),
+
+    MongooseModule.forFeature([
+      {
+        name: "User",
+        schema: UserSchema,
+      },
+    ]),
+  ],
+  controllers: [AuthController],
+  providers: [
+    AuthService,
+    { provide: APP_GUARD, useClass: AuthGuard },
+  ],
 })
-class AuthModule{
-
-}
-
-export default AuthModule;
+export class AuthModule {}
