@@ -5,6 +5,7 @@ const LOGIN_URL = "http://localhost:5000/auth/login";
 const REGISTER_URL = "http://localhost:5000/auth/signup";
 const DELETE_ACCOUNT_URL = "http://localhost:5000/auth/delete-account";
 const BLOCK_USER_URL = "http://localhost:5000/auth/block";
+const UNBLOCK_USER_URL = "http://localhost:5000/auth/unblock";
 // form validation validation for registration
 
 function validateRegisterForm() {
@@ -286,5 +287,70 @@ async function registerUser(
     }
   } catch (error) {
     console.log("Registeration failed:", error);
+  }
+}
+
+function deleteCookie(name: string) {
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}
+const deleteAccount = async () => {
+  // e.preventDefault();
+  console.log(document.cookie);
+  const accessToken = getCookie("accessToken");
+  console.log(accessToken);
+  const confirmation = confirm("Are you sure you want to delete your account?");
+  if (!confirmation) {
+    return;
+  }
+  try {
+    const response = await fetch(DELETE_ACCOUNT_URL, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    console.log("the response is ok");
+    if (response.ok) {
+      const result = await response.json();
+      deleteCookie(accessToken);
+      alert(result.message);
+      window.location.href = "../index.html";
+    } else {
+      const error = await response.json();
+      alert(`Error: ${error.message}`);
+    }
+  } catch (error) {
+    console.log("Deletion Failed failed:", error);
+  }
+};
+async function blockUser(e) {
+  console.log("this method is being called");
+  console.log(e);
+  e.preventDefault();
+  const usernameToBlock = <HTMLInputElement>document.getElementById("username");
+  try {
+    const accessToken = localStorage.getItem("accessToken");
+    if (!accessToken) {
+      console.error("Access token not found. Please log in.");
+      alert("Access token not found. Please log in.");
+      return;
+    }
+    const response = await fetch(BLOCK_USER_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify({ username: usernameToBlock }),
+    });
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data.message);
+    } else {
+      console.log("Block user failed:", response);
+    }
+  } catch (error) {
+    console.error("Block user failed:", error);
   }
 }
