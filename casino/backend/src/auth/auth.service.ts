@@ -40,6 +40,7 @@ class AuthService{
         return this.userModel.findOne({email: email});
     }
 
+<<<<<<< HEAD
     async createUser (createUserDto: AuthDto) : Promise<any>{
         const hash = await argon.hash(createUserDto.password);
         createUserDto.password = hash;
@@ -61,6 +62,49 @@ class AuthService{
         return {
             message: 'success'
         };
+=======
+
+    async createUser (createUserDto: AuthDto) : Promise<any>{
+        const hash = await argon.hash(createUserDto.password);
+        createUserDto.password = hash;
+        
+        const user = await this.userModel.create(createUserDto);
+        await user.save();
+        console.log(user);
+        return user;
+        // const user =  new this.userModel(createUserDto);
+        //  
+    }
+
+    async login(email: string, password: string, response: Response): Promise<{ message: string }> {
+
+        try{
+            const user: User = await this.userModel.findOne({ email: email });
+            console.log(user);
+            if (!user) {
+                return {message: "no user found"};
+            }
+    
+            const pwMatches = await argon.verify(user.password, password);
+        
+            if (!pwMatches) {
+                return {message: "wrong password"};
+            }
+           
+            const payload = { sub: user.email };
+            const access_token: string = await this.jwtService.signAsync(payload);
+            response.cookie('jwt', access_token, { httpOnly: true });
+        
+            return {
+                message: 'success'
+            };
+        }
+        catch(e){
+            console.log(e);
+            return {message: "something went wrong"};
+        }
+        
+>>>>>>> second-setup
     }
 
     async user(request: Request): Promise<any>{
