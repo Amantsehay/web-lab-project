@@ -10,6 +10,7 @@ import { ACGuard, UseRoles } from "nest-access-control";
 import { Param } from "@nestjs/common";
 import {AuthGuard} from "./guards/auth.guard";
 import { Response } from "express";
+import { userInfo } from "os";
 
 @Controller("auth")
 export class AuthController {
@@ -69,11 +70,11 @@ async blockUser(@Param('username') username: string) {
   }
 }
 
-@Post('unblock/:email')
-async unblockUser(@Param('email') email: string) {
-  const user = await this.authService.getUserByEmail(email);
+@Post('unblock/:username')
+async unblockUser(@Param('username') username: string) {
+  const user = await this.authService.getUserByUsername(username);
   if (user) {
-    await this.authService.unblockUserByEmail(email);
+    await this.authService.unblockByUsername(username);
     return { message: 'User unblocked successfully' };
   } else {
     return { message: 'User not found' };
@@ -86,10 +87,17 @@ async unblockUser(@Param('email') email: string) {
     const user  = req.user;
     if (!user) {
       throw new UnauthorizedException(
-        
       )
     }
-    console.log(user);
+    if ('username' in user) {
+        await this.authService.deleteAccount(user.username);
+
+    }
+    else{
+      throw new UnauthorizedException("User not found");
+    }
+
+    // await this.authService.deleteAccount(user.username);
     return { message: 'Account deleted successfully' };
   }
 }
