@@ -124,24 +124,32 @@
               <p>Bet<a href="#">Ebet</a></p>
             </div>
             <div>
-              <form class="regstration-form" action="userAcces.html">
+              <form
+                class="regstration-form"
+                id="login-form"
+                action="userAcces.html"
+              >
                 <div class="login-form-emails">
                   <div>
-                    <label for="userName"
+                    <label for="login-userName"
                       ><i class="fa fa-user"></i> Username:</label
                     >
-                    <input id="userName" type="text" required />
+                    <input
+                      type="text"
+                      name="username"
+                      id="login-userName"
+                      required
+                    />
                     <div class="error"></div>
                   </div>
                   <div>
-                    <label for="password"
+                    <label for="login-password"
                       ><i class="fa fa-key"></i>Password:</label
                     >
                     <input
-                      id="password"
                       type="password"
                       name="password"
-                      id="password"
+                      id="login-password"
                       required
                     />
                     <div class="error"></div>
