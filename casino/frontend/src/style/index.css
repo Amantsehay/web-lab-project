@@ -1169,3 +1169,148 @@ footer {
     width:80%;
   }
 }
+
+
+/* *****************************************Dashboard page******************************************************************* */
+
+.dashboard body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/backgroundImage.webp'); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center center;
+  color:white;
+}
+
+
+.dashboard body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1b1b1b;
+  color: #fff;
+}
+
+.dashboard .dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #2c2c2c;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: rgba(44, 44, 44, 0.7); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard .dashboard-item {
+  padding: 20px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #333;
+  overflow: hidden;
+}
+
+.dashboard h2 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.dashboard p {
+  color: #bbb;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.dashboard .button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.dashboard .button:hover {
+  background-color: #45a049;
+}
+
+.dashboard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+
+/* *****************************************account update page******************************************************************* */
+
+
+
+#account-update{
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/dice-3095227_1280.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+}
+
+#Update-password{
+  background-color: rgb(4, 4, 4, 0.7); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+#update-userPassword{
+  background-color: rgba(44, 44, 44, 0.2);
+}
+
+
+/* *****************************************update user name  page******************************************************************* */
+
+
+
+#userName-update{
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/dice-3095227_1280.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+
+}
+#update-userName{
+  background-color: rgba(4, 4, 4, 0.7);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  
+}
+
+#update-newUser{
+  background-color: rgba(44, 44, 44, 0.2);
+}
+
+
+
+
+
+
+
+
+
