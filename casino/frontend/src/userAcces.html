@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./style/userAccess.css" />
     <link rel="stylesheet" href="./style/index.css" />
 
-    <title>UserAcces</title>
+    <title>UserAccess</title>
   </head>
   <body class="userAccess">
     <header class="header-container">
@@ -16,18 +16,8 @@
           <a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a>
         </h1>
       </div>
-      <div class="nav-bar">
-        <a href="./dashboard.html">DashBoard</a>
-        <hr />
-        <a href="./transaction.html">Transaction</a>
-        <hr />
-        <a href="./login_games.html">Games</a>
-        <hr />
-        <a href="./account.html">Account</a>
-        <hr />
-      </div>
       <div class="sign-in-up-container">
-        <a href="../logout.html"><button>Logout</button></a>
+        <a href="./index.html"><button>Logout</button></a>
       </div>
     </header>
     <main class="main-user-access">
@@ -75,7 +65,46 @@
         </div>
       </div>
     </main>
+    <footer>
+      <div class="footer-container">
+        <div class="payment-option-info">
+          <h4>Payment Options</h4>
+          <div class="payment-icons">
+            <img src="./images/visa.webp" />
+            <img src="./images/americanexpress.jpg" />
+            <img src="./images/masterCard.png" />
+            <img src="./images/paypal.jpg" />
+          </div>
+        </div>
 
+        <div>
+          <div class="logo">
+            <h1>BetEbet</h1>
+          </div>
+
+          <div class="footer-socials">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+
+            <form
+              class="footer-email"
+              action="send_email.php"
+              method="POST"
+              class="email-form"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="../build/scripts/index.js"></script>
   </body>
 </html>
