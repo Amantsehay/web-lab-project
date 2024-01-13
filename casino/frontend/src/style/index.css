@@ -1,10 +1,9 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   color: var(--color-white);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 :root {
@@ -75,31 +74,21 @@
   height: 35px;
   border-radius: 5px;
   border: none;
-  -webkit-transition: 0.5s all ease-in-out;
   transition: 0.5s all ease-in-out;
 }
-
 .btn:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .header-container {
   overflow-x: hidden;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0.5fr 2.5fr 1fr;
-      grid-template-columns: 0.5fr 2.5fr 1fr;
+  grid-template-columns: 0.5fr 2.5fr 1fr;
   height: 100px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background: var(--gray-800);
 }
-
 .header-container .logo {
   color: var(--color-yellow);
   font-size: 1.5rem;
@@ -107,73 +96,46 @@
   text-decoration: none;
   padding: 1rem;
 }
-
 .header-container .nav-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   justify-self: flex-end;
   gap: 1rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
-
 .header-container .nav-bar a:hover {
   color: var(--color-yellow);
 }
-
 .header-container .sign-in-up-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   gap: 1rem;
 }
 
 .landing-page {
   height: 100vh;
   background: var(--color-background);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   padding-left: 1rem;
 }
-
 .landing-page .welcome-container {
   max-width: 800px;
 }
-
 .landing-page .welcome-container .welcome-title {
   font-size: 3rem;
   font-weight: var(--font-weight-bold);
   color: var(--primary-color);
 }
-
 .landing-page .welcome-container .welcome-text {
   color: var(--color-yellow);
 }
-
 .landing-page .landing-page-btn {
   margin-top: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
 }
-
 .landing-page .landing-page-btn .btn {
   width: 150px;
 }
@@ -181,35 +143,23 @@
 .random-facts {
   height: 25vh;
   background-color: var(--gray-900);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
   gap: 1rem;
 }
-
 .random-facts .fact-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 0.5rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .random-facts .fact-item i {
   font-size: 2rem;
   color: var(--color-yellow);
 }
-
 .random-facts .fact-item h3 {
   color: var(--color-green);
 }
-
 .random-facts .fact-item p {
   color: var(--color-white);
 }
@@ -219,7 +169,6 @@
   padding-top: 5rem;
   padding-inline: 1rem;
 }
-
 .game-intros-container .title {
   font-size: 2rem;
   font-weight: var(--font-weight-bold);
@@ -227,34 +176,21 @@
   margin-bottom: 1rem;
   text-align: center;
 }
-
 .game-intros-container .games {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
-
 .game-intros-container .games .game {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   border-radius: 5px;
   background: var(--gray-900);
   padding: 1rem;
 }
-
 .game-intros-container .games .game h2 {
   color: var(--color-yellow);
   font-size: 1.5rem;
   font-weight: var(--font-weight-bold);
-}
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
