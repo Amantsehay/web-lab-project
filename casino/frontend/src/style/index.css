@@ -941,17 +941,24 @@ footer {
 /* ***************************************************************************Games page *******************************************************************8 */
 
 .game-body {
-  background-image: url("../images/casino.jpg");
+  /* background-image: url("../images/game3.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  font-family:'poppins', sans-serif;
 }
 
-.main-container {
-  margin-top: 7rem;
+.game-main-container {
+  margin: 0.6rem;
+  padding:30px
 }
-
+.game-main-container  h1{
+  text-align: center;
+  color:orange;
+  font-size: 80px;
+  font-weight: 600;
+}
 .games-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -998,7 +1005,16 @@ footer {
   background-color: rgb(242, 206, 5);
   color: black;
   border: none;
-} /*# sourceMappingURL=games.css.map */
+  text-decoration: none;
+  font-size: 25px;
+  padding:5px;
+
+} 
+.game-layer a:hover{
+  background-color: red;
+}
+
+  /*# sourceMappingURL=games.css.map */
 /* ***************************************************************************Contact page******************************************************************* */
 .contactBody{
   font-family: 'poppins', sans-serif;

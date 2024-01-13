@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./style/index.css">
     <title>Casino Game</title>
 </head>
-<body>
+<body class="contactBody">
     <header class="header-container">
         <div id="logo-container">
             <img id="main-logo" src="../src/images/logo.jpg">
@@ -39,38 +39,44 @@
                         <img src="../src/images/logo.jpg" alt="logo">
                         <p>Bet<a href="#">Ebet</a></p>
                     </div>
-                <div>
+                  <div>
                     <form class="regstration-form">
                         <div class="registration-form-emails">
-                          <div>
-                            <label for="userName"><i class="fa fa-user"></i> Username:</label>
-                            <input id="userName" type="text" required>
+                          <div class="registration-input">
+                            <div><label for="userName"><i class="fa fa-user"></i> Username:</label></div>
+                            <div><input id="userName" type="text" required></div>
                             <div class="error"></div>
                           </div>
-                          <div> 
-                            <label for="email"><i class="fa fa-envelope-o"></i> Email:</label>
-                            <input id="email" type="email" name="email" required>
+                          <div class="registration-form-emails"> 
+                            <div><label for="email"><i class="fa fa-envelope-o"></i> Email:</label></div>
+                            <div><input id="email" type="email" name="email" required></div>
                             <div class="error"></div>
                           </div>
-                          <div>
+                          <div class="registration-form-emails">
                                                     
-                            <label for="password"><i class="fa fa-key"></i> Password:</label>
-                            <input id="password" type="password" name="password" id="password" required>
+                            <div><label for="password"><i class="fa fa-key"></i> Password:</label></div>
+                            <div><input id="password" type="password" name="password" id="password" required></div>
                             <div class="error"></div>
                         
                           </div>
-                          <div>
-                            <label for="confirmPassword"><i class="fa fa-lock"></i> Confirm Password:</label>
-                            <input id="confirmPassword" type="password" name="confirmPassword" id="confirmPassword" required>
+                          <div class="registration-form-emails">
+                            <div><label for="confirmPassword"><i class="fa fa-lock"></i> Confirm Password:</label></div>
+                            <div><input id="confirmPassword" type="password" name="confirmPassword" id="confirmPassword" required></div>
                             <div class="error"></div>
                           </div>
+                        </div>
+                        <div>
+                          <div class="registration-options">
+                            <label><input type="radio" name="registrationType" value="user" checked> User</label>
+                            <label><input type="radio" name="registrationType" value="admin"> Admin</label>
+                        </div>
                         </div>
                     
                         <div class="registration-button">
                             <button type="submit" onclick="validateForm(event)">Register</button>
                         </div>
                     </form>
-                </div>
+                  </div>
             </section>
           </div>
     </div>
@@ -109,8 +115,7 @@
               </div>
         </div>
     </div>
-
-    <main class="container-fluid main-container">
+    <main class="container-fluid game-main-container">
       <div>
         <h1 class="text-center">Games</h1>
       </div>
@@ -214,37 +219,37 @@
     </main>
    
 <footer>
-  <div class="footer-container">
+    <div class="footer-container">
 
-      <div class="payment-option-info">
-          <h4> Payment Options </h4>
-          <div class="payment-icons">
-              <img src="./images/visa.webp">
-              <img src="./images/americanexpress.jpg">
-              <img src="./images/masterCard.png">
-              <img src="./images/paypal.jpg">
-          </div>
-      </div>
+        <div class="payment-option-info">
+            <h4> Payment Options </h4>
+            <div class="payment-icons">
+                <img src="./images/visa.webp">
+                <img src="./images/americanexpress.jpg">
+                <img src="./images/masterCard.png">
+                <img src="./images/paypal.jpg">
+            </div>
+        </div>
 
-      <div >
-          <div class="logo">
-              <h1>BetEbet</h1>
-          </div>
+        <div >
+            <div class="logo">
+                <h1>BetEbet</h1>
+            </div>
 
-          <div class="footer-socials">
-              <a href=""><i class="fa-brands fa-facebook"></i></a>
-              <a href=""><i class="fa-brands fa-twitter"></i></a>
-              <a href=""><i class="fa-brands fa-instagram"></i></a>
-              
-              <form class="footer-email" action="send_email.php" method="POST" class="email-form">
-                  <input type="email" name="email" placeholder="Your Email" required>
-                  <button type="submit">Send</button>
-              </form>
-          </div>
-      </div>
+            <div class="footer-socials">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                
+                <form class="footer-email" action="send_email.php" method="POST" class="email-form">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
 
 
-  </div>
+    </div>
 
 
 </footer>
