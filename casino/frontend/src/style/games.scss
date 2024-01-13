@@ -1,0 +1,102 @@
+$border-raduis: 1rem;
+$padding-x: 1rem;
+$padding-y: 1rem;
+$h-font-size:1.5rem;
+$button-color:rgb(242, 206, 5);
+
+
+
+
+
+  .navbar {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 999;
+  }
+
+  #main-logo {
+    width: 3.5rem;
+    height: 4rem;
+  }
+
+  #logo-container {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../images/casino.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+// .logout-btn{
+//   margin-left:30%;
+// }
+.main-container{
+  margin-top:7rem;
+  // display:flex;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.games-container {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.games-content {
+  position: relative;
+  overflow: hidden;
+  border-radius: $border-raduis;
+  border: 1px solid rgba(31, 52, 65, 0.2);
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $border-raduis;
+  }
+}
+
+.game-layer {
+  width: 100%;
+  height: 100%;
+  // background-color: linear-gradient(rgba(34, 64, 77, 0.5), rgba(67, 83, 104, 0.5));
+  position: absolute;
+  bottom:0;
+  left:0;
+  border-radius: $border-raduis;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: $padding-y $padding-x;
+  h5{
+    color:aliceblue;
+    font-size:$h-font-size;
+    line-height: 1.8;
+  }
+  a{
+    width: 100%;
+    background-color: $button-color;
+    color: black;
+    border:none;
+
+  }
+}
