@@ -9,22 +9,18 @@ import {
 export class SignUpDto {
   @IsNotEmpty()
   @IsString()
-  readonly firstname: string;
-
-  @IsNotEmpty()
-  @IsString()
-  readonly lastname: string;
-
-  @IsNotEmpty()
-  @IsString()
-  readonly username: string;
+  username: {
+    type: string;
+    unique: true;
+    required: true;
+  };
 
   @IsNotEmpty()
   @IsEmail()
-  readonly email: {
+  email: {
     type: string;
     unique: true;
-    requred: true;
+    required: true;
   };
 
   @IsNotEmpty()

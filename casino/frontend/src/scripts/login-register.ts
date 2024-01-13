@@ -6,22 +6,19 @@ const registerForm: HTMLElement | null =
   document.getElementById("register-form");
 
 //calling functions
-if (loginForm) {
-  loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const username = (<HTMLInputElement>(
-      document.getElementById("login-userName")
-    )).value;
-    const password = (<HTMLInputElement>(
-      document.getElementById("login-password")
-    )).value;
 
-    console.log("login form submitted");
+loginForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const username = (<HTMLInputElement>document.getElementById("login-userName"))
+    .value;
+  const password = (<HTMLInputElement>document.getElementById("login-password"))
+    .value;
 
-    //call login function
-    loginUser(username, password);
-  });
-}
+  console.log("login form submitted");
+
+  //call login function
+  loginUser(username, password);
+});
 
 // if (registerForm){
 //     registerForm.addEventListener("submit", (e) => {
@@ -36,9 +33,7 @@ const API_URL = "http://localhost:5000/";
 const LOGIN_URL = "http://localhost:5000/auth/login";
 const REGISTER_URL = "http://localhost:5000/auth/signup";
 
-
-
-const  DELETE_ACCOUNT_URL =   "http://localhost:5000/auth/delete-account"
+const DELETE_ACCOUNT_URL = "http://localhost:5000/auth/delete-account";
 
 // Login
 
@@ -55,7 +50,7 @@ async function loginUser(username: string, password: string): Promise<any> {
     if (response.ok) {
       const data = await response.json();
       const accessToken = data.accessToken;
-      setCookie("username", accessToken, 3);
+      setCookie(username, accessToken, 3);
       console.log("Login successful:", data);
     } else {
       console.log("Login failed:", response);
@@ -91,43 +86,56 @@ function getCookie(name: string): string | null {
   return null;
 }
 
-function deleteCookie(name) {
-  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-}
+// calling register function
 
-
-
-
-
-const deleteAccount = async (e: Event) => {
+registerForm?.addEventListener("submit", (e) => {
   e.preventDefault();
-  const accessToken = getCookie("username");
-  const confirmation = confirm("Are you sure you want to delete your account?");
-  if (!confirmation) {
-      return;
-  }
-  try {
-      const response = await fetch('/delete-account', {
-          method: 'DELETE',
-          headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${accessToken}`, // Include your access token here
-          },
-      });
+  const username = (<HTMLInputElement>(
+    document.getElementById("register-userName")
+  )).value;
+  const email = (<HTMLInputElement>document.getElementById("email")).value;
+  const password = (<HTMLInputElement>(
+    document.getElementById("register-password")
+  )).value;
 
-      if (response.ok) {
-          const result = await response.json();
-          deleteCookie(accessToken);
-          alert(result.message);
-          window.location.href = '../index.html';
-      } else {
-          const error = await response.json();
-          alert(`Error: ${error.message}`);
-      }
-  } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred while processing your request.');
-  }
-}
+  console.log(
+    JSON.stringify({
+      username,
+      email,
+      password,
+    })
+  );
+
+  console.log("register form submitted");
+
+  //call register function
+  registerUser(username, email, password);
+});
 
 // Registeration
+
+async function registerUser(
+  username: string,
+  email: string,
+  password: string
+): Promise<any> {
+  try {
+    const response = await fetch(REGISTER_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, email, password }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log("Registeration successful:", data);
+    } else {
+      const error = await response.json();
+      console.log("Registeration failed", error);
+    }
+  } catch (error) {
+    console.log("Registeration failed:", error);
+  }
+}

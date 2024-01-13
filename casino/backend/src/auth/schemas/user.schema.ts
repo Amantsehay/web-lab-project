@@ -6,12 +6,6 @@ import {Role} from "../roles/user.roles";
 })
 export class User {
   @Prop({ required: true })
-  firstname: string;
-
-  @Prop({ required: true })
-  lastname: string;
-
-  @Prop({ required: true })
   username: string;
 
   @Prop({ required: true })
