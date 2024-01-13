@@ -214,7 +214,7 @@
   height: 100%;
   background-color: transparent;
   z-index: -1;
-  transition: background-color 0.3s;
+  transition: 0.3s ease-in-out;
 }
 
 .game:hover::before {
@@ -247,7 +247,7 @@
   visibility: hidden;
   color: white;
   padding: 10px;
-  transition: visibility 0.3s, background-color 0.3s;
+  transition: visibility 0.3s, background-color 0.3s ease-in-out;
 }
 
 .game:hover .game-description {
