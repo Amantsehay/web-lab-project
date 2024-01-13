@@ -28,7 +28,7 @@
   <body class="about-body">
     <header class="header-container">
       <div id="logo-container">
-        <img id="main-logo" src="../src/images/logo.jpg" />
+        <img id="main-logo" src="images/logo.jpg" />
         <h1>
           <a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a>
         </h1>
@@ -58,7 +58,7 @@
           <div class="column mt-4">
             <div class="col-md-4 my-5">
               <h5>Email</h5>
-              <a href="mailto:your.email@example.com">
+              <a href="mailto:betebet2023@gmail.com">
                 <i class="fas fa-envelope"></i> betebet2023@gmail.com
               </a>
             </div>
@@ -83,23 +83,49 @@
         </div>
 
         <div class="col-md-7">
-          <form
-            action="https://formsubmit.co/birukmaru12@gmail.com"
-            method="post"
-            class="contact"
-            id="commentForm"
-          >
-            <label for="name">Name:</label>
-            <input class="my-3" type="text" id="name" name="name" required />
+          <div class="container">
+            <form
+              action="https://formsubmit.co/birukmaru12@gmail.com"
+              method="post"
+              class="contact"
+              id="commentForm"
+            >
+              <div class="form-group">
+                <label for="name"><h5>Name:</h5></label>
+                <input
+                  class="form-control my-3"
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                />
+              </div>
 
-            <label for="email">Email:</label>
-            <input class="my-3" type="email" id="email" name="email" required />
+              <div class="form-group">
+                <label for="email"><h5>Email:</h5></label>
+                <input
+                  class="form-control my-3"
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
 
-            <label class="mb-3" for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+              <div class="form-group">
+                <label class="mb-3" for="message"><h5>Message:</h5></label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
 
-            <button onclick="sendMail()" type="submit">Submit</button>
-          </form>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
     </main>
@@ -144,6 +170,8 @@
         </div>
       </div>
     </footer>
+    <script src="script.js"></script>
+
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
@@ -153,5 +181,8 @@
         emailjs.init("VbEhGK32tRH1Las4B");
       })();
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
