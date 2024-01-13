@@ -36,7 +36,9 @@ const API_URL = "http://localhost:5000/";
 const LOGIN_URL = "http://localhost:5000/auth/login";
 const REGISTER_URL = "http://localhost:5000/auth/signup";
 
-const  DELETE_ACCOUNT_URL =   "http://localhost:5000/auth/delete-a"
+
+
+const  DELETE_ACCOUNT_URL =   "http://localhost:5000/auth/delete-account"
 
 // Login
 
@@ -53,7 +55,7 @@ async function loginUser(username: string, password: string): Promise<any> {
     if (response.ok) {
       const data = await response.json();
       const accessToken = data.accessToken;
-      setCookie("username", username, 3);
+      setCookie("username", accessToken, 3);
       console.log("Login successful:", data);
     } else {
       console.log("Login failed:", response);
@@ -87,6 +89,45 @@ function getCookie(name: string): string | null {
     }
   }
   return null;
+}
+
+function deleteCookie(name) {
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}
+
+
+
+
+
+const deleteAccount = async (e: Event) => {
+  e.preventDefault();
+  const accessToken = getCookie("username");
+  const confirmation = confirm("Are you sure you want to delete your account?");
+  if (!confirmation) {
+      return;
+  }
+  try {
+      const response = await fetch('/delete-account', {
+          method: 'DELETE',
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${accessToken}`, // Include your access token here
+          },
+      });
+
+      if (response.ok) {
+          const result = await response.json();
+          deleteCookie(accessToken);
+          alert(result.message);
+          window.location.href = '../index.html';
+      } else {
+          const error = await response.json();
+          alert(`Error: ${error.message}`);
+      }
+  } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while processing your request.');
+  }
 }
 
 // Registeration

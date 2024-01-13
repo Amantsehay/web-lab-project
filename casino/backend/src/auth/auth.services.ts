@@ -49,14 +49,14 @@ export class AuthService {
 
     };
 
-    const access_token: string = await this.jwtService.signAsync(payload, {
+    const accessToken: string = await this.jwtService.signAsync(payload, {
       secret: process.env.JWT_SECRET,
       expiresIn: process.env.JWT_EXPIRES,
     })
    
     
     return {
-      access_token
+      accessToken
     };
   }
 
@@ -90,12 +90,11 @@ export class AuthService {
   }
   
 
-  async blockUserByEmail(email: string): Promise<void> {
-    await this.userModel.findOneAndUpdate({ email }, { isBlocked: true });
-  }
+  
 
-  async unblockUserByEmail(email: string): Promise<void> {
-    await this.userModel.findOneAndUpdate({ email }, { isBlocked: false });
+  async unblockByUsername(username: string): Promise<void> {
+    await this.userModel.findOneAndUpdate({ username }, { isBlocked: false });
+    
   }
 
   async getUserByEmail(email: string): Promise<User | null> {
@@ -109,12 +108,14 @@ export class AuthService {
   async getUserByUsername(username: string) {
     return this.userModel.findOne({username}).exec();
    
-
   
   }
 
   async blockUserByUsername(username: string) {
 
+  }
 
+  async deleteAccount(username: string | unknown) {
+    await this.userModel.findOneAndDelete({username}).exec();
   }
 }
