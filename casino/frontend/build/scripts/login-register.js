@@ -23,6 +23,7 @@ loginForm?.addEventListener("submit", (e) => {
 const API_URL = "http://localhost:5000/";
 const LOGIN_URL = "http://localhost:5000/auth/login";
 const REGISTER_URL = "http://localhost:5000/auth/signup";
+const DELETE_ACCOUNT_URL = "http://localhost:5000/auth/delete-account";
 // Login
 async function loginUser(username, password) {
     try {
@@ -35,12 +36,16 @@ async function loginUser(username, password) {
         });
         if (response.ok) {
             const data = await response.json();
-            const accessToken = data.accessToken;
+            const accessToken = await data.accessToken;
+            console.log("The access token for this user is:", accessToken);
             setCookie(username, accessToken, 3);
+            console.log("Cookie set");
+            console.log("and the access token from the  cookie is :");
+            console.log(getCookie(username));
             console.log("Login successful:", data);
         }
         else {
-            console.log("Login failed:", response);
+            console.log("Login failed:", response.json());
         }
     }
     catch (error) {
@@ -96,7 +101,7 @@ async function registerUser(username, email, password) {
         }
         else {
             const error = await response.json();
-            console.log("Registeration failed without error:", error);
+            console.log("Registeration failed", error);
         }
     }
     catch (error) {
