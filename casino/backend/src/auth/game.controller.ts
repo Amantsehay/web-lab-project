@@ -3,6 +3,7 @@ import {GameService} from "./game.service";
 import {Public} from "./decorators/public.decorator";
 import {ACGuard, UseRoles} from "nest-access-control";
 import {Request} from "express";
+import { AdminAuthorizationGuard } from "./guards/admin.authorization.guard";
 
 export class GameDto{
     gameUrl: string
@@ -11,65 +12,35 @@ export class GameDto{
 @Controller('game')
 export class GameController {
     constructor(private gameService: GameService ) {}
-    @Public()
-    @Delete()
+
+    @Delete('delete-game')
     @UseGuards(ACGuard)
-    @UseRoles({
-        possession: 'any',
-        action: 'delete',
-        resource: 'game'
-    })
+    @UseGuards(AdminAuthorizationGuard)
     async deleteGame(@Body() body: GameDto) : Promise<any> {
 
         const gameUrl = body.gameUrl;
         return this.gameService.deleteGame(gameUrl);
     }
-    @Public()
-    @Get()
+
+    @Get('games')
     @UseGuards(ACGuard)
-    @UseRoles({
-        possession: 'any',
-        action: 'read',
-        resource: 'game'
-    })
+    @UseGuards(AdminAuthorizationGuard)
     async getGames(@Req() req: Request) : Promise<string[]> {
         return this.gameService.getGames();
     }
-    @Public()
-    @Post()
+  
+    @Post('add-game')
     @UseGuards(ACGuard)
-    @UseRoles({
-        possession: 'any',
-        action: 'create',
-        resource: 'game'
-    })
-    async addGame(@Req() req: Request) : Promise<string[]> {
+    @UseGuards(AdminAuthorizationGuard)
+    async addGame(@Body() body: GameDto) : Promise<string[]> {
 
-        return this.gameService.addGame();
+        return this.gameService.addGame(body.gameUrl);
     }
-    @Public()
-    @Post()
     @UseGuards(ACGuard)
-    @UseRoles({
-        possession: 'any',
-        action: 'update',
-        resource: 'game'
-    })
+    @UseGuards(AdminAuthorizationGuard)
+    @Post('update')
     async updateGame(@Body() body: string) : Promise<string[]> {
         return this.gameService.getGames();
     }
-
-    // @Public()
-    // @Get()
-    // @UseGuards(ACGuard)
-    // @UseRoles({
-    //   possession: 'any',
-    //   action: 'read',
-    //   resource: 'game'
-    // })
-    // async getGames(@Req() req: Request) : Promise<string[]> {
-    //
-    //   return this.gameService.getGames();
-    // }
 
 }

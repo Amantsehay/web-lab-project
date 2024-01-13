@@ -27,6 +27,7 @@ import {
 import { AuthGuard } from "./guards/auth.guard";
 import * as bcrypt from "bcryptjs";
 import { use } from "passport";
+import { AdminAuthorizationGuard } from "./guards/admin.authorization.guard";
 
 @Controller("auth")
 export class AuthController {
@@ -67,11 +68,7 @@ export class AuthController {
 
   @Post("block")
   @UseGuards(ACGuard)
-  @UseRoles({
-    possession: "any",
-    action: "update",
-    resource: "profile",
-  })
+  @UseGuards(AdminAuthorizationGuard)
   async blockUser(
     @Param("username") username: string,
   ) {
@@ -97,6 +94,8 @@ export class AuthController {
   //unblock user endpoint
 
   @Post("unblock/:username")
+  @UseGuards(AuthGuard)
+  @UseGuards(AdminAuthorizationGuard)
   async unblockUser(
     @Param("username") username: string,
   ) {
