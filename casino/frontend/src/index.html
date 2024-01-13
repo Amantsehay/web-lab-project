@@ -103,11 +103,11 @@
                     />
                     <div class="error"></div>
                   </div>
+                  <div class="registration-button">
+                    <input type="submit" name="register" />
+                  </div>
                 </div>
 
-                <div class="registration-button">
-                  <input type="submit" name="register" />
-                </div>
               </form>
             </div>
           </section>
@@ -124,32 +124,61 @@
               <p>Bet<a href="#">Ebet</a></p>
             </div>
             <div>
-              <form class="regstration-form" action="userAcces.html">
+              <form
+                class="regstration-form"
+                id="login-form"
+                action="userAcces.html"
+              >
                 <div class="login-form-emails">
                   <div>
-                    <label for="userName"
+                    <label for="login-userName"
                       ><i class="fa fa-user"></i> Username:</label
                     >
-                    <input id="userName" type="text" required />
-                    <div class="error"></div>
-                  </div>
-                  <div>
-                    <label for="password"
-                      ><i class="fa fa-key"></i>Password:</label
-                    >
                     <input
-                      id="password"
-                      type="password"
-                      name="password"
-                      id="password"
+                      type="text"
+                      name="username"
+                      id="login-userName"
                       required
                     />
                     <div class="error"></div>
                   </div>
+                  <div>
+                    <label for="login-password"
+                      ><i class="fa fa-key"></i>Password:</label
+                    >
+                    <input
+                      type="password"
+                      name="password"
+                      id="login-password"
+                      required
+                    />
+                    <div class="error"></div>
+                  </div>
+                  <div>
+                    <div class="registration-options">
+                      <label
+                        ><input
+                          type="radio"
+                          name="registrationType"
+                          value="user"
+                          checked
+                        />
+                        User</label
+                      >
+                      <label
+                        ><input
+                          type="radio"
+                          name="registrationType"
+                          value="admin"
+                        />
+                        Admin</label
+                      >
+                    </div>
+                  </div>
                 </div>
 
                 <div class="login-button">
-                  <button type="submit">Sign in</button>
+                  <input type="submit" name="login" />
                 </div>
               </form>
             </div>

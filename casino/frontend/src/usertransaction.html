@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/font-awesome/fontawesome.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style/index.css" />
+    <title>User transaction</title>
+  </head>
+  <body class="transaction-body">
+    <header class="header-container">
+        <div id="logo-container">
+          <img id="main-logo" src="../src/images/logo.jpg" />
+          <h1>
+            <a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a>
+          </h1>
+        </div>
+        <div class="nav-bar">
+          <a href="./usergames.html">Games</a>
+          <hr />
+          <a href="./usertransaction.html">Transaction</a>
+          <hr />
+          <a href="./useraccount.html">Account</a>
+          <hr />
+        </div>
+        <div class="sign-in-up-container">
+          <a href="./index.html"><button>Logout</button></a>
+        </div>
+        <i class="fa fa-bars menu-icon"></i>
+      </header>
+    <div class="transaction-container">
+      <h2>Account Transaction</h2>
+      <form class="transaction-form" onsubmit="return validateForm()">
+        <label for="accountNumber" class="transaction-form-label">Account Number:</label>
+        <input
+          type="text"
+          id="accountNumber"
+          name="accountNumber"
+          class="transaction-form-input"
+          required
+        />
+
+        <label for="amount" class="transaction-form-label">Amount:</label>
+        <input
+          type="text"
+          id="amount"
+          name="amount"
+          class="transaction-form-input"
+          required
+        />
+        <div class="with-dep-div">
+          <button type="submit" class="transaction-form-button">Deposit</button>
+          <button type="submit" class="transaction-form-button withdraw">Withdraw</button>
+        </div>
+
+        <div id="error-message" class="error-message"></div>
+      </form>
+    </div>
+    <footer>
+        <div class="footer-container">
+          <div class="payment-option-info">
+            <h4>Payment Options</h4>
+            <div class="payment-icons">
+              <img src="./images/visa.webp" />
+              <img src="./images/americanexpress.jpg" />
+              <img src="./images/masterCard.png" />
+              <img src="./images/paypal.jpg" />
+            </div>
+          </div>
+  
+          <div>
+            <div class="logo">
+              <h1>BetEbet</h1>
+            </div>
+  
+            <div class="footer-socials">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+  
+              <form
+                class="footer-email"
+                action="send_email.php"
+                method="POST"
+                class="email-form"
+              >
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+                <button type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="../build/scripts/index.js"></script>
+    <script>
+      function validateForm() {
+        var accountNumber = document.getElementById("accountNumber").value;
+        var amount = document.getElementById("amount").value;
+        var errorMessage = document.getElementById("error-message");
+
+        if (isNaN(accountNumber) || isNaN(amount)) {
+          errorMessage.textContent =
+            "Both account number and amount should be valid numbers.";
+          return false;
+        } else {
+          errorMessage.textContent = "";
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

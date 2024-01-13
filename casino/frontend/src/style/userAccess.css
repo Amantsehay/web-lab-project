@@ -161,6 +161,7 @@ a:hover {
 .main-user-access .main-container .score-keeping .current-amount {
   font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 .main-user-access .main-container .score-keeping .current-amount span {
   color: var(--color-yellow);
@@ -172,6 +173,7 @@ a:hover {
 .main-user-access .main-container .score-keeping .current-bet-amount input {
   background-color: var(--gray-800);
   border: 2px solid var(--color-gold);
+  padding: 0.5rem;
 }
 .main-user-access .main-container .score-keeping .current-bet-amount input:focus {
   outline: none;
@@ -179,6 +181,7 @@ a:hover {
 .main-user-access .main-container .score-keeping .current-bet-amount .amount-submit {
   background-color: var(--color-gold);
   border: 2px solid var(--color-gold);
+
 }
 .main-user-access .main-container .score-keeping .current-bet-amount .amount-submit span {
   font-size: 1rem;
