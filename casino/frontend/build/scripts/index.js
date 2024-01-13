@@ -1,10 +1,9 @@
-"use strict";
 const rotateWheel = () => {
     const wheel = document.querySelector('.wheel');
     const startButton = document.querySelector('.play-button');
     let deg = 0;
     const clickHandler = () => {
-        startButton === null || startButton === void 0 ? void 0 : startButton.removeEventListener('click', clickHandler); // Remove the click event listener to prevent accumulation
+        startButton?.removeEventListener('click', clickHandler); // Remove the click event listener to prevent accumulation
         if (startButton) {
             startButton.style.pointerEvents = 'none';
         }
@@ -15,12 +14,12 @@ const rotateWheel = () => {
             wheel.classList.add('blur');
         }
         // Add the transitionend event listener after the rotation starts
-        wheel === null || wheel === void 0 ? void 0 : wheel.addEventListener('transitionend', transitionEndHandler);
+        wheel?.addEventListener('transitionend', transitionEndHandler);
     };
     const transitionEndHandler = (e) => {
         console.log('Transition ended:', e.propertyName);
         if (wheel)
-            wheel === null || wheel === void 0 ? void 0 : wheel.classList.remove('blur');
+            wheel?.classList.remove('blur');
         if (startButton) {
             startButton.style.pointerEvents = 'auto';
         }
@@ -34,10 +33,10 @@ const rotateWheel = () => {
         if (result) {
             result.innerHTML = '1';
         }
-        wheel === null || wheel === void 0 ? void 0 : wheel.removeEventListener('transitionend', transitionEndHandler);
-        startButton === null || startButton === void 0 ? void 0 : startButton.addEventListener('click', clickHandler);
+        wheel?.removeEventListener('transitionend', transitionEndHandler);
+        startButton?.addEventListener('click', clickHandler);
     };
-    startButton === null || startButton === void 0 ? void 0 : startButton.addEventListener('click', clickHandler);
+    startButton?.addEventListener('click', clickHandler);
 };
 rotateWheel();
 const menuIcon = document.querySelector('.menu-icon');
