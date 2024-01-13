@@ -57,7 +57,11 @@
               <p>Bet<a href="#">Ebet</a></p>
             </div>
             <div>
-              <form class="regstration-form" id="register-form">
+              <form
+                class="regstration-form"
+                id="register-form"
+                action="userAccess.html"
+              >
                 <div class="registration-form-emails">
                   <div>
                     <label for="userName"
@@ -120,13 +124,13 @@
               <p>Bet<a href="#">Ebet</a></p>
             </div>
             <div>
-              <form class="regstration-form" id="login-form">
+              <form class="regstration-form" action="userAcces.html">
                 <div class="login-form-emails">
                   <div>
                     <label for="userName"
                       ><i class="fa fa-user"></i> Username:</label
                     >
-                    <input id="login-userName" type="text" required />
+                    <input id="userName" type="text" required />
                     <div class="error"></div>
                   </div>
                   <div>
@@ -134,7 +138,7 @@
                       ><i class="fa fa-key"></i>Password:</label
                     >
                     <input
-                      id="login-password"
+                      id="password"
                       type="password"
                       name="password"
                       id="password"
@@ -145,7 +149,7 @@
                 </div>
 
                 <div class="login-button">
-                  <input type="submit" name="Signin" />
+                  <button type="submit">Sign in</button>
                 </div>
               </form>
             </div>
