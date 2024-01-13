@@ -57,55 +57,77 @@
               <p>Bet<a href="#">Ebet</a></p>
             </div>
             <div>
-              <form class="regstration-form" id="register-form">
-                <div class="registration-form-emails">
-                  <div>
+              <form class="regstration-form">
+                <div class="names">
+                  <div class="userName">
                     <label for="userName"
-                      ><i class="fa fa-user"></i> Username:</label
+                      ><i class="fa fa-user"></i>User Name:</label
                     >
-                    <input id="register-userName" type="text" required />
-                    <div class="error"></div>
-                  </div>
-                  <div>
-                    <label for="email"
-                      ><i class="fa fa-envelope-o"></i> Email:</label
-                    >
-                    <input id="email" type="email" name="email" required />
-                    <div class="error"></div>
-                  </div>
-                  <div>
-                    <label for="password"
-                      ><i class="fa fa-key"></i> Password:</label
-                    >
-                    <input
-                      id="register-password"
-                      type="password"
-                      name="password"
-                      id="password"
-                      required
-                    />
-                    <div class="error"></div>
-                  </div>
-                  <div>
-                    <label for="confirmPassword"
-                      ><i class="fa fa-lock"></i> Confirm Password:</label
-                    >
-                    <input
-                      id="confirmPassword"
-                      type="password"
-                      name="confirmPassword"
-                      id="confirmPassword"
-                      required
-                    />
-                    <div class="error"></div>
+                    <br /><input id="userName" name="userName" required />
+                    <p
+                      id="userNameError"
+                      class="error"
+                      style="display: none"
+                    ></p>
                   </div>
                 </div>
 
+                <div class="registration-form-emails">
+                  <label for="email"
+                    ><i class="fa fa-envelope-o"></i>Email:</label
+                  >
+                  <input type="email" name="email" id="email" required />
+                  <p id="emailError" class="error" style="display: none"></p>
+
+                  <label for="password"
+                    ><i class="fa fa-key"></i>Password:</label
+                  >
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    required
+                  />
+
+                  <p id="passwordError" class="error" style="display: none"></p>
+
+                  <label for="confirmPassword"
+                    ><i class="fa fa-lock"></i>Confirm Password:</label
+                  >
+                  <input
+                    type="password"
+                    name="confirmPassword"
+                    id="confirmPassword"
+                    required
+                  />
+                  <p
+                    id="confirmPasswordError"
+                    class="error"
+                    style="display: none"
+                  ></p>
+
+                  <p
+                    id="registrationSuccess"
+                    class="success"
+                    style="display: none"
+                  ></p>
+                </div>
+
+                <div id="formError" class="error"></div>
+
                 <div class="registration-button">
-                  <input type="submit" name="register" />
+                  <button type="button" onclick="validateForm()">
+                    Register
+                  </button>
+                </div>
+                <div id="changeToLogin">
+                  <p>
+                    Already have an account? <a href="./login.html">Sign in</a>
+                  </p>
                 </div>
               </form>
             </div>
+            <div id="errorMessages" class="error-message"></div>
           </section>
         </div>
       </div>
@@ -120,35 +142,47 @@
               <p>Bet<a href="#">Ebet</a></p>
             </div>
             <div>
-              <form class="regstration-form" id="login-form">
+              <form class="regstration-form" id="loginFormnn">
                 <div class="login-form-emails">
-                  <div>
-                    <label for="userName"
-                      ><i class="fa fa-user"></i> Username:</label
+                  <div class="uuserName">
+                    <label for="uuserName"
+                      ><i class="fa fa-user"></i>User Name:</label
                     >
-                    <input id="login-userName" type="text" required />
-                    <div class="error"></div>
+                    <br /><input id="uuserName" name="userName" required />
+                    <p
+                      id="uuserNameError"
+                      class="error"
+                      style="display: none"
+                    ></p>
                   </div>
                   <div>
-                    <label for="password"
+                    <label for="ppassword"
                       ><i class="fa fa-key"></i>Password:</label
-                    >
+                    ><br />
                     <input
-                      id="login-password"
-                      type="password"
+                      type="ppassword"
                       name="password"
-                      id="password"
+                      id="ppassword"
                       required
                     />
-                    <div class="error"></div>
+
+                    <p
+                      id="passwordError"
+                      class="error"
+                      style="display: none"
+                    ></p>
                   </div>
                 </div>
+                <div id="formError" class="error"></div>
 
                 <div class="login-button">
-                  <input type="submit" name="Signin" />
+                  <button type="button" onclick="validateLoginForm()">
+                    Sign in
+                  </button>
                 </div>
               </form>
             </div>
+            <div id="eerrorMessages" class="eerror-message"></div>
           </section>
         </div>
       </div>
@@ -603,7 +637,8 @@
         </div>
       </div>
     </footer>
-    <script src="../build/scripts/index.js"></script>
-    <script src="../build/scripts/login-register.js"></script>
+    <script src="./java/script.js"></script>
+
+    <script src="today.js"></script>
   </body>
 </html>
