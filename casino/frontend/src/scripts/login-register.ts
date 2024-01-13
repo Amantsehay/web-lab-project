@@ -391,7 +391,7 @@ const deleteAccount = async (event: Event) => {
     console.log("the response is ok");
     if (response.ok) {
       const result = await response.json();
-      deleteCookie(accessToken);
+      deleteCookie();
       alert(result.message);
       window.location.href = './index.html'
     } else {

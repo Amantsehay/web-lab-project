@@ -264,7 +264,7 @@ async function registerUser(username, email, password) {
     }
 }
 function deleteCookie() {
-    localStorage.removeItem('access_token');
+    localStorage.removeItem('access-token');
 }
 const deleteAccount = async (event) => {
     event.preventDefault();
@@ -286,7 +286,7 @@ const deleteAccount = async (event) => {
         console.log("the response is ok");
         if (response.ok) {
             const result = await response.json();
-            deleteCookie(accessToken);
+            deleteCookie();
             alert(result.message);
             window.location.href = './index.html';
         }
