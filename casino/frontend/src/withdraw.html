@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Transaction</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .transaction-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .transaction-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .form-button:hover {
+            background-color: #45a049;
+        }
+
+        .form-button.withdraw {
+            background-color: #f44336;
+        }
+
+        .form-button.withdraw:hover {
+            background-color: #d32f2f;
+        }
+
+        .error-message {
+            color: #f44336;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="transaction-container">
+        <h2>Account Transaction</h2>
+        <form class="transaction-form" onsubmit="return validateForm()">
+            <label for="accountNumber" class="form-label">Account Number:</label>
+            <input type="text" id="accountNumber" name="accountNumber" class="form-input" required>
+
+            <label for="amount" class="form-label">Amount:</label>
+            <input type="number" id="amount" name="amount" class="form-input" required>
+
+            <button type="submit" class="form-button">Deposit</button>
+            <button type="submit" class="form-button withdraw">Withdraw</button>
+
+            <div id="error-message" class="error-message"></div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var accountNumber = document.getElementById('accountNumber').value;
+            var amount = document.getElementById('amount').value;
+            var errorMessage = document.getElementById('error-message');
+
+            if (!accountNumber || !amount) {
+                errorMessage.textContent = 'Please provide both account number and amount.';
+                return false;
+            } else {
+                errorMessage.textContent = '';
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
