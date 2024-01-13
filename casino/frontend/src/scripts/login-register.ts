@@ -368,8 +368,8 @@ async function registerUser(
   }
 }
 
-function deleteCookie(name: string) {
-  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+function deleteCookie() {
+  localStorage.removeItem('access_token');
 }
 const deleteAccount = async (event: Event) => {
   event.preventDefault();

@@ -263,8 +263,8 @@ async function registerUser(username, email, password) {
         console.log("Registeration failed:", error);
     }
 }
-function deleteCookie(name) {
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+function deleteCookie() {
+    localStorage.removeItem('access_token');
 }
 const deleteAccount = async (event) => {
     event.preventDefault();
