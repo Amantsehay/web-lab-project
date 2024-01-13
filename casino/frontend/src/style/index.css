@@ -744,31 +744,14 @@ footer {
   flex-direction: column;
   gap:4px;
 }
-/* .registration-form-emails {
+.registration-form-emails div{
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  padding: 10px;
-  padding-left: 20px;
-} */
+}
 .registration-button {
   margin-top: 20px;
 }
-/* .firstName {
-  display: flex;
-  flex-direction: column;
-} */
-/* .names {
-  display: flex;
-  gap: 0.1%;
-  margin-bottom: 10px;
 
-  padding-left: 20px;
-}
-.lastName {
-  display: flex;
-  flex-direction: column;
-} */
 .regstration-form input {
   background-color: black;
   border: 1px solid rgba(255, 255, 255, 0.432);
@@ -783,29 +766,27 @@ footer {
 .regstration-form input:active {
   box-shadow: none;
 }
-/* .names input {
-  margin-top: 3px;
-  height: 16px;
-} */
+
 .registration-input{
   display: flex;
   flex-direction: column;
 
 }
 .registration-button {
-  text-align: center;
+
   background-color: gold;
   padding: 8px;
   border-radius: 20px;
 }
-.registration-button button:hover {
-  font-size: larger;
-}
-.registration-button button {
+.registration-button input {
   background-color: gold;
-  border: none;
+  border:none;
+  box-shadow: none;
+  color: black;
   font-size: medium;
+
 }
+
 .registration-logo p 
 {
   font-size: 30px;
@@ -902,7 +883,6 @@ footer {
   box-shadow: none;
 }
 .login-button {
-  text-align: center;
   background-color: gold;
   padding: 8px;
   border-radius: 20px;
@@ -910,10 +890,13 @@ footer {
 .login-button button:hover {
   font-size: larger;
 }
-.login-button button {
+.login-button input {
   background-color: gold;
-  border: none;
+  border:none;
+  box-shadow: none;
+  color: black;
   font-size: medium;
+
 }
 .login-logo p {
   font-size: 30px;

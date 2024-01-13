@@ -19,165 +19,173 @@
     <title>Casino Game</title>
 </head>
 <body class="contactBody">
-    <header class="header-container">
-      <div id="logo-container">
-        <img id="main-logo" src="../src/images/logo.jpg" />
-        <h1>
-          <a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a>
-        </h1>
+  <header class="header-container">
+    <div id="logo-container">
+      <img id="main-logo" src="../src/images/logo.jpg" />
+      <h1>
+        <a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a>
+      </h1>
+    </div>
+    <div class="nav-bar">
+      <a href="./index.html">Home</a>
+      <hr />
+      <a href="./about.html">About Us</a>
+      <hr />
+      <a href="games.html">Games</a>
+      <hr />
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="sign-in-up-container">
+      <a href="#" onclick="displayLoginForm()"
+        ><i class="fa fa-sign-in"></i><button>Login</button></a
+      >
+      <a href="#" onclick="displayRegistrationForm()"
+        ><i class="fa fa-user-plus"></i><button>Register</button></a
+      >
+    </div>
+    <i class="fa fa-bars menu-icon"></i>
+  </header>
+  <div>
+    <div id="registrationForm">
+      <div class="close-button" onclick="closeRegistrationForm()">
+        &times;
       </div>
-      <div class="nav-bar">
-        <a href="./index.html">Home</a>
-        <hr />
-        <a href="./about.html">About Us</a>
-        <hr />
-        <a href="games.html">Games</a>
-        <hr />
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="sign-in-up-container">
-        <a href="#" onclick="displayLoginForm()"
-          ><i class="fa fa-sign-in"></i><button>Login</button></a
-        >
-        <a href="#" onclick="displayRegistrationForm()"
-          ><i class="fa fa-user-plus"></i><button>Register</button></a
-        >
-      </div>
-      <i class="fa fa-bars menu-icon"></i>
-    </header>
-    <div>
-      <div id="registrationForm">
-        <div class="close-button" onclick="closeRegistrationForm()">
-          &times;
-        </div>
-        <div class="registration-main">
-          <section class="registration-card">
-            <div class="registration-logo">
-              <img src="../src/images/logo.jpg" alt="logo" />
-              <p>Bet<a href="#">Ebet</a></p>
-            </div>
-            <div>
-              <form
-                class="regstration-form"
-                id="register-form"
-                action="userAccess.html"
-              >
-                <div class="registration-form-emails">
-                  <div>
-                    <label for="userName"
-                      ><i class="fa fa-user"></i> Username:</label
-                    >
-                    <input id="register-userName" type="text" required />
-                    <div class="error"></div>
-                  </div>
-                  <div>
-                    <label for="email"
-                      ><i class="fa fa-envelope-o"></i> Email:</label
-                    >
-                    <input id="email" type="email" name="email" required />
-                    <div class="error"></div>
-                  </div>
-                  <div>
-                    <label for="password"
-                      ><i class="fa fa-key"></i> Password:</label
-                    >
-                    <input
-                      id="register-password"
-                      type="password"
-                      name="password"
-                      id="password"
-                      required
-                    />
-                    <div class="error"></div>
-                  </div>
-                  <div>
-                    <label for="confirmPassword"
-                      ><i class="fa fa-lock"></i> Confirm Password:</label
-                    >
-                    <input
-                      id="confirmPassword"
-                      type="password"
-                      name="confirmPassword"
-                      id="confirmPassword"
-                      required
-                    />
-                    <div class="error"></div>
-                  </div>
+      <div class="registration-main">
+        <section class="registration-card">
+          <div class="registration-logo">
+            <img src="../src/images/logo.jpg" alt="logo" />
+            <p>Bet<a href="#">Ebet</a></p>
+          </div>
+          <div>
+            <form
+              class="regstration-form"
+              id="register-form"
+              action="userAccess.html"
+            >
+              <div class="registration-form-emails">
+                <div>
+                  <label for="userName"
+                    ><i class="fa fa-user"></i> Username:</label
+                  >
+                  <input id="register-userName" type="text" required />
+                  <div class="error"></div>
                 </div>
+                <div>
+                  <label for="email"
+                    ><i class="fa fa-envelope-o"></i> Email:</label
+                  >
+                  <input id="email" type="email" name="email" required />
+                  <div class="error"></div>
+                </div>
+                <div>
+                  <label for="password"
+                    ><i class="fa fa-key"></i> Password:</label
+                  >
+                  <input
+                    id="register-password"
+                    type="password"
+                    name="password"
+                    id="password"
+                    required
+                  />
+                  <div class="error"></div>
+                </div>
+                <div>
+                  <label for="confirmPassword"
+                    ><i class="fa fa-lock"></i> Confirm Password:</label
+                  >
+                  <input
+                    id="confirmPassword"
+                    type="password"
+                    name="confirmPassword"
+                    id="confirmPassword"
+                    required
+                  />
+                  <div class="error"></div>
+                </div>
+              </div>
 
-                <div class="registration-button">
-                  <input type="submit" name="register" />
-                </div>
-              </form>
-            </div>
-          </section>
-        </div>
+              <div class="registration-button">
+                <input type="submit" name="register" />
+              </div>
+            </form>
+          </div>
+        </section>
       </div>
     </div>
-    <div>
-      <div id="loginForm">
-        <div class="close-button" onclick="closeLoginForm()">&times;</div>
-        <div class="login-main">
-          <section class="login-card">
-            <div class="login-logo">
-              <img src="../src/images/logo.jpg" alt="logo" />
-              <p>Bet<a href="#">Ebet</a></p>
-            </div>
-            <div>
-              <form class="regstration-form" action="userAcces.html">
-                <div class="login-form-emails">
-                  <div>
-                    <label for="userName"
-                      ><i class="fa fa-user"></i> Username:</label
+  </div>
+  <div>
+    <div id="loginForm">
+      <div class="close-button" onclick="closeLoginForm()">&times;</div>
+      <div class="login-main">
+        <section class="login-card">
+          <div class="login-logo">
+            <img src="../src/images/logo.jpg" alt="logo" />
+            <p>Bet<a href="#">Ebet</a></p>
+          </div>
+          <div>
+            <form
+              class="regstration-form"
+              id="login-form"
+              action="userAcces.html"
+            >
+              <div class="login-form-emails">
+                <div>
+                  <label for="login-userName"
+                    ><i class="fa fa-user"></i> Username:</label
+                  >
+                  <input
+                    type="text"
+                    name="username"
+                    id="login-userName"
+                    required
+                  />
+                  <div class="error"></div>
+                </div>
+                <div>
+                  <label for="login-password"
+                    ><i class="fa fa-key"></i>Password:</label
+                  >
+                  <input
+                    type="password"
+                    name="password"
+                    id="login-password"
+                    required
+                  />
+                  <div class="error"></div>
+                </div>
+                <div>
+                  <div class="registration-options">
+                    <label
+                      ><input
+                        type="radio"
+                        name="registrationType"
+                        value="user"
+                        checked
+                      />
+                      User</label
                     >
-                    <input id="userName" type="text" required />
-                    <div class="error"></div>
-                  </div>
-                  <div>
-                    <label for="password"
-                      ><i class="fa fa-key"></i>Password:</label
+                    <label
+                      ><input
+                        type="radio"
+                        name="registrationType"
+                        value="admin"
+                      />
+                      Admin</label
                     >
-                    <input
-                      id="password"
-                      type="password"
-                      name="password"
-                      id="password"
-                      required
-                    />
-                    <div class="error"></div>
-                  </div>
-                  <div>
-                    <div class="registration-options">
-                      <label
-                        ><input
-                          type="radio"
-                          name="registrationType"
-                          value="user"
-                          checked
-                        />
-                        User</label
-                      >
-                      <label
-                        ><input
-                          type="radio"
-                          name="registrationType"
-                          value="admin"
-                        />
-                        Admin</label
-                      >
-                    </div>
                   </div>
                 </div>
+              </div>
 
-                <div class="login-button">
-                  <input type="submit" name="login" />
-                </div>
-              </form>
-            </div>
-          </section>
-        </div>
+              <div class="login-button">
+                <input type="submit" name="login" />
+              </div>
+            </form>
+          </div>
+        </section>
       </div>
     </div>
+  </div>
     <main class="container-fluid game-main-container">
       <div>
         <h1 class="text-center">Games</h1>
@@ -325,7 +333,8 @@
 
 
 </footer>
-<script src="./java/script.js"></script>
+<script src="../build/scripts/index.js"></script>
+<script src="../build/scripts/login-register.js"></script>
 
 </body>
 </html>
