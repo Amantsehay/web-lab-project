@@ -67,15 +67,19 @@
                     <label for="userName"
                       ><i class="fa fa-user"></i> Username:</label
                     >
-                    <input id="register-userName" type="text" required />
-                    <div class="error"></div>
+                    <input id="register-userName" type="text" />
+                    <p
+                      id="userNameError"
+                      class="error"
+                      style="display: none"
+                    ></p>
                   </div>
                   <div>
                     <label for="email"
                       ><i class="fa fa-envelope-o"></i> Email:</label
                     >
-                    <input id="email" type="email" name="email" required />
-                    <div class="error"></div>
+                    <input id="email" name="email" />
+                    <p id="emailError" class="error" style="display: none"></p>
                   </div>
                   <div>
                     <label for="password"
@@ -86,9 +90,12 @@
                       type="password"
                       name="password"
                       id="password"
-                      required
                     />
-                    <div class="error"></div>
+                    <p
+                      id="passwordError"
+                      class="error"
+                      style="display: none"
+                    ></p>
                   </div>
                   <div>
                     <label for="confirmPassword"
@@ -99,17 +106,25 @@
                       type="password"
                       name="confirmPassword"
                       id="confirmPassword"
-                      required
                     />
-                    <div class="error"></div>
+                    <p
+                      id="confirmPasswordError"
+                      class="error"
+                      style="display: none"
+                    ></p>
+                    <p
+                      id="registrationSuccess"
+                      class="success"
+                      style="display: none"
+                    ></p>
                   </div>
                   <div class="registration-button">
                     <input type="submit" name="register" />
                   </div>
                 </div>
-
               </form>
             </div>
+            <div id="errorMessages" class="error-message"></div>
           </section>
         </div>
       </div>
@@ -127,20 +142,19 @@
               <form
                 class="regstration-form"
                 id="login-form"
-                action="userAcces.html"
+                action="games.html"
               >
                 <div class="login-form-emails">
                   <div>
                     <label for="login-userName"
                       ><i class="fa fa-user"></i> Username:</label
                     >
-                    <input
-                      type="text"
-                      name="username"
-                      id="login-userName"
-                      required
-                    />
-                    <div class="error"></div>
+                    <input type="text" name="username" id="login-userName" />
+                    <p
+                      id="uuserNameError"
+                      class="error"
+                      style="display: none"
+                    ></p>
                   </div>
                   <div>
                     <label for="login-password"
@@ -150,9 +164,12 @@
                       type="password"
                       name="password"
                       id="login-password"
-                      required
                     />
-                    <div class="error"></div>
+                    <p
+                      id="passwordError"
+                      class="error"
+                      style="display: none"
+                    ></p>
                   </div>
                   <div>
                     <div class="registration-options">
@@ -176,12 +193,14 @@
                     </div>
                   </div>
                 </div>
+                <div id="formError" class="error"></div>
 
                 <div class="login-button">
                   <input type="submit" name="login" />
                 </div>
               </form>
             </div>
+            <div id="eerrorMessages" class="eerror-message"></div>
           </section>
         </div>
       </div>
