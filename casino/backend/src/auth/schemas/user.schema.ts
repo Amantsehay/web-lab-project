@@ -7,7 +7,7 @@ import * as mongoose from "mongoose";
 })
 export class User {
 
-  @Prop({ unique: true, default: new mongoose.Types.ObjectId() , type: mongoose.Schema.Types.ObjectId})
+  @Prop({ unique: false, default: new mongoose.Types.ObjectId() , type: mongoose.Schema.Types.ObjectId})
   id: mongoose.Types.ObjectId;
   @Prop({ required: true })
   username: string;
