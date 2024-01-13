@@ -8,13 +8,19 @@ import { JwtService } from "@nestjs/jwt";
 export class GameService{
     constructor(
         @InjectModel(Game.name)
-        private userModel: Model<Game>,
+        private gameModel: Model<Game>,
         private jwtService: JwtService,
+        
         ) {}
-    @Post()
 
-    deleteGame() {
-        return [];
+  
+   async deleteGame(gameUrl: string) {
+    return this.gameModel.findOneAndDelete({gameUrl: gameUrl})
+
+
+
+        
+        
     }
 
     getGames() {

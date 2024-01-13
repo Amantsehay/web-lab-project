@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/font-awesome/fontawesome.css" />
+    <!-- <link rel="stylesheet" href="style/font-awesome/fontawesome.css" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -40,17 +40,17 @@
           <p>Bet<a href="#">Ebet</a></p>
         </div>
         <div>
-          <form class="regstration-form">
+          <form class="regstration-form-1">
             <div class="login-form-emails">
-              <label for="email"><i class="fa fa-key"></i>New User Name:</label>
-              <input type="email" name="email" required />
+              <label for="new-username"><i class="fa fa-key"></i>New User Name:</label>
+              <input type="text" name="new-username"  id='new-username' required />
 
               <label for="password"><i class="fa fa-key"></i>Password:</label>
-              <input type="password" name="password" id="password" required />
+              <input type="password" name="password" id="password-for-change-username" required />
             </div>
 
-            <div class="login-button">
-              <button type="Login">Change</button>
+            <div class="update-username-btn">
+              <button type="Login" id="update-username-btn" onclick="updateUsername(event)">Change</button>
             </div>
           </form>
         </div>
@@ -96,5 +96,6 @@
         </div>
       </div>
     </footer>
+    <script src="../../build/scripts/login-register.js"></script>
   </body>
 </html>

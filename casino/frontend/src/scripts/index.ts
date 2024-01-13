@@ -1,4 +1,14 @@
+
+// import {getCurentBalanec} from './login-register.ts'
 const rotateWheel = (): void => {
+    const currentBet: number = (<HTMLInputElement> document.getElementById('bet-number')).valueAsNumber;
+
+    console.log(currentBet, 'this is the current bet')
+
+    const currentBalance: number = Number((<HTMLElement> document.getElementById('current-amount')).querySelector('span').innerText);
+
+    console.log(currentBalance, 'this is the current balance')
+
     const wheel: HTMLElement | null = document.querySelector('.wheel');
     const startButton: HTMLButtonElement | null = document.querySelector('.play-button');
 
@@ -37,22 +47,33 @@ const rotateWheel = (): void => {
 
         let result: HTMLElement | null = document.querySelector('.result');
 
-        if (result) {
-            result.innerHTML = '1';
-        }
-
+      
         
-        wheel?.removeEventListener('transitionend', transitionEndHandler);
+        
       
         startButton?.addEventListener('click', clickHandler);
     };
+
+    if ( currentBet > currentBalance){
+        alert('You do not have enough money to place this bet')
+        return 
+    }
+
+  
+    wheel?.removeEventListener('transitionend', transitionEndHandler);
 
 
     startButton?.addEventListener('click', clickHandler);
 };
 
 
-rotateWheel();
+const startButton: HTMLButtonElement | null = document.querySelector('.play-button');
+
+startButton?.addEventListener('click', (e: Event)=>{
+  e.preventDefault();
+  rotateWheel();
+
+})
 
 const menuIcon: HTMLElement | null = document.querySelector('.menu-icon');
 const navBar: HTMLElement | null = document.querySelector('.nav-bar');
@@ -96,3 +117,5 @@ const closeLoginForm = (): void => {
 
 
  
+
+

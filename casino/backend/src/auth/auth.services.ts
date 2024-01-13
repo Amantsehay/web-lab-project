@@ -2,6 +2,9 @@ import {
   HttpException,
   HttpStatus,
   Injectable,
+  NotFoundException,
+  Req,
+
 } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
@@ -49,6 +52,7 @@ export class AuthService {
       sub: user.email,
       username: user.username,
       roles: user.roles,
+      currentBalance: user.currentBalance,
     };
 
     const accessToken: string =
@@ -115,12 +119,20 @@ export class AuthService {
   deleteUser(userId: any) {}
 
   async getUserByUsername(username: string) {
-    return this.userModel
+    const user =  this.userModel
       .findOne({ username })
       .exec();
+    return user;
+     
   }
 
-  async blockUserByUsername(username: string) {}
+  async blockUserByUsername(user : User | null) {
+    await this.userModel.findOneAndUpdate(
+      { username: user.username },
+      { isBlocked: true },
+    );
+
+  }
 
   async deleteAccount(
     username: string | unknown,
@@ -128,5 +140,37 @@ export class AuthService {
     await this.userModel
       .findOneAndDelete({ username })
       .exec();
+  }
+
+
+  async updatePassword(username: string | unknown, newPassword: string): Promise<void> {
+    const user = await this.userModel.findOne({ username }).exec();
+
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    user.password = hashedPassword;
+    await user.save();
+  }
+
+  async updateUsername(currentUsername: string | unknown, newUsername: string): Promise<void> {
+    const user = await this.userModel.findOne({ username: currentUsername }).exec();
+
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+
+    user.username = newUsername;
+
+    await user.save();
+  }
+
+
+  async getUserAmount(userName: string | unknown): Promise<number> {
+    const user = this.userModel.findOne({username: userName}).exec();
+    console.log('this method is being called ')
+    console.log(user);
+    return (await user).currentBalance;
   }
 }

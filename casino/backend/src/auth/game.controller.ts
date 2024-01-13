@@ -1,24 +1,28 @@
-import {Body, Controller, Get, Post, Req, UseGuards} from "@nestjs/common";
+import {Body, Controller, Get, Post, Req, UseGuards, Delete} from "@nestjs/common";
 import {GameService} from "./game.service";
 import {Public} from "./decorators/public.decorator";
 import {ACGuard, UseRoles} from "nest-access-control";
 import {Request} from "express";
 
+export class GameDto{
+    gameUrl: string
+}
 
 @Controller('game')
 export class GameController {
     constructor(private gameService: GameService ) {}
     @Public()
-    @Post()
+    @Delete()
     @UseGuards(ACGuard)
     @UseRoles({
         possession: 'any',
-        action: 'read',
+        action: 'delete',
         resource: 'game'
     })
-    async deleteGame(@Body() game: string) : Promise<string[]> {
+    async deleteGame(@Body() body: GameDto) : Promise<any> {
 
-        return this.gameService.deleteGame();
+        const gameUrl = body.gameUrl;
+        return this.gameService.deleteGame(gameUrl);
     }
     @Public()
     @Get()
