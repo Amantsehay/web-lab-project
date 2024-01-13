@@ -7,8 +7,6 @@ import * as mongoose from "mongoose";
 })
 export class User {
 
-  @Prop({ unique: false, default: new mongoose.Types.ObjectId() , type: mongoose.Schema.Types.ObjectId})
-  id: mongoose.Types.ObjectId;
   @Prop({ required: true })
   username: string;
 
@@ -29,3 +27,4 @@ export class User {
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
+
