@@ -22,9 +22,15 @@
             return await this.userModel.findOne({email: email});
         }
     
+<<<<<<< HEAD
         async createUser (createUserDto: AuthDto) : Promise<void>{
             const  newUser =  new this.userModel(createUserDto);
             newUser.save();
+=======
+        async createUser (createUserDto: AuthDto) : Promise<User>{
+            const  newUser =  new this.userModel(createUserDto);
+            return newUser.save();
+>>>>>>> second-setup
             
         }
 
