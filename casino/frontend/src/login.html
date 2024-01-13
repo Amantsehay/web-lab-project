@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/font-awesome/fontawesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./style/index.css">
+    <title>login Page</title>
+</head>
+<body class="loginBody">
+    <header class="header-container">
+        <div id="logo-container">
+            <img id="main-logo" src="../src/images/logo.jpg">
+            <h1><a  href="#" class="Bet">Bet</a><a class="Ebet"href="#">Ebet</a></h1>
+        </div>
+        <div class="nav-bar">
+            <a href="./index.html">Home</a>
+            <hr>
+            <a href="./about.html">About Us</a>
+            <hr>
+            <a href="#">Games</a>
+            <hr>
+            <a href="#">Contact</a>
+        </div>
+        <div class="sign-in-up-container">
+            <a href="./login.html"><button>Login</button></a>
+            <a href="./register.html"><button><i class="fa fa-user-plus"></i>Register</button></a>
+        </div>
+    </header>
+    <main class="login-main">
+        <section class="login-card">
+            <div class="login-logo">
+                <img src="../src/images/logo.jpg" alt="logo">
+                <p>Bet<a href="#">Ebet</a></p>
+            </div>
+            <div>
+                <form class="regstration-form">
+                  <div class="login-form-emails">
+                        <label for="email"><i class="fa fa-envelope-o"></i>Email:</label>
+                        <input type="email" name="email" required>
+                    
+                        <label for="password"><i class="fa fa-key"></i>Password:</label>
+                        <input type="password" name="password" id="password" required>
+                    
+                    </div>
+                
+                    <div class="login-button">
+                        <button type="Login">Sign in</button>
+                    </div>
+                    <div id="changeToRegister">
+                        <p>Don't have an account? <a href="./register.html">Register</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+    
+            <div class="payment-option-info">
+                <h4> Payment Options </h4>
+                <div class="payment-icons">
+                    <img src="./images/visa.webp">
+                    <img src="./images/americanexpress.jpg">
+                    <img src="./images/masterCard.png">
+                    <img src="./images/paypal.jpg">
+                </div>
+            </div>
+    
+            <div >
+                <div class="logo">
+                    <h1>BetEbet</h1>
+                </div>
+    
+                <div class="footer-socials">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    
+                    <form class="footer-email" action="send_email.php" method="POST" class="email-form">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+    
+    
+        </div>
+    
+    
+    </footer>
+</body>
+</html>

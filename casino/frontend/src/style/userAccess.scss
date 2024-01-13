@@ -1,0 +1,474 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: var(--color-white);
+    font-family: 'Roboto', sans-serif;
+  
+  
+    //background: var(--color-background);
+  
+  }
+  
+  :root {
+    /* Primary Colors */
+    --color-gold: #f1c40f;
+    --color-background: black;
+    --color-green: #2ecc71;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-red: #df3b3b;
+    --color-yellow: #e6e627;
+    --primary-color: #3498db;       // Blue
+    --secondary-color: #e74c3c;     // Red
+    --accent-color: #2ecc71;        // Green
+  
+    /* Grays */
+    --gray-50: #f8f9fa;             // Lightest Gray
+    --gray-100: #f1f3f5;            // Light Gray
+    --gray-200: #e9ecef;            // Gray
+    --gray-300: #dee2e6;            // Dark Gray
+    --gray-400: #ced4da;            // Darker Gray
+    --gray-500: #adb5bd;            // Darkish Gray
+    --gray-600: #868e96;            // Medium Gray
+    --gray-700: #495057;            // Dark Medium Gray
+    --gray-800: #343a40;            // Dark Gray
+    --gray-900: #212529;            // Darkest Gray
+  
+    /* Neutrals */
+    --background-color: var(--gray-50);    // Lightest Gray
+    --text-color: var(--gray-700);         // Dark Medium Gray
+    --border-color: var(--gray-200);       // Gray
+  
+    /* Success and Error Colors */
+    --success-color: #27ae60;       // Green
+    --error-color: #e74c3c;         // Red
+  
+    /* Call-to-Action */
+    --cta-background: var(--gray-100);      // Light Gray
+    --cta-text: #3498db;            // Blue
+  
+    /* Link Colors */
+    --link-color: #3498db;          // Blue
+    --visited-link-color: #8e44ad;  // Purple
+  
+    /* Button Colors */
+    --button-background: #3498db;   // Blue
+    --button-text: #fff;            // White
+  
+    /* Input Colors */
+    --input-background: #fff;       // White
+    --input-border: var(--gray-300);           // Dark Gray
+    --input-focus-border: #3498db;  // Blue on focus
+  
+    /* Miscellaneous */
+    --info-color: #3498db;          // Blue
+    --warning-color: #f39c12;       // Orange
+  
+  
+    // Font Sizes
+      --font-size-xxs: 0.5rem;
+      --font-size-xs: 0.75rem;
+      --font-size-sm: 0.875rem;
+      --font-size-md: 1rem;
+      --font-size-lg: 1.125rem;
+      --font-size-xl: 1.25rem;
+      --font-size-xxl: 1.5rem;
+      --font-size-xxxl: 1.875rem;
+  
+      // Font Weights
+      --font-weight-light: 300;
+      --font-weight-normal: 400;
+      --font-weight-bold: 700;
+  
+  
+  
+    font-size: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  
+  
+  
+  
+  }
+  
+
+
+
+
+
+// The body section
+  .userAccess{
+    background-image: url('../images/bg_main.jpg');
+   
+
+  }
+
+  // General styling stuff
+  
+  .btn{
+    background: var(--primary-color);
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    transition: 0.5s all ease-in-out;
+    &:hover{
+      transform: scale(1.05);
+    }
+  
+  }
+
+  a{
+    text-decoration: none;
+    outline: none;
+    color: var(--color-black);
+    z-index: 1000;
+
+    &:hover{
+      color: var(--color-yellow);
+    }
+   
+  }
+
+  .blur{
+    animation: blur 10s;
+  }
+
+
+  @keyframes blur {
+    0%{
+      filter: blur(0.9px);
+
+    }
+
+    30%{
+      filter: blur(1px);
+    }
+
+    50%{
+      filter: blur(2px);
+    }
+
+    80%{
+      filter: blur(1.5px);
+    }
+
+    95%{
+      filter: blur(0px);
+    }
+
+  }
+
+  // The header section 
+  #main-logo {
+    width: 3.5rem;
+    height: 4rem;
+    
+  }
+  
+  #logo-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  //  .main-user-access{
+  //   margin-top: 10rem;
+  
+    
+  //  }
+
+  .navbar-nav{
+    .nav-item{
+      .nav-link{
+        color: var(--color-red);
+        font-size: 1.5rem;
+        font-weight: bold;
+        &:hover{
+          color: var(--color-yellow);
+        }
+      }
+    }
+  }
+
+
+
+
+
+// The main section 
+
+.main-user-access{
+  background: var(--color-black);
+  height: 100vh;
+  opacity: 0.95;
+  background-image: url("https://casino5.netlify.app/background.jpg");
+
+  .main-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .game-board{
+      margin-top: 5rem;
+      position: relative;
+
+      .marker{
+        position: absolute;
+        left: 45%;
+        top: -1rem;
+        width: 60px;
+        height: 100px;
+        z-index: 100;
+       
+      }
+     
+    }
+
+    .score-keeping{
+      .current-amount{
+        font-size: 1.5rem;
+        font-weight: bold;
+  
+        span{
+          color: var(--color-yellow);
+        }
+
+      }
+      .current-bet-amount{
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        input{
+          background-color: var(--gray-800);
+          border: 2px solid  var(--color-gold);
+          &:focus{
+            outline: none;
+          }
+
+        }
+        .amount-submit{   
+          background-color: var(--color-gold); 
+          border: 2px solid var(--color-gold);
+          
+          span{
+            font-size: 1rem;
+            padding:1rem;
+          }
+        }
+        
+      }
+
+      
+    }
+  }
+
+  .play-number-form{
+    display: flex;
+    flex-direction: column;
+    .play-number{
+      width: 100%;
+      padding:0.5rem;
+      background-color: var(--gray-800);
+      border: 1px solid var(--color-gold);
+      margin-bottom:0.7rem;
+      
+      &:focus{
+      outline: none}
+
+    }
+    .play-button{
+     
+      background-color: var(--color-yellow);
+      filter: brightness(100%);
+      padding: 0.5rem;
+      transition: 0.5s all ease-in-out;
+
+      &:hover{
+        background-color: var(--primary-color);
+
+      }
+    }
+  }
+  
+}
+
+
+
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  // // The header section
+  // .header-container{
+  //   overflow-x: hidden;
+  
+  //   display: grid;
+  //   grid-template-columns: 0.5fr 2.5fr 1fr;
+  //   height: 100px;
+  //   align-items: center;
+  //   justify-content: center;
+  //   background: var(--gray-800);
+  //   .logo{
+  //     color: var(--color-yellow);
+  //     font-size: 1.5rem;
+  //     font-weight: bold;
+  //     text-decoration: none;
+  //     padding: 1rem;
+  //   }
+  
+  //   .nav-bar{
+  //     display: flex;
+  //     justify-self: flex-end;
+  //     gap: 1rem;
+  //     align-items: center;
+  //     justify-content: center;
+  
+  //     a{
+  //       &:hover{
+  //         color: var(--color-yellow);
+  //       }
+  //     }
+  //   }
+  //   .sign-in-up-container{
+  //     display: flex;
+  //     justify-content: center;
+  //     gap: 1rem;
+  //   }
+  // }
+  
+  
+  // // The main section
+  
+  //  //The Main Home Section
+  
+  // .landing-page{
+  //   height: 100vh;
+  //   background: var(--color-background);
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   padding-left: 1rem;
+  
+  //   .welcome-container{
+  //     max-width: 800px;
+  //     .welcome-title{
+  //         font-size: 3rem;
+  //         font-weight: var(--font-weight-bold);
+  //         color: var(--primary-color);
+  //     }
+  //     .welcome-text{
+  //       color: var(--color-yellow);
+  //     }
+  // }
+  //   .landing-page-btn{
+  //     margin-top: 2rem;
+  //     display: flex;
+  //     gap: 1rem;
+  //     .btn{
+  //       width: 150px;
+  //     }
+  //   }
+  // }
+  
+  
+  // // Random Facts Section
+  // .random-facts{
+  //       height: 25vh;
+  //       background-color: var(--gray-900);
+  //       display: flex;
+  //       justify-content: space-around;
+  //       flex-wrap: wrap;
+  //       gap: 1rem;
+  //     .fact-item{
+  //       display: flex;
+  //       gap: 0.5rem;
+  //       align-items: center;
+  //       i{
+  //         font-size: 2rem;
+  //         color: var(--color-yellow);
+  //       }
+  //       h3{
+  //         color: var(--color-green);
+  //       }
+  //       p{
+  //         color: var(--color-white);
+  //       }
+  //     }
+  // }
+  
+  
+  // .game-intros-container{
+  
+  //   background: var(--gray-800);
+  //   padding-top: 5rem;
+  //   padding-inline: 1rem;
+  
+  //   .title{
+  //     font-size: 2rem;
+  //     font-weight: var(--font-weight-bold);
+  //     color: var(--primary-color);
+  //     margin-bottom: 1rem;
+  //     text-align: center;
+  //   }
+  
+  //   .games{
+  //     display: grid; 
+  //     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  //     gap: 1rem;
+  
+  //     .game{
+  //       display: flex;
+  //       flex-direction: column;
+  //       align-items: center;
+  //       border-radius: 5px;
+  //       background: var(--gray-900);
+  //       padding: 1rem;
+  //       h2{
+  //         color: var(--color-yellow);
+  //         font-size: 1.5rem;
+  //         font-weight: var(--font-weight-bold);
+  //       }
+  //     }
+  
+  //   }
+  
+  
+  
+    
+  
+  
+  
+  
+  // }
+  
+  
+  
+  
+  
+  
+  

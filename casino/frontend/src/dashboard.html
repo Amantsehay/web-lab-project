@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="dashboard">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./style/userAccess.css" />
+    <link rel="stylesheet" href="./style/index.css" />
+  </head>
+  <body class="dashboard">
+    <header class="header-container dashboard">
+      <div id="logo-container" class="dashboard">
+        <img id="main-logo" src="../src/images/logo.jpg" />
+        <h1>
+          <a href="#" class="Bet dashboard">Bet</a
+          ><a class="Ebet dashboard" href="#">Ebet</a>
+        </h1>
+      </div>
+      <div class="nav-bar dashboard">
+        <a href="./dashboard.html" class="dashboard">DashBoard</a>
+        <hr class="dashboard" />
+        <a href="./transaction.html" class="dashboard">Transaction</a>
+        <hr class="dashboard" />
+        <a href="./login_games.html" class="dashboard">Games</a>
+        <hr class="dashboard" />
+        <a href="./account.html" class="dashboard">Account</a>
+        <hr class="dashboard" />
+      </div>
+      <div class="sign-in-up-container dashboard">
+        <a href="./index.html" class="dashboard"
+          ><button class="dashboard">Logout</button></a
+        >
+      </div>
+    </header>
+    <div class="dashboard-container dashboard">
+      <div class="dashboard-item dashboard">
+        <h2 class="dashboard">Admin Panel</h2>
+        <p class="dashboard">Welcome, [Admin Name]!</p>
+      </div>
+
+      <div class="dashboard-item dashboard">
+        <h2 class="dashboard">Add Games</h2>
+        <a href="#" class="button dashboard">Add Game</a>
+      </div>
+
+      <div class="dashboard-item dashboard">
+        <h2 class="dashboard">Block Users</h2>
+        <a href="./account-update/block-user.html" class="button dashboard"
+          >Block User</a
+        >
+      </div>
+
+      <div class="dashboard-item dashboard">
+        <button class="dashboard" onclick="deleteGames(event)">Delete Games</button>
+      </div>
+
+      <div class="dashboard-item dashboard">
+        <h2 class="dashboard">Update Games</h2>
+        <a href="#" class="button dashboard">Update Game</a>
+      </div>
+    </div>
+    
+    <footer>
+      <div class="footer-container">
+        <div class="payment-option-info">
+          <h4>Payment Options</h4>
+          <div class="payment-icons">
+            <img src="./images/visa.webp" />
+            <img src="./images/americanexpress.jpg" />
+            <img src="./images/masterCard.png" />
+            <img src="./images/paypal.jpg" />
+          </div>
+        </div>
+
+        <div>
+          <div class="logo">
+            <h1>BetEbet</h1>
+          </div>
+
+          <div class="footer-socials">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+
+            <form
+              class="footer-email"
+              action="send_email.php"
+              method="POST"
+              class="email-form"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../build/scripts/login-register.js"></script>
+  </body>
+</html>

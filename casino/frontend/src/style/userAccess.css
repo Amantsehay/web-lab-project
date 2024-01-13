@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: var(--color-white);
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  /* Primary Colors */
+  --color-gold: #f1c40f;
+  --color-background: black;
+  --color-green: #2ecc71;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-red: #df3b3b;
+  --color-yellow: #e6e627;
+  --primary-color: #3498db;
+  --secondary-color: #e74c3c;
+  --accent-color: #2ecc71;
+  /* Grays */
+  --gray-50: #f8f9fa;
+  --gray-100: #f1f3f5;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #868e96;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  /* Neutrals */
+  --background-color: var(--gray-50);
+  --text-color: var(--gray-700);
+  --border-color: var(--gray-200);
+  /* Success and Error Colors */
+  --success-color: #27ae60;
+  --error-color: #e74c3c;
+  /* Call-to-Action */
+  --cta-background: var(--gray-100);
+  --cta-text: #3498db;
+  /* Link Colors */
+  --link-color: #3498db;
+  --visited-link-color: #8e44ad;
+  /* Button Colors */
+  --button-background: #3498db;
+  --button-text: #fff;
+  /* Input Colors */
+  --input-background: #fff;
+  --input-border: var(--gray-300);
+  --input-focus-border: #3498db;
+  /* Miscellaneous */
+  --info-color: #3498db;
+  --warning-color: #f39c12;
+  --font-size-xxs: 0.5rem;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-xxl: 1.5rem;
+  --font-size-xxxl: 1.875rem;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  font-size: 20px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.userAccess {
+  background-image: url("../images/bg_main.jpg");
+}
+
+.btn {
+  background: var(--primary-color);
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  transition: 0.5s all ease-in-out;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: var(--color-black);
+  z-index: 1000;
+}
+a:hover {
+  color: var(--color-yellow);
+}
+
+.blur {
+  animation: blur 10s;
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(0.9px);
+  }
+  30% {
+    filter: blur(1px);
+  }
+  50% {
+    filter: blur(2px);
+  }
+  80% {
+    filter: blur(1.5px);
+  }
+  95% {
+    filter: blur(0px);
+  }
+}
+#main-logo {
+  width: 3.5rem;
+  height: 4rem;
+}
+
+#logo-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: var(--color-red);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar-nav .nav-item .nav-link:hover {
+  color: var(--color-yellow);
+}
+
+.main-user-access {
+  background: var(--color-black);
+  height: 100vh;
+  opacity: 0.95;
+  background-image: url("https://casino5.netlify.app/background.jpg");
+}
+.main-user-access .main-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.main-user-access .main-container .game-board {
+  margin-top: 5rem;
+  position: relative;
+}
+.main-user-access .main-container .game-board .marker {
+  position: absolute;
+  left: 45%;
+  top: -1rem;
+  width: 60px;
+  height: 100px;
+  z-index: 100;
+}
+.main-user-access .main-container .score-keeping .current-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.main-user-access .main-container .score-keeping .current-amount span {
+  color: var(--color-yellow);
+}
+.main-user-access .main-container .score-keeping .current-bet-amount {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.main-user-access .main-container .score-keeping .current-bet-amount input {
+  background-color: var(--gray-800);
+  border: 2px solid var(--color-gold);
+  padding: 0.5rem;
+}
+.main-user-access .main-container .score-keeping .current-bet-amount input:focus {
+  outline: none;
+}
+.main-user-access .main-container .score-keeping .current-bet-amount .amount-submit {
+  background-color: var(--color-gold);
+  border: 2px solid var(--color-gold);
+
+}
+.main-user-access .main-container .score-keeping .current-bet-amount .amount-submit span {
+  font-size: 1rem;
+  padding: 1rem;
+}
+.main-user-access .play-number-form {
+  display: flex;
+  flex-direction: column;
+}
+.main-user-access .play-number-form .play-number {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--gray-800);
+  border: 1px solid var(--color-gold);
+  margin-bottom: 0.7rem;
+}
+.main-user-access .play-number-form .play-number:focus {
+  outline: none;
+}
+.main-user-access .play-number-form .play-button {
+  background-color: var(--color-yellow);
+  filter: brightness(100%);
+  padding: 0.5rem;
+  transition: 0.5s all ease-in-out;
+}
+.main-user-access .play-number-form .play-button:hover {
+  background-color: var(--primary-color);
+}/*# sourceMappingURL=userAccess.css.map */

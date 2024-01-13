@@ -1,0 +1,1368 @@
+* {
+  margin: 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.95);
+  height: 5rem; /* Converted from 80px */
+  /* position: sticky; */
+  top: 0;
+  z-index: 100;
+}
+
+#main-logo {
+  width: 3.75rem; /* Converted from 60px */
+  height: 4.375rem; /* Converted from 70px */
+}
+
+#logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 0.78125rem; /* Converted from 1.25rem */
+  font-size: 0.78125rem; /* Converted from 1.25rem */
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: white;
+  font-family: monospace;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  font-size: 1.26rem;
+}
+
+.nav-bar a::before {
+  content: "";
+  position: absolute;
+  bottom: -0.125rem; /* Converted from -2px */
+  left: 0;
+  width: 100%;
+  height: 0.125rem; /* Converted from 2px */
+  background-color: #333;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+}
+
+.nav-bar a:hover {
+  color: #ff4081;
+}
+
+.nav-bar a:hover::before {
+  transform: scaleX(1);
+}
+
+.sign-in-up-container {
+  display: flex;
+  gap: 1.25rem; /* Converted from 20px */
+  /* margin-right: 0.625rem;  */
+  /* Converted from 10px */
+}
+
+.sign-in-up-container button {
+  padding: 0.3125rem; /* Converted from 5px */
+  font-size: 0.9375rem; /* Converted from 15px */
+  background-color: black;
+  color: rgba(255, 166, 0, 0.8);
+}
+
+.sign-in-up-container button:hover {
+  color: white;
+  background-color: rgba(255, 217, 0, 0.411);
+}
+
+.landing-page {
+  background-image: url("../images/pexels-raka-miftah-4253690back.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.welcome-title {
+  color: orange;
+  padding-top: 10%;
+  font-size: 50px;
+  padding-left: 50px;
+}
+.welcome-title2 {
+  color: orange;
+  font-size: 40px;
+  padding-left: 50px;
+}
+.welcome-text {
+  color: white;
+  width: 50%;
+  padding-left: 50px;
+  margin-top: 30px;
+  font-family: monospace;
+}
+.landing-page-btn {
+  width: 60%;
+}
+.landing-page-btn {
+  margin-top: 3.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+#landing-page-btn1 {
+  padding: 10px;
+  font-size: large;
+  font-weight: bold;
+  /* background-color: #ff4080; */
+  background-color: rgb(218, 0, 0);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.331);
+}
+#landing-page-btn2 {
+  padding: 10px;
+  font-size: large;
+  font-weight: bold;
+  border: 2px solid rgb(218, 0, 0);
+  background-color: rgba(0, 0, 0, 0.855);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.331);
+}
+#landing-page-btn1:hover {
+  font-size: larger;
+  box-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5);
+}
+#landing-page-btn2:hover {
+  font-size: larger;
+  box-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5);
+}
+.Ebet {
+  color: rgba(255, 196, 0, 0.701);
+}
+.Bet {
+  color: white;
+  text-decoration: none;
+}
+.random-facts {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.92);
+  align-items: center;
+  border: 1px solid rgba(245, 245, 245, 0.288);
+}
+.fact-item {
+  display: flex;
+  gap: 0.5rem;
+  color: white;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.715);
+  font-family: cursive;
+}
+.fact-item i {
+  color: gold;
+}
+.fact-item h3 {
+  font-size: 12px;
+}
+.game-intros-container {
+  background-color: #222;
+  padding-bottom: 40px;
+}
+.game-intros-container div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 20px;
+}
+.game:hover {
+  border: 1px solid red;
+  box-shadow: 0pc 3px 8px red;
+  opacity: 0.7;
+  border-radius: 8px;
+}
+.game {
+  flex: 0 0 25%;
+  background-color: rgb(8, 5, 5);
+  color: rgb(242, 160, 8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  opacity: 1;
+}
+.game {
+  position: relative;
+}
+
+.game::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+.game:hover::before {
+  background-color: black;
+  border-radius: 8px;
+}
+
+.game-button {
+  background-color: rgba(255, 166, 0, 0.918);
+  border-color: orange;
+  min-width: 250px;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.games-intro-title {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.824);
+  padding: 40px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.game p {
+  font-size: large;
+  font-weight: 1000;
+}
+.game-description {
+  visibility: hidden;
+  color: white;
+  padding: 10px;
+  transition: visibility 0.3s, background-color 0.3s ease-in-out;
+}
+
+.game:hover .game-description {
+  visibility: visible;
+  background-color: black;
+}
+
+.game-dice {
+  background-image: url("../images/dice-3095227_1280.jpg");
+}
+.game-poker {
+  background-image: url("../images/poker.jpg");
+}
+.game-blackjack {
+  background-image: url("../images/blackjack.jpg");
+}
+.game-craps {
+  background-image: url("../images/craps2.jpg");
+}
+.game-slots {
+  background-image: url("../images/slots.jpg");
+}
+.game-roulette {
+  background-image: url("../images/RussianRoulette.jpg");
+}
+.about-intro-container {
+  background-color: rgb(218, 0, 0);
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+  opacity: 0.95;
+  background: linear-gradient(to bottom, #161616, #540000);
+}
+.description-home {
+  width: 50%;
+}
+.description-home h1 {
+  color: rgba(255, 217, 0, 0.808);
+
+}
+.description-home p {
+  color: rgb(177, 196, 215);
+  font-size: large;
+  margin-top: 1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  /* margin-left: 1rem; */
+}
+.quick-facts-container div {
+  display: flex;
+  gap: 2rem;
+}
+.quick-facts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: rgba(255, 255, 255, 0.774);
+  box-shadow: 2px 2px 2px 2px black;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.quick-facts-container i {
+  font-size: 20px;
+  color: rgba(255, 217, 0, 0.705);
+}
+
+.quick-facts-container a {
+  color: red;
+}
+.quick-facts-container div:hover {
+  font-size: large;
+}
+.how-it-works-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  /* border:2px solid white;
+  border:0px 0px 2px rgba(255, 255, 255, 0.824); */
+}
+
+.step {
+  margin-top: 4%;
+  margin-bottom: 4%;
+  /* border:1px solid white; */
+  padding: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.step h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: orange;
+}
+
+.step p {
+  font-size: 14px;
+  color: white;
+}
+.how-it-works-main {
+  background: linear-gradient(to bottom, #540000f3, black);
+  text-align: center;
+}
+.how-it-works-main h2 {
+  font-size: 60px;
+  color: rgb(196, 179, 179);
+  margin-bottom: 1rem;
+}
+.faq-main-container {
+  background-color: #020202;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.642);
+  font-family: Arial, sans-serif;
+  padding-top: 5rem;
+  padding-bottom: 6rem;
+}
+.faq-main-container h1 {
+  text-align: center;
+  color: rgba(255, 166, 0, 0.737);
+  font-size: 40px;
+}
+.faq-container {
+  display: flex;
+  gap: 4rem;
+  margin-top: 5rem;
+}
+.faq-container div {
+  width: 50%;
+  text-align: center;
+}
+.faq-column {
+  flex: 0 0 45%;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-item summary {
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #0f0e0e;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.226);
+}
+.faq-item summary:hover {
+  font-size: larger;
+  background-color: rgba(255, 166, 0, 0.737);
+  color: black;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  margin-left: 25%;
+  color: white;
+}
+
+footer {
+  background-color: black;
+  color: white;
+}
+.footer-container {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  padding: 2rem;
+}
+.payment-icons img {
+  opacity: 0.8;
+  width: 5rem;
+}
+.payment-icons img:hover {
+  opacity: 1;
+}
+.payment-icons {
+  display: flex;
+  gap: 2rem;
+}
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+}
+.footer-socials i {
+  color: rgba(255, 255, 255, 0.413);
+}
+.footer-socials i:hover {
+  color: rgba(255, 255, 255, 0.762);
+}
+.payment-option-info h4 {
+  font-size: 2.3rem;
+  color: rgba(255, 166, 0, 0.811);
+  margin-bottom: 1rem;
+}
+.footer-email input {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.534);
+  color: white;
+}
+.footer-email button {
+  padding: 8px;
+  background-color: rgba(255, 166, 0, 0.79);
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 3px white;
+}
+.footer-email button:hover {
+  font-size: large;
+}
+.logo {
+  color: rgba(255, 166, 0, 0.811);
+}
+.user-testimonial-container {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  width: 100%;
+  /* scrollbar-width: thin; */
+  scrollbar-color: transparent transparent;
+  padding-top: 30px;
+}
+
+.user-testimonial-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.user-testimonial-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.user-testimonial-container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+/* For Firefox */
+.user-testimonial-container {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  background-color: #020202e9;
+}
+
+.testimonial {
+  flex: 0 0 auto;
+  width: 300px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  color: white;
+}
+
+.testimonial-content,
+.testimony-giver {
+  text-align: center;
+}
+
+.testimonial-content {
+  height: fit-content;
+  padding: 30px;
+  color: rgba(255, 255, 255, 0.776);
+  /* background-color: black; */
+  border: 1px solid rgba(255, 255, 255, 0.589);
+}
+
+.testimonial-text {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.testimony-giver img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.testimonial-author {
+  font-style: italic;
+  color: red;
+  font-size: larger;
+}
+
+.testimonial-content {
+  position: relative;
+}
+
+.testimonial-content::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+}
+/* *******************************************************About Us*********************************************************************** */
+.aboutus-main {
+  background-image: url("../images/casino2.jpg");
+  background-size: cover;
+  background-position: center;
+  /* text-align: center; */
+}
+.aboutus-main div {
+  width: 50%;
+  padding-top: 50px;
+  padding-left: 20%;
+  padding-bottom: 2rem;
+}
+
+.aboutus-main h1 {
+  color: #ff9900;
+}
+
+.aboutus-main h2 {
+  margin-top: 30px;
+  color: #ff9900;
+}
+
+.aboutus-main p {
+  margin-top: 10px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.sign-in-up-container i {
+  display: none;
+}
+@media (max-width: 768px) {
+  .nav-bar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    color: white;
+  }
+
+  .nav-bar.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 14%;
+    right: 0;
+    width: 50%;
+    background-color: red;
+    padding: 10px;
+    margin-top: 5px;
+  }
+
+  .nav-bar.show a {
+    display: block;
+    /* background-color: black; */
+    color: black;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  .sign-in-up-container button {
+    display: none;
+  }
+  .sign-in-up-container i {
+    display: flex;
+    color: rgba(255, 166, 0, 0.913);
+    text-decoration: none;
+    /* border:1px solid rgba(255, 166, 0, 0.913); */
+    padding: 5px;
+    font-size: 20px;
+    box-shadow: 1px 0px 1px 1px rgba(255, 255, 255, 0.557);
+  }
+
+  .sign-in-up-container i:hover {
+    color: white;
+    background-color: rgba(255, 217, 0, 0.411);
+  }
+  #main-logo {
+    width: 50px;
+    height: 50px;
+  }
+  .how-it-works-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+  }
+  .random-facts {
+    flex-wrap: wrap;
+  }
+  .about-intro-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .description-home {
+    width: fit-content;
+  }
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  .faq-container div {
+    width: 100%;
+  }
+  .faq-answer {
+    margin-left: 0;
+  }
+  .faq-container {
+    gap: 0.3rem;
+  }
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .payment-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+  }
+  .payment-option-info h4 {
+    font-size: 2rem;
+  }
+  .footer-socials {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+  
+  }
+  .sign-in-up-container a {
+    text-decoration: none;
+  }
+ 
+}
+@media (min-width: 650px) {
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .footer-socials {
+    display: flex;
+    flex-direction: column;
+  }
+  .payment-icons {
+    gap: 1rem;
+    
+  }
+}
+@media (min-width: 500px) {
+  .sign-in-up-container button {
+    display: flex;
+  }
+  .sign-in-up-container i {
+    display: none;
+  }
+  .sign-in-up-container a {
+    text-decoration: none;
+  }
+
+}
+/* ************************************************************************Registration***************************************************************************************** */
+
+.registration-main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+.registration-card {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  padding: 2%;
+  margin-left: 5%;
+  margin-top: 7%;
+  background-color: rgba(0, 0, 0, 1);
+  box-shadow: 0px 4px 8px black;
+}
+.registration-logo {
+  display: flex;
+  gap: 4px;
+}
+.registration-logo img {
+  width: 80px;
+  height: 80px;
+}
+.registration-form-emails{
+  display: flex;
+  flex-direction: column;
+  gap:4px;
+}
+.registration-form-emails div{
+  display: flex;
+  flex-direction: column;
+}
+.registration-button {
+  margin-top: 20px;
+}
+
+.regstration-form input {
+  background-color: black;
+  border: 1px solid rgba(255, 255, 255, 0.432);
+  height: 3%;
+  color: white;
+  box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.683);
+  padding: 7px;
+  margin-top: 2px;
+  padding-left: 150px;
+
+}
+.regstration-form input:active {
+  box-shadow: none;
+}
+
+.registration-input{
+  display: flex;
+  flex-direction: column;
+
+}
+.registration-button {
+
+  background-color: gold;
+  padding: 8px;
+  border-radius: 20px;
+}
+.registration-button input {
+  background-color: gold;
+  border:none;
+  box-shadow: none;
+  color: black;
+  font-size: medium;
+
+}
+
+.registration-logo p 
+{
+  font-size: 30px;
+  margin-top: 20px;
+}
+.registration-logo a 
+{
+  color: rgba(255, 217, 0, 0.701);
+}
+.welcome-section h2 
+{
+  color: rgba(255, 217, 0, 0.701);
+}
+.welcome-section a 
+{
+  color: gold;
+}
+.regstration-form label 
+{
+  font-size: larger;
+}
+
+#registrationForm
+{
+  display: none;
+  position: fixed;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0f0e0e81;
+  z-index: 1;
+}
+.close-button 
+{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 50px;
+}
+
+/* ***************************************************************************Login page *******************************************************************8 */
+.login-main {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+.login-card {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  padding: 4%;
+  margin-left: 5%;
+  margin-top: 9%;
+  background-color: rgba(0, 0, 0, 1);
+  box-shadow: 0px 4px 8px black;
+  width: 320px;
+}
+.login-logo {
+  display: flex;
+  gap: 4px;
+}
+.login-logo img {
+  width: 80px;
+  height: 80px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.login-form-emails {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.login-button {
+  margin-top: 20px;
+}
+.login-form input {
+  background-color: black;
+  border: 1px solid rgba(255, 255, 255, 0.432);
+  height: 50px;
+  color: white;
+  box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.683);
+}
+.login-form input:active {
+  box-shadow: none;
+}
+.login-button {
+  background-color: gold;
+  padding: 8px;
+  border-radius: 20px;
+}
+.login-button button:hover {
+  font-size: larger;
+}
+.login-button input {
+  background-color: gold;
+  border:none;
+  box-shadow: none;
+  color: black;
+  font-size: medium;
+
+}
+.login-logo p {
+  font-size: 30px;
+  margin-top: 20px;
+}
+.login-logo a {
+  color: rgba(255, 217, 0, 0.701);
+}
+.login-form label {
+  font-size: larger;
+}
+#loginForm {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0f0e0e81;
+  z-index: 1;
+}
+
+/* ***************************************************************************Games page *******************************************************************8 */
+
+.game-body {
+  /* background-image: url("../images/a"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family:'poppins', sans-serif;
+  background-color: aliceblue;
+}
+
+.game-main-container {
+  margin: 0.6rem;
+  padding:30px;
+}
+.game-main-container  h1{
+  text-align: center;
+  color:orange;
+  font-size: 80px;
+  font-weight: 600;
+}
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.games-content {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgba(31, 52, 65, 0.2);
+}
+.games-content img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.unavailable-games img{
+  opacity:0.8;
+}
+.game-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 1rem;
+}
+.game-layer h5 {
+  color: aliceblue;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+.game-layer a {
+  width: 80%;
+  background-color: rgb(242, 206, 5);
+  color: black;
+  border: none;
+  text-decoration: none;
+  font-size: 20px;
+  padding:5px;
+
+} 
+.nav-bar{
+  z-index: 999;
+}
+.available-game-button:hover{
+  background-color: red;
+}
+/* ***************************************************************************Contact page******************************************************************* */
+.contactBody{
+  font-family: 'poppins', sans-serif;
+}
+.contactSection{
+  position: relative;
+  min-height: 100vh;
+  padding:50px 100px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url('../images/oncontact\ \(1\).jpg');
+  /* background-color:black; */
+  background-size: cover;
+
+}
+.contactSection .content{
+  max-width:800px;
+  text-align: center;
+
+}
+.contactSection .content h2{
+  font-size: 36px;
+  font-weight: 500;
+  color:rgba(255, 166, 0, 0.824);
+  margin-bottom: 10px;
+
+}
+.contactSection .content p{
+  font-weight: 300;
+  color:white;
+
+}
+.contactContainer{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:30px ;
+}
+.contactContainer .contactInfo{
+  width:50%;
+  display: flex;
+  flex-direction: column;
+
+}
+.contactContainer .contactInfo .box{
+  position:relative;
+  padding:20p 0;
+  display:flex;
+  margin-bottom: 30px;
+}
+.contactContainer .contactInfo .box .contactIcon{
+  min-width: 60px;
+  height:60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+
+}
+.contactContainer .contactInfo .box .contactText
+{
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  flex-direction: column;
+  font-weight: 300;
+  
+}
+.contactContainer .contactInfo .box .contactText a{
+  color:white;
+  text-decoration: none;
+
+}
+.contactContainer .contactInfo .box .contactText h3{
+  font-weight: 800;
+  color:rgba(255, 166, 0, 0.824);
+
+}
+.contactForm{
+  width:40%;
+  padding:40px;
+  background: #fff;
+}
+#sendMessage{
+  font-size: 30px;
+  color:#333;
+  font-weight: 500px;
+}
+.contactForm .inputBox{
+  position: relative;
+  width:100%;
+  margin-top: 10px;
+
+}
+.contactForm .inputBox input,
+.contactForm .inputBox textarea
+{
+  width:100%;
+  padding:5px 0;
+  font-size: 16px;
+  margin:10px 0;
+  border:none;
+  border-bottom: 2px solid #333;
+  outline:none;
+}
+.contactForm .inputBox span{
+  position: absolute;
+  left:0;
+  padding:5px 0;
+  font-size: 16px;
+  margin:10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color:#666;
+}
+.contactForm .inputBox  input:focus ~ span,
+.contactForm .inputBox  input:valid ~ span,
+.contactForm .inputBox  textarea:focus ~ span,
+.contactForm .inputBox  textarea:valid ~ span{
+  font-size: 12px;
+  transform: translateY(-20px);
+  color:red;
+}
+.contactForm .inputBox input[type="submit"]{
+  width:100px;
+  cursor:pointer;
+  padding:10px;
+  font-size: 18px;
+  background-color: #ff9900;
+  border:none;
+}
+
+@media (max-width: 991px)
+{
+  .contactSection{
+    padding:50px;
+  }
+  .contactContainer{
+    flex-direction: column;
+  }
+  .contactContainer .contactInfo{
+    margin-bottom: 40px;
+  }
+  .contactContainer .contactInfo,
+  .contactForm 
+  {
+    width:80%;
+  }
+}
+
+
+/* *****************************************Dashboard page******************************************************************* */
+
+.dashboard body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/backgroundImage.webp'); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center center;
+  color:white;
+}
+
+
+.dashboard body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1b1b1b;
+  color: #fff;
+}
+
+.dashboard .dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #2c2c2c;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: rgba(44, 44, 44, 0.7); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard .dashboard-item {
+  padding: 20px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #333;
+  overflow: hidden;
+}
+
+.dashboard h2 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.dashboard p {
+  color: #bbb;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.dashboard .button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.dashboard .button:hover {
+  background-color: #45a049;
+}
+
+.dashboard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+
+/* *****************************************account update page******************************************************************* */
+
+
+
+#account-update{
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/dice-3095227_1280.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+}
+
+#Update-password{
+  background-color: rgb(4, 4, 4, 0.7); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+#update-userPassword{
+  background-color: rgba(44, 44, 44, 0.2);
+}
+
+
+/* *****************************************update user name  page******************************************************************* */
+
+
+
+#userName-update{
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/dice-3095227_1280.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+
+}
+#update-userName{
+  background-color: rgba(4, 4, 4, 0.7);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  
+}
+
+#update-newUser{
+  background-color: rgba(44, 44, 44, 0.2);
+}
+/* *****************************************************************************transaction******************************************************************************8 */
+.transaction-body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0sys;
+  background-image: url("../images/bg-contact.jpg");
+  background-size: 50% 80%;
+ 
+}
+.transaction-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgb(224, 216, 216);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  
+}
+
+
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-form-label {
+  margin-bottom: 8px;
+}
+
+.transaction-form-input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: gray;
+}
+
+.transaction-form-button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.transaction-form-button:hover {
+  background-color: #45a049;
+}
+
+.transaction-form-button.withdraw {
+  background-color: #f44336;
+}
+
+.transaction-form-button.withdraw:hover {
+  background-color: #d32f2f;
+}
+
+.error-message {
+  color: #f44336;
+  margin-top: 5px;
+}
+
+.with-dep-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/font-awesome/fontawesome.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style/index.css" />
+    <title>Casino Game</title>
+  </head>
+  <body class="game-body">
+    <header class="header-container">
+        <div id="logo-container">
+          <img id="main-logo" src="../src/images/logo.jpg" />
+          <h1>
+            <a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a>
+          </h1>
+        </div>
+        <div class="nav-bar">
+          <a href="./usergames.html">Games</a>
+          <hr />
+          <a href="./usertransaction.html">Transaction</a>
+          <hr />
+          <a href="./useraccount.html">Account</a>
+          <hr />
+        </div>
+        <div class="sign-in-up-container">
+          <a href="./index.html"><button>Logout</button></a>
+        </div>
+        <i class="fa fa-bars menu-icon"></i>
+      </header>
+    <div>
+      <div id="registrationForm">
+        <div class="close-button" onclick="closeRegistrationForm()">
+          &times;
+        </div>
+        <div class="registration-main">
+          <section class="registration-card">
+            <div class="registration-logo">
+              <img src="../src/images/logo.jpg" alt="logo" />
+              <p>Bet<a href="#">Ebet</a></p>
+            </div>
+            <div>
+              <form class="regstration-form">
+                <div class="registration-form-emails">
+                  <div class="registration-input">
+                    <div>
+                      <label for="userName"
+                        ><i class="fa fa-user"></i> Username:</label
+                      >
+                    </div>
+                    <div><input id="userName" type="text" required /></div>
+                    <div class="error"></div>
+                  </div>
+                  <div class="registration-form-emails">
+                    <div>
+                      <label for="email"
+                        ><i class="fa fa-envelope-o"></i> Email:</label
+                      >
+                    </div>
+                    <div>
+                      <input id="email" type="email" name="email" required />
+                    </div>
+                    <div class="error"></div>
+                  </div>
+                  <div class="registration-form-emails">
+                    <div>
+                      <label for="password"
+                        ><i class="fa fa-key"></i> Password:</label
+                      >
+                    </div>
+                    <div>
+                      <input
+                        id="password"
+                        type="password"
+                        name="password"
+                        id="password"
+                        required
+                      />
+                    </div>
+                    <div class="error"></div>
+                  </div>
+                  <div class="registration-form-emails">
+                    <div>
+                      <label for="confirmPassword"
+                        ><i class="fa fa-lock"></i> Confirm Password:</label
+                      >
+                    </div>
+                    <div>
+                      <input
+                        id="confirmPassword"
+                        type="password"
+                        name="confirmPassword"
+                        id="confirmPassword"
+                        required
+                      />
+                    </div>
+                    <div class="error"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="registration-options">
+                    <label
+                      ><input
+                        type="radio"
+                        name="registrationType"
+                        value="user"
+                        checked
+                      />
+                      User</label
+                    >
+                    <label
+                      ><input
+                        type="radio"
+                        name="registrationType"
+                        value="admin"
+                      />
+                      Admin</label
+                    >
+                  </div>
+                </div>
+
+                <div class="registration-button">
+                  <button type="submit" onclick="validateForm(event)">
+                    Register
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div id="loginForm">
+        <div class="close-button" onclick="closeLoginForm()">&times;</div>
+        <div class="login-main">
+          <section class="login-card">
+            <div class="login-logo">
+              <img src="../src/images/logo.jpg" alt="logo" />
+              <p>Bet<a href="#">Ebet</a></p>
+            </div>
+            <div>
+              <form class="regstration-form">
+                <div class="login-form-emails">
+                  <div>
+                    <label for="userName"
+                      ><i class="fa fa-user"></i> Username:</label
+                    >
+                    <input id="userName" type="text" required />
+                    <div class="error"></div>
+                  </div>
+                  <div>
+                    <label for="password"
+                      ><i class="fa fa-key"></i>Password:</label
+                    >
+                    <input
+                      id="password"
+                      type="password"
+                      name="password"
+                      id="password"
+                      required
+                    />
+                    <div class="error"></div>
+                  </div>
+                </div>
+
+                <div class="login-button">
+                  <button type="submit">Sign in</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <main class="container-fluid game-main-container">
+        <div>
+          <h1 class="text-center">Games</h1>
+        </div>
+        <div class="games-container">
+          <div class="games-content 
+          ">
+            <img
+              src="./images/poker.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Wheel</h5>
+              <a href="./userAcces.html" class="available-game-button">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/roll.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Blackjack</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/roll.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Pocker</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/game2.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Dice</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/poker.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Craps</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/roll.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Slots</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/game3.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Craps</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+  
+          <div class="games-content unavailable-games
+          ">
+            <img
+              src="./images/poker.jpg"
+              alt="Game Image"
+            />
+            <div class="game-layer">
+              <h5 class="card-title">Fun Bobby</h5>
+              <a href="#" class="btn btn-primary">Play Now</a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="payment-option-info">
+          <h4>Payment Options</h4>
+          <div class="payment-icons">
+            <img src="./images/visa.webp" />
+            <img src="./images/americanexpress.jpg" />
+            <img src="./images/masterCard.png" />
+            <img src="./images/paypal.jpg" />
+          </div>
+        </div>
+
+        <div>
+          <div class="logo">
+            <h1>BetEbet</h1>
+          </div>
+
+          <div class="footer-socials">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+
+            <form
+              class="footer-email"
+              action="send_email.php"
+              method="POST"
+              class="email-form"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../build/scripts/index.js"></script>
+  </body>
+</html>

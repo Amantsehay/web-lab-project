@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/userAccess.css" />
+    <link rel="stylesheet" href="./style/index.css" />
+
+    <title>UserAccess</title>
+  </head>
+  <body class="userAccess">
+    <header class="header-container">
+      <div id="logo-container">
+        <img id="main-logo" src="../src/images/logo.jpg" />
+        <h1>
+          <a href="#" class="Bet">Bet</a><a class="Ebet" href="#">Ebet</a>
+        </h1>
+      </div>
+      <div class="sign-in-up-container">
+        <a href="./index.html"><button>Logout</button></a>
+      </div>
+    </header>
+    <main class="main-user-access">
+      <div class="main-container">
+        <div class="game-board">
+          <p class="result"></p>
+          <img
+            src="./images/marker.png"
+            alt="No Image is loading"
+            class="marker"
+          />
+
+          <img src="./images/whel.png" class="wheel" />
+        </div>
+
+        <div class="score-keeping">
+          <p class="current-bet-amount" id="current-amount">Current Amount : <span>888</span></p>
+
+          <form class="current-bet-amount">
+            <input
+              type="text"
+              name="bet-amount"
+              id="bet-amount"
+              placeholder="Enter Bet"
+            />
+            <button class="amount-submit" type="submit">
+              <span> USD</span>
+            </button>
+          </form>
+
+          <div class="play-number-form">
+            <form>
+              <input
+                type="text"
+                class="play-number"
+                name="bet-number"
+                id="bet-number"
+                placeholder="Enter Number"
+              />
+            </form>
+            <button class="play-button" type="button">
+              Play Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="payment-option-info">
+          <h4>Payment Options</h4>
+          <div class="payment-icons">
+            <img src="./images/visa.webp" />
+            <img src="./images/americanexpress.jpg" />
+            <img src="./images/masterCard.png" />
+            <img src="./images/paypal.jpg" />
+          </div>
+        </div>
+
+        <div>
+          <div class="logo">
+            <h1>BetEbet</h1>
+          </div>
+
+          <div class="footer-socials">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+
+            <form
+              class="footer-email"
+              action="send_email.php"
+              method="POST"
+              class="email-form"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../build/scripts/index.js"></script>
+    <script src="../build//scripts/login-register.js"></script>
+  </body>
+</html>
