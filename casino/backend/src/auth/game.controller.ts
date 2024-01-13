@@ -4,6 +4,7 @@ import {Public} from "./decorators/public.decorator";
 import {ACGuard, UseRoles} from "nest-access-control";
 import {Request} from "express";
 import { AdminAuthorizationGuard } from "./guards/admin.authorization.guard";
+import { AuthGuard } from "./guards/auth.guard";
 
 export class GameDto{
     gameUrl: string
@@ -14,7 +15,7 @@ export class GameController {
     constructor(private gameService: GameService ) {}
 
     @Delete('delete-game')
-    @UseGuards(ACGuard)
+    @UseGuards(AuthGuard)
     @UseGuards(AdminAuthorizationGuard)
     async deleteGame(@Body() body: GameDto) : Promise<any> {
 
@@ -23,20 +24,20 @@ export class GameController {
     }
 
     @Get('games')
-    @UseGuards(ACGuard)
+    @UseGuards(AuthGuard)
     @UseGuards(AdminAuthorizationGuard)
     async getGames(@Req() req: Request) : Promise<string[]> {
         return this.gameService.getGames();
     }
   
     @Post('add-game')
-    @UseGuards(ACGuard)
+    @UseGuards(AuthGuard)
     @UseGuards(AdminAuthorizationGuard)
     async addGame(@Body() body: GameDto) : Promise<string[]> {
 
         return this.gameService.addGame(body.gameUrl);
     }
-    @UseGuards(ACGuard)
+    @UseGuards(AuthGuard)
     @UseGuards(AdminAuthorizationGuard)
     @Post('update')
     async updateGame(@Body() body: string) : Promise<string[]> {

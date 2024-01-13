@@ -1,10 +1,14 @@
 import {Prop, Schema, SchemaFactory} from "@nestjs/mongoose";
 import {Role} from "../roles/user.roles";
+import * as mongoose from "mongoose";
 
 @Schema({
   timestamps: true,
 })
 export class User {
+
+  @Prop({ unique: true, default: new mongoose.Types.ObjectId() , type: mongoose.Schema.Types.ObjectId})
+  id: mongoose.Types.ObjectId;
   @Prop({ required: true })
   username: string;
 
