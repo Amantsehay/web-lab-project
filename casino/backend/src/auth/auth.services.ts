@@ -22,7 +22,6 @@ export class AuthService {
       .findOne({ username: username })
       .lean()
       .exec();
-
       
       if (!user) {
         throw new HttpException(
@@ -46,6 +45,7 @@ export class AuthService {
     const payload = {
       sub: user.email,
       username: user.username,
+      roles: user.roles,
 
     };
 
@@ -104,5 +104,17 @@ export class AuthService {
 
   deleteUser(userId: any) {
     
+  }
+
+  async getUserByUsername(username: string) {
+    return this.userModel.findOne({username}).exec();
+   
+
+  
+  }
+
+  async blockUserByUsername(username: string) {
+
+
   }
 }

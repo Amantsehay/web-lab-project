@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casino Dashboard</title>
+    <title>Admin Dashboard</title>
 
     <style>
         body {
@@ -46,14 +46,6 @@
             font-size: 16px;
         }
 
-        .game-preview {
-            width: 100%;
-            height: 200px;
-            background-color: #555;
-            margin-bottom: 10px;
-            border-radius: 10px;
-        }
-
         .button {
             display: inline-block;
             padding: 12px 24px;
@@ -84,24 +76,29 @@
 <body>
     <div class="dashboard-container">
         <div class="dashboard-item">
-            <h2>Player Information</h2>
-            <p>Welcome, [Player Name]! Your current balance is $500.</p>
+            <h2>Admin Panel</h2>
+            <p>Welcome, [Admin Name]!</p>
         </div>
 
         <div class="dashboard-item">
-            <h2>Game Preview</h2>
-            <div class="game-preview"></div>
-            <a href="#" class="button">Play Now</a>
+            <h2>Add Games</h2>
+            <a href="#" class="button">Add Game</a>
         </div>
 
         <div class="dashboard-item">
-            <h2>Recent Transactions</h2>
-            <ul>
-                <li>Deposit: $100</li>
-                <li>Withdrawal: $50</li>
-                <li>Bet: $20</li>
-            </ul>
+            <h2>Block Users</h2>
+            <a href="./account-update/block-user.html" class="button">Block User</a>
         </div>
-    </div> 
+
+        <div class="dashboard-item">
+            <h2>Delete Games</h2>
+            <a href="#" class="button">Delete Game</a>
+        </div>
+
+        <div class="dashboard-item">
+            <h2>Update Games</h2>
+            <a href="#" class="button">Update Game</a>
+        </div>
+    </div>
 </body>
 </html>
