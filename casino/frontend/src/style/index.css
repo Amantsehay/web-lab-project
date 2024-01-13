@@ -672,6 +672,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+
   }
   .payment-option-info h4 {
     font-size: 2rem;
@@ -680,10 +681,12 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 0.3rem;
+  
   }
   .sign-in-up-container a {
     text-decoration: none;
   }
+ 
 }
 @media (min-width: 650px) {
   .footer-container {
@@ -696,6 +699,7 @@ footer {
   }
   .payment-icons {
     gap: 1rem;
+    
   }
 }
 @media (min-width: 500px) {
@@ -708,12 +712,12 @@ footer {
   .sign-in-up-container a {
     text-decoration: none;
   }
+
 }
 /* ************************************************************************Registration***************************************************************************************** */
 
 .registration-main {
   display: flex;
-  /* flex-direction:center; */
   justify-content: center;
   align-items: flex-start;
   height: 100vh;
@@ -737,49 +741,58 @@ footer {
   width: 80px;
   height: 80px;
 }
-.registration-form {
+.registration-form-emails{
   display: flex;
   flex-direction: column;
+  gap:4px;
 }
-.registration-form-emails {
+/* .registration-form-emails {
   display: flex;
   flex-direction: column;
   gap: 3px;
   padding: 10px;
   padding-left: 20px;
-}
+} */
 .registration-button {
   margin-top: 20px;
 }
-.firstName {
+/* .firstName {
   display: flex;
   flex-direction: column;
-}
-.names {
+} */
+/* .names {
   display: flex;
   gap: 0.1%;
   margin-bottom: 10px;
-  /* padding: 10px; */
+
   padding-left: 20px;
 }
 .lastName {
   display: flex;
   flex-direction: column;
-}
+} */
 .regstration-form input {
   background-color: black;
   border: 1px solid rgba(255, 255, 255, 0.432);
   height: 3%;
   color: white;
-  box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.683);
+  box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.683);
   padding: 7px;
+  margin-top: 2px;
+  padding-left: 150px;
+
 }
 .regstration-form input:active {
   box-shadow: none;
 }
-.names input {
+/* .names input {
   margin-top: 3px;
   height: 16px;
+} */
+.registration-input{
+  display: flex;
+  flex-direction: column;
+
 }
 .registration-button {
   text-align: center;
@@ -795,24 +808,30 @@ footer {
   border: none;
   font-size: medium;
 }
-.registration-logo p {
+.registration-logo p 
+{
   font-size: 30px;
   margin-top: 20px;
 }
-.registration-logo a {
+.registration-logo a 
+{
   color: rgba(255, 217, 0, 0.701);
 }
-.welcome-section h2 {
+.welcome-section h2 
+{
   color: rgba(255, 217, 0, 0.701);
 }
-.welcome-section a {
+.welcome-section a 
+{
   color: gold;
 }
-.regstration-form label {
+.regstration-form label 
+{
   font-size: larger;
 }
 
-#registrationForm {
+#registrationForm
+{
   display: none;
   position: fixed;
   top: 5px;
@@ -822,8 +841,8 @@ footer {
   background-color: #0f0e0e81;
   z-index: 1;
 }
-
-.close-button {
+.close-button 
+{
   position: absolute;
   top: 10px;
   right: 10px;
@@ -832,6 +851,7 @@ footer {
   cursor: pointer;
   font-size: 50px;
 }
+
 /* ***************************************************************************Login page *******************************************************************8 */
 .login-main {
   display: flex;
@@ -991,9 +1011,9 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* background: url('../images/pexels-raka-miftah-4253690back.jpg'); */
-  background-color:black;
-  background-size: 100% 100%;
+  background: url('../images/oncontact\ \(1\).jpg');
+  /* background-color:black; */
+  background-size: cover;
 
 }
 .contactSection .content{

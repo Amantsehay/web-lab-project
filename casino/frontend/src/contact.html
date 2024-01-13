@@ -39,38 +39,44 @@
                         <img src="../src/images/logo.jpg" alt="logo">
                         <p>Bet<a href="#">Ebet</a></p>
                     </div>
-                <div>
+                  <div>
                     <form class="regstration-form">
                         <div class="registration-form-emails">
-                          <div>
-                            <label for="userName"><i class="fa fa-user"></i> Username:</label>
-                            <input id="userName" type="text" required>
+                          <div class="registration-input">
+                            <div><label for="userName"><i class="fa fa-user"></i> Username:</label></div>
+                            <div><input id="userName" type="text" required></div>
                             <div class="error"></div>
                           </div>
-                          <div> 
-                            <label for="email"><i class="fa fa-envelope-o"></i> Email:</label>
-                            <input id="email" type="email" name="email" required>
+                          <div class="registration-form-emails"> 
+                            <div><label for="email"><i class="fa fa-envelope-o"></i> Email:</label></div>
+                            <div><input id="email" type="email" name="email" required></div>
                             <div class="error"></div>
                           </div>
-                          <div>
+                          <div class="registration-form-emails">
                                                     
-                            <label for="password"><i class="fa fa-key"></i> Password:</label>
-                            <input id="password" type="password" name="password" id="password" required>
+                            <div><label for="password"><i class="fa fa-key"></i> Password:</label></div>
+                            <div><input id="password" type="password" name="password" id="password" required></div>
                             <div class="error"></div>
                         
                           </div>
-                          <div>
-                            <label for="confirmPassword"><i class="fa fa-lock"></i> Confirm Password:</label>
-                            <input id="confirmPassword" type="password" name="confirmPassword" id="confirmPassword" required>
+                          <div class="registration-form-emails">
+                            <div><label for="confirmPassword"><i class="fa fa-lock"></i> Confirm Password:</label></div>
+                            <div><input id="confirmPassword" type="password" name="confirmPassword" id="confirmPassword" required></div>
                             <div class="error"></div>
                           </div>
+                        </div>
+                        <div>
+                          <div class="registration-options">
+                            <label><input type="radio" name="registrationType" value="user" checked> User</label>
+                            <label><input type="radio" name="registrationType" value="admin"> Admin</label>
+                        </div>
                         </div>
                     
                         <div class="registration-button">
                             <button type="submit" onclick="validateForm(event)">Register</button>
                         </div>
                     </form>
-                </div>
+                  </div>
             </section>
           </div>
     </div>
@@ -109,86 +115,6 @@
               </div>
         </div>
     </div>
-
-    <!-- <main class="container mt-5">
-      <div class="row">
-        <div class="col-md-5">
-          <h2>Contact Us</h2>
-
-          <div class="column mt-4">
-            <div class="col-md-4 my-5">
-              <h5>Email</h5>
-              <a href="mailto:betebet2023@gmail.com">
-                <i class="fas fa-envelope"></i> betebet2023@gmail.com
-              </a>
-            </div>
-
-            <div class="col-md-4 my-5">
-              <h5>Phone</h5>
-              <a href="tel:+251989122801">
-                <i class="fas fa-phone"></i> +251989122801
-              </a>
-            </div>
-
-            <div class="col-md-4">
-              <h5>Location</h5>
-              <a
-                href="https://maps.app.goo.gl/sRLnUokVCYN19ion8"
-                target="_blank"
-              >
-                <i class="fas fa-map-marker"></i> Our Company Location
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-7">
-          <div class="container">
-            <form
-              action="https://formsubmit.co/birukmaru12@gmail.com"
-              method="post"
-              class="contact"
-              id="commentForm"
-            >
-              <div class="form-group">
-                <label for="name"><h5>Name:</h5></label>
-                <input
-                  class="form-control my-3"
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="email"><h5>Email:</h5></label>
-                <input
-                  class="form-control my-3"
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label class="mb-3" for="message"><h5>Message:</h5></label>
-                <textarea
-                  class="form-control"
-                  id="message"
-                  name="message"
-                  rows="4"
-                  required
-                ></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </main> -->
     <section class="contactSection">
       <div class="content">
         <h2>Contact Us</h2>
